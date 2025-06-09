@@ -1,0 +1,56 @@
+{
+    "ComponentName": "past_event_track",
+    "BlockType": "stack",
+    "Width": 800,
+    "HorizontalAlignment": "Left",
+    "Spacing": 10,
+    "Items": [
+        {
+            "BlockType": "text",
+            "VerticalAlignment": "Center",
+            "Source": "{Item.Date, Converter=DateToDayOfMonth}  {Item.Date, Converter=DateToMonthInWords}  {Item.Date, Converter=DateToYear}",
+            "FontSize": 16
+        },
+        {
+            "BlockType": "text",
+            "VerticalAlignment": "Center",
+            "Source": "|",
+            "FontSize": 42,
+            "Width": 4
+        },
+        {
+            "BlockType": "text",
+            "VerticalAlignment": "Center",
+            "Source": "{Item.Track.CircuitName}",
+            "FontName": "{FontNameWide}",
+            "FontSize": 16
+        },
+        {
+            "BlockType": "text",
+            "VerticalAlignment": "Center",
+            "Source": "{Item.Track.CountryName}",
+            "FontSize": 16
+        },
+        {
+            "BlockType": "image",
+            "VerticalAlignment": "Center",
+            "Height": 22,
+            "ImageOptions": {
+                "Path": "{Item.Track.Nation.LogotypePath}"
+            }
+        },
+        {
+            "BlockType": "text",
+            "VerticalAlignment": "Center",
+            "Source": "|",
+            "FontSize": 42,
+            "Width": 4
+        },
+        {
+            "BlockType": "text",
+            "VerticalAlignment": "Center",
+            "Source": "Round  {Item.Position}",
+            "FontSize": 16
+        }
+    ]
+}

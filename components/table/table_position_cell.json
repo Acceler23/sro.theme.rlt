@@ -1,0 +1,22 @@
+{
+    "ComponentName": "position_cell",
+    "BlockType": "text",
+    "Source": "<position>",
+    "Width": 66,
+    "Height": 52,
+    "Background": "{BackgroundDefault}",
+    "FontName": "{FontNameDefault}",
+    "FontSize": 14,
+    "Foreground": "{ForegroundDefault}",
+    "TextOptions": {
+        "HorizontalAlignment": "Left"
+    },
+    "Triggers": [
+        {
+            "Condition": "{Item.Index, Converter=NumberIsOdd}",
+            "Property": "Background",
+            "Value": "{BackgroundDarker}"
+        }
+    ],
+    "PaddingLeft": 32
+}

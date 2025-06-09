@@ -1,0 +1,63 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        "Orientation": "Vertical",
+        "Width": "*",
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "{Season.LeagueInfo.LeagueName}",
+                "FontSize": 40,
+                "MarginBottom": 20
+            },
+            {
+                "BlockType": "stack",
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": ">",
+                        "FontSize": 24,
+                        "Foreground": "{HeadMain}"
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": " EVENTS",
+                        "FontSize": 24
+                    }
+                ]
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "ItemStackOptions": {
+                    "ItemSource": "{Events.Events}",
+                    "ItemTemplate": {
+                        "BlockType": "dock",
+                        "Orientation": "Horizontal",
+                        "Background": "{BackgroundDefault}",
+                        "Width": "*",
+                        "Height": "*",
+                        "Spacing": 100,
+                        "Padding": "25,25,25,25",
+                        "MarginTop": 25,
+                        "Items": [
+                            {
+                                "BlockType": "component",
+                                "Component": "past_event_track"
+                            },
+                            {
+                                "BlockType": "text",
+                                "HorizontalAlignment": "Right",
+                                "Source": "{Item.Description}",
+                                "VerticalAlignment": "Center",
+                                "FontSize": 16
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

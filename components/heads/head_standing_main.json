@@ -1,0 +1,23 @@
+{
+    "ComponentName": "standing_main_head_cell",
+    "BlockType": "dock",
+    "Items": [
+        {
+            "BlockType": "image",
+            "Source": "back_main_cut",
+            "Width": 30,
+            "Height": 56
+        },
+        {
+            "BlockType": "text",
+            "Source": "{Season.LeagueInfo.LeagueName}",
+            "Background": "{HeadMain}",
+            "FontSize": 16,
+            "Foreground": "{BackgroundDefault}",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Height": 56,
+            "Width": "*"
+        }
+    ]
+}

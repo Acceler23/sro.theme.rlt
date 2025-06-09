@@ -1,0 +1,16 @@
+{
+  "ThemeId": "sro.racing.theme",
+  "Name": "SRO Racing Theme",
+  "Author": "Acceler23",
+  "Description": "Theme based on the SRO Racing website",
+  "Version": "1.0.0",
+  "DisableUnspecifiedLocalization": false,
+  "ForceLiveriesLoading": false,
+  "Links": [
+    {
+      "Url": "https://github.com/Acceler23/sro.theme.rlt",
+      "Type": "ThemeRepository",
+      "Caption": "Repository"
+    }
+  ]
+}

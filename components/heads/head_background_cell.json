@@ -1,0 +1,9 @@
+{
+    "ComponentName": "head_background_cell",
+    "BlockType": "text",
+    "Source": "infil",
+    "Background": "{HeadSecond}",
+    "Height": 50,
+    "Width": "*",
+    "MarginBottom": -50
+}

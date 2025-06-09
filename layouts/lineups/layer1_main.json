@@ -1,0 +1,119 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType": "stack",
+                "Orientation": "Horizontal",
+                "Padding": "{PaddingDefault}",
+                "HorizontalAlignment": "Left",
+                "MarginBottom": 10,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": ">",
+                                "FontSize": 24,
+                                "Foreground": "{HeadMain}"
+                            },
+                            {
+                                "BlockType": "text",
+                                "HorizontalAlignment": "Right",
+                                "Source": " {Season.Name}  |  Teams",
+                                "FontSize": 24
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "component",
+                "Component": "standing_main_head_cell"
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "Width": "*",
+                "ItemStackOptions": {
+                    "ItemSource": "{Lineups.Lineups}",
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Margin": "0,0,0,3",
+                        "Width": "*",
+                        "Height": "*",
+                        "Orientation": "Horizontal",
+                        "VerticalAlignment": "Center",
+                        "Triggers": [
+                            {
+                                "Condition": "{Item.IsNextTeam}",
+                                "Setters": [
+                                    {
+                                        "Property": "MarginTop",
+                                        "Value": 10
+                                    }
+                                ]
+                            }
+                        ],
+                        "Items": [
+                            //team
+                            {
+                                "BlockType": "stack",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    //Driver
+                                    {
+                                        "BlockType": "component",
+                                        "Component": "team_cell"
+                                    },
+                                    {
+                                        "BlockType": "component",
+                                        "Component": "number_cell"
+                                    },
+                                    {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "Background": "{BackgroundDefault}",
+                                        "VerticalAlignment": "Center",
+                                        "Width": 170,
+                                        "Height": 52,
+                                        "PaddingTop": 10,
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                                                "Property": "Background",
+                                                "Value": "{BackgroundDarker}"
+                                            }
+                                        ],
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.Driver.Name}",
+                                                "FontName": "{FontNameWide}",
+                                                "FontSize": 18
+                                            },
+                                            {
+                                                "BlockType": "image",
+                                                "Height": "25",
+                                                "ImageOptions": {
+                                                    "Path": "{Item.Driver.Nationality.LogotypePath}",
+                                                    "VerticalAlignment": "Center"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

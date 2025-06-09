@@ -1,0 +1,28 @@
+{
+    "ComponentName": "session_header",
+    "BlockType": "stack",
+    "Orientation": "Horizontal",
+    "Padding": "{PaddingDefault}",
+    "HorizontalAlignment": "Left",
+    "MarginBottom": 10,
+    "Items": [
+        {
+            "Name": "title_main",
+            "BlockType": "stack",
+            "Items": [
+                {
+                    "BlockType": "text",
+                    "Source": ">",
+                    "FontSize": 24,
+                    "Foreground": "{HeadMain}"
+                },
+                {
+                    "BlockType": "text",
+                    "HorizontalAlignment": "Right",
+                    "Source": " {Session.SessionType}  |  {Session.Track.Name}  |  {Season.Name}",
+                    "FontSize": 24
+                }
+            ]
+        }
+    ]
+}

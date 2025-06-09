@@ -1,0 +1,145 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType": "stack",
+                "Orientation": "Horizontal",
+                "Padding": "{PaddingDefault}",
+                "HorizontalAlignment": "Left",
+                "MarginBottom": 10,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": ">",
+                                "FontSize": 24,
+                                "Foreground": "{HeadMain}"
+                            },
+                            {
+                                "BlockType": "text",
+                                "HorizontalAlignment": "Right",
+                                "Source": " {Season.Name}  Standings  |   {Season.LeagueInfo.LeagueName} Drivers",
+                                "FontSize": 24
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "component",
+                "Component": "standing_main_head_cell"
+            },
+            {
+                "BlockType": "text",
+                "Source": "infil",
+                "Background": "{BackgroundDarker}",
+                "Height": 50,
+                "Width": "*",
+                "MarginBottom": -50
+            },
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "TableOptions": {
+                    "ItemsSource": "{Standings.Drivers}",
+                    "RowSpacing": 3,
+                    "ColSpacing": 3,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "Style": "table_head_style",
+                        "Background": "{BackgroundDarker}",
+                        "Foreground": "{ForegroundDefault}",
+                        "HorizontalAlignment": "Left"
+                    },
+                    "Columns": [
+                        //position
+                        {
+                            "Header": "          POS",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "position_cell",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "position": "{Item.PositionString}"
+                                    }
+                                }
+                            }
+                        },
+                        //Driver Name
+                        {
+                            "Header": "  DRIVER",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "driver_cell"
+                            }
+                        },
+                        {
+                            "Header": "          TOTAL",
+                            "Template": {
+                                "BlockType": "stack",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.Points.StringValue}",
+                                        "Background": "{BackgroundDefault}",
+                                        "Height": "*",
+                                        "Width": 82,
+                                        "Padding": "{PaddingDefault}",
+                                        "TextOptions": {
+                                            "HorizontalAlignment": "Center",
+                                            "VerticalAlignment": "Center"
+                                        },
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                                                "Property": "Background",
+                                                "Value": "{BackgroundDarker}"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "MultiColumnHeadersSource": "{Standings.Events}",
+                            "MultiColumnItemsSource": "{Item.Events}",
+                            "MultiColumnHeaderTemplate": {
+                                "BlockType": "stack",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.Track.Name}"
+                                    }
+                                ]
+                            },
+                            "Template": {
+                                "BlockType": "text",
+                                "Source": "{Item.PointsString}",
+                                "HorizontalAlignment": "Center",
+                                "Background": "{BackgroundDefault}",
+                                "Width": 80,
+                                "Height": "*",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                                        "Property": "Background",
+                                        "Value": "{BackgroundDarker}"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

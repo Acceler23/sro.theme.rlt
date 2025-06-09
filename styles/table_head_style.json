@@ -1,0 +1,10 @@
+{
+    "StyleName": "table_head_style",
+    "FontName": "{FontNameDefault}",
+    "FontSize": 14,
+    "Foreground": "{BackgroundDefault}",
+    "Backgound": "{ForegroundDefault}",
+    "Background": "{HeadSecond}",
+    "Height": 50,
+    "HorizontalAlignment" : "Left"
+}

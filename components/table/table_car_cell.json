@@ -1,0 +1,39 @@
+{
+    "ComponentName": "car_cell",
+    "BlockType": "dock",
+    "Padding": "{PaddingDefault}",
+    "Background": "{BackgroundDefault}",
+    "MaxWidth": 150,
+    "Height": 52,
+    "TextOptions": {
+        "HorizontalAlignment": "Left"
+    },
+    "Triggers": [
+        {
+            "Condition": "{Item.Index, Converter=NumberIsOdd}",
+            "Property": "Background",
+            "Value": "{BackgroundDarker}"
+        }
+    ],
+    "Items": [
+        //left part
+        {
+            "BlockType": "stack",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Items": [
+                //name
+                {
+                    "BlockType": "text",
+                    "Width": 150,
+                    "MarginLeft": 0,
+                    "Source": "{Item.Car.Name}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{FontNameDefault}",
+                    "FontSize": 14
+                }
+            ]
+        }
+    ]
+}
