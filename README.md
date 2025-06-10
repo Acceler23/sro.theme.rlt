@@ -2,3 +2,6 @@ This theme is based on the SRO Racing Group webstie, recreated with public infor
 All rights reserved to 2025 SRO Motorsports Group
 
 This is v1, future updates are on the work, custom colours and images
+
+--Using Classes--
+In this current version, the class system is using the driver Text Badge
