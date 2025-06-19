@@ -2,183 +2,180 @@
     "BlockRoot": {
         "Name": "mainStack",
         "BlockType": "stack",
-        "Margin": "{MarginRoot}",
         "Orientation": "Vertical",
         "Items": [
             {
                 "BlockType": "component",
-                "Component": "session_header"
+                "Component": "league_head_cell"
             },
             {
-                "BlockType": "component",
-                "Component": "main_head_cell"
-            },
-            {
-                "BlockType": "component",
-                "Component": "head_background_cell"
-            },
-            //table
-            {
-                "Name": "mainTable",
-                "BlockType": "table",
-                "Margin": "{MarginTable}",
-                "TableOptions": {
-                    "ItemsSource": "{Session.Drivers}",
-                    "RowSpacing": 3,
-                    "ColSpacing": 0,
-                    "HeaderTemplate": {
-                        "BlockType": "text",
-                        "Style": "table_head_style",
-                        "HorizontalAlignment": "Left"
+                "BlockType": "stack",
+                "Margin": "{MarginRoot}",
+                "Orientation": "Vertical",
+                "Items": [
+                    {
+                        "BlockType": "component",
+                        "Component": "session_header"
                     },
-                    "Columns": [
-                        //position
-                        {
-                            "Header": "          POS",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "position_cell",
-                                "ComponentOptions": {
-                                    "Vars": {
-                                        "position": "{Item.PositionString}"
+                    {
+                        "BlockType": "component",
+                        "Component": "main_head_cell"
+                    },
+                    {
+                        "BlockType": "component",
+                        "Component": "head_background_cell"
+                    },
+                    //table
+                    {
+                        "Name": "mainTable",
+                        "BlockType": "table",
+                        "Margin": "{MarginTable}",
+                        "TableOptions": {
+                            "ItemsSource": "{Session.Drivers}",
+                            "RowSpacing": 3,
+                            "ColSpacing": 0,
+                            "HeaderTemplate": {
+                                "BlockType": "text",
+                                "Style": "table_head_style",
+                                "HorizontalAlignment": "Left"
+                            },
+                            "Columns": [
+                                //position
+                                {
+                                    "Header": "     POS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "position_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "position": "{Item.PositionString}"
+                                            }
+                                        }
+                                    }
+                                },
+                                //Car Number
+                                {
+                                    "Header": "CAR #",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "number_cell"
+                                    }
+                                },
+                                //Class
+                                {
+                                    "Header": "CLASS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "class_cell"
+                                    }
+                                },
+                                //Driver Name
+                                {
+                                    "Header": "DRIVERS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "driver_cell"
+                                    }
+                                },
+                                {
+                                    "Header": "TEAM",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "team_cell"
+                                    }
+                                },
+                                {
+                                    "Header": "CAR",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "car_cell"
+                                    }
+                                },
+                                //Fastest Lap
+                                {
+                                    "Header": "TIME",
+                                    "Width": 90,
+                                    "Template": {
+                                        "BlockType": "dock",
+                                        "Background": "{BackgroundDefault}",
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                                                "Property": "Background",
+                                                "Value": "{BackgroundDarker}"
+                                            }
+                                        ],
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "HorizontalAlignment": "Left",
+                                                "VerticalAlignment": "Center",
+                                                "Source": "{Item.FastestLapTime}",
+                                                "Padding": "{PaddingDefault}"
+                                            }
+                                        ]
+                                    }
+                                },
+                                //Laps
+                                {
+                                    "Header": "LAPS",
+                                    "Width": 60,
+                                    "Template": {
+                                        "BlockType": "text",
+                                        "Source": "{Item.LapsCount}",
+                                        "VerticalAlignment": "Center",
+                                        "Padding": "{PaddingDefault}",
+                                        "HorizontalAlignment": "Left",
+                                        "Background": "{BackgroundDefault}",
+                                        "Width": 72,
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                                                "Property": "Background",
+                                                "Value": "{BackgroundDarker}"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "Header": "GAP",
+                                    "Template": {
+                                        "BlockType": "text",
+                                        "Source": "{Item.IntervalRace}",
+                                        "Padding": "{PaddingDefault}",
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Left",
+                                        "Width": 100,
+                                        "Background": "{BackgroundDefault}",
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                                                "Property": "Background",
+                                                "Value": "{BackgroundDarker}"
+                                            },
+                                            {
+                                                "Condition": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                "Property": "Source",
+                                                "Value": ""
+                                            },
+                                            {
+                                                "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
+                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
+                                                "Property": "Source",
+                                                "Value": ""
+                                            },
+                                            {
+                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
+                                                "Property": "Source",
+                                                "Value": ""
+                                            }
+                                        ]
                                     }
                                 }
-                            }
-                        },
-                        //Car Number
-                        {
-                            "Header": "  CAR #",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "number_cell"
-                            }
-                        },
-                        //Class
-                        {
-                            "Header": "   CLASS",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "class_cell"
-                            }
-                        },
-                        //Driver Name
-                        {
-                            "Header": "  DRIVERS",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "driver_cell"
-                            }
-                        },
-                        {
-                            "Header": "  TEAM",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "team_cell"
-                            }
-                        },
-                        {
-                            "Header": "CAR",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "car_cell"
-                            }
-                        },
-                        //Fastest Lap
-                        {
-                            "Header": "     TIME",
-                            "Template": {
-                                "BlockType": "dock",
-                                "Background": "{BackgroundDefault}",
-                                "Triggers": [
-                                    {
-                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                        "Property": "Background",
-                                        "Value": "{BackgroundDarker}"
-                                    }
-                                ],
-                                "Items": [
-                                    {
-                                        "BlockType": "stack",
-                                        "HorizontalAlignment": "Left",
-                                        "VerticalAlignment": "Center",
-                                        "Items": [
-                                            {
-                                                "BlockType": "text",
-                                                "Source": "{Item.FastestLapTime}",
-                                                "Padding": "16,0,16,0"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        },
-                        //Laps
-                        {
-                            "Header": "     LAPS",
-                            "Template": {
-                                "BlockType": "dock",
-                                "Background": "{BackgroundDefault}",
-                                "Width": 72,
-                                "Triggers": [
-                                    {
-                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                        "Property": "Background",
-                                        "Value": "{BackgroundDarker}"
-                                    }
-                                ],
-                                "Items": [
-                                    {
-                                        "BlockType": "stack",
-                                        "HorizontalAlignment": "Left",
-                                        "VerticalAlignment": "Center",
-                                        "Items": [
-                                            {
-                                                "BlockType": "text",
-                                                "Source": "{Item.LapsCount}",
-                                                "Padding": "16,0,16,0"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "Header": "     GAP",
-                            "Template": {
-                                "BlockType": "dock",
-                                "Background": "{BackgroundDefault}",
-                                "Triggers": [
-                                    {
-                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                        "Property": "Background",
-                                        "Value": "{BackgroundDarker}"
-                                    }
-                                ],
-                                "Items": [
-                                    {
-                                        "BlockType": "stack",
-                                        "HorizontalAlignment": "Left",
-                                        "VerticalAlignment": "Center",
-                                        "Items": [
-                                            {
-                                                "BlockType": "text",
-                                                "Source": "{Item.IntervalRace}",
-                                                "Padding": "16,0,16,0",
-                                                "Triggers": [
-                                                    {
-                                                        "Condition": "{Item.Index, Converter=NumberEquals, Parameter=0}",
-                                                        "Property": "Source",
-                                                        "Value": ""
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
+                            ]
                         }
-                    ]
-                }
+                    }
+                ]
             }
         ]
     }

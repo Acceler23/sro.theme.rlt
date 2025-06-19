@@ -1,17 +1,19 @@
 {
-    "FontNameDefault": "UniviaPro-Medium",
-    "FontNameWide": "UniviaPro-Black",
+    "FontNameDefault": "UniviaPro-Regular",
+    "FontNameWide": "UniviaPro-Medium",
     "FontNameBold": "UniviaPro-Bold",
     "FontSizeDefault": 14,
     "ForegroundDefault": "#000000",
     "BackgroundDefault": "#FFFFFF",
 
     //margins
-    "MarginRoot": "60, 40, 60, 40",
+    "MarginRoot": "80, 0, 80, 0",
     "MarginTable": "0, 0",
-    "PaddingDefault": "8, 5, 8, 5",
+    "PaddingDefault": "10,16,10,16",
 
     "HeadMain": "#d91d10",
     "HeadSecond": "#3e3f40",
-    "BackgroundDarker": "#f7f8f9"
+    "BackgroundDarker": "#f7f8f9",
+
+    "TableHeight": 32
 }

@@ -7,6 +7,10 @@
         "Items": [
             {
                 "BlockType": "component",
+                "Component": "league_head_cell"
+            },
+            {
+                "BlockType": "component",
                 "Component": "session_header"
             },
             {
@@ -34,7 +38,7 @@
                     "Columns": [
                         //position
                         {
-                            "Header": "          POS",
+                            "Header": "    POS",
                             "Template": {
                                 "BlockType": "component",
                                 "Component": "position_cell",
@@ -47,7 +51,7 @@
                         },
                         //Car Number
                         {
-                            "Header": "  CAR #",
+                            "Header": "CAR #",
                             "Template": {
                                 "BlockType": "component",
                                 "Component": "number_cell"
@@ -55,7 +59,7 @@
                         },
                         //Class
                         {
-                            "Header": "   CLASS",
+                            "Header": "CLASS",
                             "Template": {
                                 "BlockType": "component",
                                 "Component": "class_cell"
@@ -63,7 +67,7 @@
                         },
                         //Driver Name
                         {
-                            "Header": "  DRIVERS",
+                            "Header": "DRIVERS",
                             "Template": {
                                 "BlockType": "component",
                                 "Component": "driver_cell"
@@ -71,7 +75,7 @@
                         },
                         //Team
                         {
-                            "Header": "  TEAM",
+                            "Header": "TEAM",
                             "Template": {
                                 "BlockType": "component",
                                 "Component": "team_cell"
@@ -86,7 +90,8 @@
                         },
                         //Fastest Lap
                         {
-                            "Header": "     TIME",
+                            "Header": "TIME",
+                            "Width": 90,
                             "Template": {
                                 "BlockType": "dock",
                                 "Background": "{BackgroundDefault}",
@@ -99,51 +104,35 @@
                                 ],
                                 "Items": [
                                     {
-                                        "BlockType": "stack",
+                                        "BlockType": "text",
                                         "HorizontalAlignment": "Left",
                                         "VerticalAlignment": "Center",
-                                        "Items": [
-                                            {
-                                                "BlockType": "text",
-                                                "Source": "{Item.AbsoluteTime}",
-                                                "Padding": "16,0,16,0"
-                                            }
-                                        ]
+                                        "Source": "{Item.AbsoluteTime}",
+                                        "Padding": "{PaddingDefault}"
                                     }
                                 ]
                             }
                         },
                         {
-                            "Header": "     GAP",
+                            "Header": "GAP",
                             "Template": {
-                                "BlockType": "dock",
+                                "BlockType": "text",
+                                "Source": "{Item.Time}",
+                                "Padding": "{PaddingDefault}",
+                                "VerticalAlignment": "Center",
+                                "HorizontalAlignment": "Left",
+                                "Width": 100,
                                 "Background": "{BackgroundDefault}",
                                 "Triggers": [
                                     {
                                         "Condition": "{Item.Index, Converter=NumberIsOdd}",
                                         "Property": "Background",
                                         "Value": "{BackgroundDarker}"
-                                    }
-                                ],
-                                "Items": [
+                                    },
                                     {
-                                        "BlockType": "stack",
-                                        "HorizontalAlignment": "Left",
-                                        "VerticalAlignment": "Center",
-                                        "Items": [
-                                            {
-                                                "BlockType": "text",
-                                                "Source": "{Item.Time}",
-                                                "Padding": "16,0,16,0",
-                                                "Triggers": [
-                                                    {
-                                                        "Condition": "{Item.Index, Converter=NumberEquals, Parameter=0}",
-                                                        "Property": "Source",
-                                                        "Value": ""
-                                                    }
-                                                ]
-                                            }
-                                        ]
+                                        "Condition": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                        "Property": "Source",
+                                        "Value": ""
                                     }
                                 ]
                             }

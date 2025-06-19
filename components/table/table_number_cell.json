@@ -1,13 +1,13 @@
 {
     "ComponentName": "number_cell",
-    "BlockType": "dock",
+    "BlockType": "text",
     "Padding": "{PaddingDefault}",
     "Background": "{BackgroundDefault}",
-    "MaxWidth": 150,
-    "Height": 52,
     "TextOptions": {
         "HorizontalAlignment": "Left"
     },
+    "Width": 65,
+    "Height": "{TableHeight}",
     "Triggers": [
         {
             "Condition": "{Item.Index, Converter=NumberIsOdd}",
@@ -15,25 +15,9 @@
             "Value": "{BackgroundDarker}"
         }
     ],
-    "Items": [
-        //left part
-        {
-            "BlockType": "stack",
-            "HorizontalAlignment": "Left",
-            "VerticalAlignment": "Center",
-            "Items": [
-                //name
-                {
-                    "BlockType": "text",
-                    "Width": 65,
-                    "MarginLeft": 0,
-                    "Source": "{Item.Driver.RaceNumber}",
-                    "HorizontalAlignment": "Left",
-                    "VerticalAlignment": "Center",
-                    "FontName": "{FontNameDefault}",
-                    "FontSize": 14
-                }
-            ]
-        }
-    ]
+    "Source": "{Item.Driver.RaceNumber}",
+    "HorizontalAlignment": "Left",
+    "VerticalAlignment": "Center",
+    "FontName": "{FontNameDefault}",
+    "FontSize": 14
 }

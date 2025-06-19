@@ -6,6 +6,10 @@
         "Orientation": "Vertical",
         "Items": [
             {
+                "BlockType": "component",
+                "Component": "league_head_cell"
+            },
+            {
                 "BlockType": "stack",
                 "Orientation": "Horizontal",
                 "Padding": "{PaddingDefault}",

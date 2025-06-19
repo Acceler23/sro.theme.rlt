@@ -1,39 +1,30 @@
 {
     "ComponentName": "car_cell",
-    "BlockType": "dock",
+    "BlockType": "text",
     "Padding": "{PaddingDefault}",
     "Background": "{BackgroundDefault}",
-    "MaxWidth": 150,
-    "Height": 52,
     "TextOptions": {
         "HorizontalAlignment": "Left"
     },
+    "RenderIf": false,
+    "Width": 200,
+    "Height": "{TableHeight}",
     "Triggers": [
         {
             "Condition": "{Item.Index, Converter=NumberIsOdd}",
             "Property": "Background",
             "Value": "{BackgroundDarker}"
+        },
+        {
+            "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+            "ConditionOr": "{ShowCarsWithTeams}",
+            "Property": "RenderIf",
+            "Value": true
         }
     ],
-    "Items": [
-        //left part
-        {
-            "BlockType": "stack",
-            "HorizontalAlignment": "Left",
-            "VerticalAlignment": "Center",
-            "Items": [
-                //name
-                {
-                    "BlockType": "text",
-                    "Width": 150,
-                    "MarginLeft": 0,
-                    "Source": "{Item.Car.Name}",
-                    "HorizontalAlignment": "Left",
-                    "VerticalAlignment": "Center",
-                    "FontName": "{FontNameDefault}",
-                    "FontSize": 14
-                }
-            ]
-        }
-    ]
+    "Source": "{Item.Car.Name}",
+    "HorizontalAlignment": "Left",
+    "VerticalAlignment": "Center",
+    "FontName": "{FontNameDefault}",
+    "FontSize": 14
 }

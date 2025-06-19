@@ -3,8 +3,8 @@
     "FontName": "{FontNameDefault}",
     "FontSize": 14,
     "Foreground": "{BackgroundDefault}",
-    "Backgound": "{ForegroundDefault}",
     "Background": "{HeadSecond}",
-    "Height": 50,
-    "HorizontalAlignment" : "Left"
+    "HorizontalAlignment": "Left",
+    "VerticalAlignment": "Center",
+    "Padding": "10,18,10,18"
 }

@@ -1,0 +1,16 @@
+{
+    "ComponentName": "league_head_cell",
+    "BlockType": "dock",
+    "HorizontalAlignment": "Center",
+    "Width": "*",
+    "StretchWidth": true,
+    "Items": [
+        {
+            "BlockType": "image",
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Top",
+            "Width": 124,
+            "Source": "{Season.LeagueInfo.LeagueLogo}"
+        }
+    ]
+}

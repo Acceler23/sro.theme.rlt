@@ -1,0 +1,156 @@
+{
+    "ComponentName": "next_event_track",
+    "BlockType": "stack",
+    "Orientation": "Vertical",
+    "BackgroundImage": "bg_dark_mini",
+    "RenderIf": "{Item.CompletedStatus, Converter=StringEquals, Parameter=InFuture}",
+    "Width": 335,
+    "MaxWidth": 335,
+    "Height": 400,
+    "Items": [
+        //Flag
+        {
+            "BlockType": "text",
+            "Source": "",
+            "VerticalAlignment": "Top",
+            "HorizontalAlignment": "Center",
+            "Height": 140,
+            "Width": 335,
+            "MarginTop": -23,
+            "BackgroundImage": "{Item.Track.Nation.LogotypePath}",
+            "Triggers": [
+                {
+                    "Condition": "{CustomImage}",
+                    "Property": "BackgroundImage",
+                    "Value": "track_images/{Item.Track.CircuitName}.png"
+                }
+            ]
+        },
+        //Date
+        {
+            "BlockType": "stack",
+            "Orientation": "Horizontal",
+            "VerticalAlignment": "Top",
+            "PaddingLeft": 20,
+            "MarginTop": -90,
+            "Height": 120,
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "Orientation": "Vertical",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Bottom",
+                    "Background": "{HeadMain}",
+                    "Height": 100,
+                    "Width": 70,
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "HorizontalAlignment": "Center",
+                            "Source": "{Item.Date, Converter=DateToDayOfMonth}",
+                            "FontSize": 28,
+                            "Foreground": "{BackgroundDefault}",
+                            "Padding": "15,15,15,10"
+                        },
+                        {
+                            "BlockType": "text",
+                            "HorizontalAlignment": "Center",
+                            "Source": "{Item.Date, Converter=DateToMonthInWords}",
+                            "FontSize": 14,
+                            "Foreground": "{BackgroundDefault}",
+                            "Padding": "15,0,15,0",
+                            "MarginTop": -8
+                        },
+                        {
+                            "BlockType": "text",
+                            "HorizontalAlignment": "Center",
+                            "Source": "{Item.Date, Converter=DateToYear}",
+                            "FontSize": 14,
+                            "Foreground": "{BackgroundDefault}",
+                            "Padding": "15, 12, 15,0"
+                        },
+                        {
+                            "BlockType": "image",
+                            "Source": "{Season.Track.LogotypePath}"
+                        }
+                    ]
+                }
+            ]
+        },
+        //Track Info
+        {
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "Height": 196,
+            "MarginTop": 10,
+            "Width": 335,
+            "MaxWidth": 335,
+            "Items": [
+                {
+                    "BlockType": "text",
+                    "Source": "{Item.Track.CircuitName}",
+                    "HorizontalAlignment": "Left",
+                    "FontSize": 20,
+                    "Foreground": "{BackgroundDefault}",
+                    "Padding": "40,36,40,0"
+                },
+                {
+                    "BlockType": "stack",
+                    "Orientation": "Horizontal",
+                    "Padding": "40,5,40,0",
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "Source": "{Item.Track.CountryName}­",
+                            "HorizontalAlignment": "Left",
+                            "PaddingTop": 5,
+                            "FontSize": 14,
+                            "Foreground": "#B3B3B3"
+                        },
+                        {
+                            "BlockType": "image",
+                            "Height": 20,
+                            "MarginTop": -2,
+                            "ImageOptions": {
+                                "Path": "{Item.Track.Nation.LogotypePath}"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "text",
+                    "Source": "Round  {Item.Position}",
+                    "Padding": "40,5,40,0",
+                    "VerticalAlignment": "Center",
+                    "HorizontalAlignment": "Left",
+                    "PaddingTop": 5,
+                    "FontSize": 14,
+                    "Foreground": "#B3B3B3"
+                },
+                {
+                    "BlockType": "text",
+                    "Source": "{Season.LeagueInfo.LeagueFullName}",
+                    "Padding": "40,5,40,0",
+                    "VerticalAlignment": "Center",
+                    "HorizontalAlignment": "Left",
+                    "PaddingTop": 5,
+                    "FontSize": 14,
+                    "Foreground": "#B3B3B3"
+                }
+            ]
+        },
+        {
+            "BlockType": "text",
+            "MarginTop": -20,
+            "Source": "{Item.Track.CircuitFullName, Converter=TruncateString, Parameter=40}",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Height": 61,
+            "Width": 335,
+            "Foreground": "{BackgroundDefault}",
+            "Background": "#3e3f40",
+            "Orientation": "Horizontal",
+            "PaddingLeft": 40
+        }
+    ]
+}

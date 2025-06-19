@@ -2,11 +2,13 @@
     "ComponentName": "position_cell",
     "BlockType": "text",
     "Source": "<position>",
-    "Width": 66,
-    "Height": 52,
     "Background": "{BackgroundDefault}",
     "FontName": "{FontNameDefault}",
+    "Padding": "{PaddingDefault}",
+    "PaddingLeft": 25,
     "FontSize": 14,
+    "Width": 35,
+    "Height": "{TableHeight}",
     "Foreground": "{ForegroundDefault}",
     "TextOptions": {
         "HorizontalAlignment": "Left"
@@ -16,7 +18,21 @@
             "Condition": "{Item.Index, Converter=NumberIsOdd}",
             "Property": "Background",
             "Value": "{BackgroundDarker}"
+        },
+        {
+            "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
+            "Property": "Source",
+            "Value": "NC"
+        },
+        {
+            "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
+            "Property": "Source",
+            "Value": "DNS"
+        },
+        {
+            "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
+            "Property": "Source",
+            "Value": "DSQ"
         }
-    ],
-    "PaddingLeft": 32
+    ]
 }

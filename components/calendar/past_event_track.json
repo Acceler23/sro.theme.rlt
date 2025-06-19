@@ -1,8 +1,9 @@
 {
     "ComponentName": "past_event_track",
     "BlockType": "stack",
-    "Width": 800,
+    "Width": "*",
     "HorizontalAlignment": "Left",
+    "RenderIf": "{Item.CompletedStatus, Converter=StringNotEquals, Parameter=InFuture}",
     "Spacing": 10,
     "Items": [
         {

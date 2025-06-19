@@ -1,0 +1,24 @@
+{
+    "Properties": [
+        {
+            "Name": "ShowCarsWithTeams",
+            "PublicName": "Show Cars on Team Lineups",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "CustomImage",
+            "PublicName": "Custom Event Image",
+            "Description": "Use custom images for calendar, add them on %app root%/user/themes/sro.racing.theme/images/track_images/CircuitName.png",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "RenderRows",
+            "PublicName": "Number of Rows in Calendar",
+            "Description": "Override the calendar row numbers to prevent extra renders",
+            "Type": "Integer",
+            "DefaultValue": 3
+        }
+    ]
+}
