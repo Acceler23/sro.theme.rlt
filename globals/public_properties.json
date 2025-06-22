@@ -1,6 +1,48 @@
 {
     "Properties": [
         {
+            "Name": "ShowLeaugeLogo",
+            "PublicName": "Show League Logo",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowDriverClass",
+            "PublicName": "Show Driver Class as",
+            "Type": "Enum",
+            "EnumValues": [
+                "None",
+                "LeagueRoles",
+                "DriverFeatures",
+                "TextBadge"
+            ],
+            "DefaultValue": "None"
+        },
+        {
+            "Name": "ShowDriverNumber",
+            "PublicName": "Show Driver Number",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowLapsQualy",
+            "PublicName": "Show Laps in Qualy",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowLapsRace",
+            "PublicName": "Show Laps in Race",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowPBRace",
+            "PublicName": "Show Best Lap in Race",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
             "Name": "ShowCarsWithTeams",
             "PublicName": "Show Cars on Team Lineups",
             "Type": "Bool",

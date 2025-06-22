@@ -3,16 +3,31 @@
     "BlockType": "text",
     "Padding": "{PaddingDefault}",
     "Background": "{BackgroundDefault}",
-    "Width": 60,
+    "MaxWidth": 900,
     "Height": "{TableHeight}",
+    "Source": "",
     "Triggers": [
         {
             "Condition": "{Item.Index, Converter=NumberIsOdd}",
             "Property": "Background",
             "Value": "{BackgroundDarker}"
+        },
+        {
+            "Condition": "{ShowDriverClass, Converter=StringEquals, Parameter=LeagueRoles}",
+            "Property": "Source",
+            "Value": "{Season.MainLeagueCategory.Name}"
+        },
+        {
+            "Condition": "{ShowDriverClass, Converter=StringEquals, Parameter=DriverFeatures}",
+            "Property": "Source",
+            "Value": "{Item.Driver.PrimaryDriverFeature.Name}"
+        },
+        {
+            "Condition": "{ShowDriverClass, Converter=StringEquals, Parameter=TextBadge}",
+            "Property": "Source",
+            "Value": "{Item.Driver.BadgeText}"
         }
     ],
-    "Source": "{Item.Driver.BadgeText}",
     "HorizontalAlignment": "Left",
     "VerticalAlignment": "Center",
     "FontName": "{FontNameDefault}",

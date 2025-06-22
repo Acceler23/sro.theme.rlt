@@ -50,7 +50,29 @@
                                             "Vars": {
                                                 "position": "{Item.PositionString}"
                                             }
-                                        }
+                                        },
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                                                "Property": "Background",
+                                                "Value": "{BackgroundDarker}"
+                                            },
+                                            {
+                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
+                                                "Property": "Source",
+                                                "Value": "NC"
+                                            },
+                                            {
+                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
+                                                "Property": "Source",
+                                                "Value": "DNS"
+                                            },
+                                            {
+                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
+                                                "Property": "Source",
+                                                "Value": "DSQ"
+                                            }
+                                        ]
                                     }
                                 },
                                 //Car Number
@@ -94,47 +116,17 @@
                                 //Fastest Lap
                                 {
                                     "Header": "TIME",
-                                    "Width": 90,
                                     "Template": {
-                                        "BlockType": "dock",
-                                        "Background": "{BackgroundDefault}",
-                                        "Triggers": [
-                                            {
-                                                "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                                "Property": "Background",
-                                                "Value": "{BackgroundDarker}"
-                                            }
-                                        ],
-                                        "Items": [
-                                            {
-                                                "BlockType": "text",
-                                                "HorizontalAlignment": "Left",
-                                                "VerticalAlignment": "Center",
-                                                "Source": "{Item.FastestLapTime}",
-                                                "Padding": "{PaddingDefault}"
-                                            }
-                                        ]
+                                        "BlockType": "component",
+                                        "Component": "fastlap_race"
                                     }
                                 },
                                 //Laps
                                 {
                                     "Header": "LAPS",
-                                    "Width": 60,
                                     "Template": {
-                                        "BlockType": "text",
-                                        "Source": "{Item.LapsCount}",
-                                        "VerticalAlignment": "Center",
-                                        "Padding": "{PaddingDefault}",
-                                        "HorizontalAlignment": "Left",
-                                        "Background": "{BackgroundDefault}",
-                                        "Width": 72,
-                                        "Triggers": [
-                                            {
-                                                "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                                "Property": "Background",
-                                                "Value": "{BackgroundDarker}"
-                                            }
-                                        ]
+                                        "BlockType": "component",
+                                        "Component": "Laps_Race"
                                     }
                                 },
                                 {

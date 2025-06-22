@@ -60,7 +60,14 @@
             "BlockType": "stack",
             "Orientation": "Vertical",
             "VerticalAlignment": "Bottom",
+            "PaddingTop": 5,
             "MarginTop": 40,
+            "ColorizeBackground": {
+                "ColorBlendingMode": "Normal",
+                "BlendPercentage": 50,
+                "AlphaCompositionMode": "DestAtop",
+                "Color": "#000000"
+            },
             "Items": [
                 {
                     "BlockType": "text",

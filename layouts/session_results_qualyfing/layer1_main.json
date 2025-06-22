@@ -46,7 +46,29 @@
                                     "Vars": {
                                         "position": "{Item.PositionString}"
                                     }
-                                }
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                                        "Property": "Background",
+                                        "Value": "{BackgroundDarker}"
+                                    },
+                                    {
+                                        "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
+                                        "Property": "Source",
+                                        "Value": "NC"
+                                    },
+                                    {
+                                        "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
+                                        "Property": "Source",
+                                        "Value": "DNS"
+                                    },
+                                    {
+                                        "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
+                                        "Property": "Source",
+                                        "Value": "DSQ"
+                                    }
+                                ]
                             }
                         },
                         //Car Number
@@ -111,6 +133,14 @@
                                         "Padding": "{PaddingDefault}"
                                     }
                                 ]
+                            }
+                        },
+                        //Laps
+                        {
+                            "Header": "LAPS",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "Lap_qualy"
                             }
                         },
                         {

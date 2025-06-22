@@ -1,6 +1,7 @@
 {
     "ComponentName": "league_head_cell",
     "BlockType": "dock",
+    "RenderIf": "{ShowLeaugeLogo}",
     "HorizontalAlignment": "Center",
     "Width": "*",
     "StretchWidth": true,

@@ -1,0 +1,23 @@
+{
+    "ComponentName": "Lap_qualy",
+    "BlockType": "text",
+    "RenderIf": "{ShowLapsQualy}",
+    "Source": "{Item.LapsCount}",
+    "VerticalAlignment": "Center",
+    "Padding": "{PaddingDefault}",
+    "HorizontalAlignment": "Left",
+    "Background": "{BackgroundDefault}",
+    "Width": 72,
+    "Triggers": [
+        {
+            "Condition": "{Item.Index, Converter=NumberIsOdd}",
+            "Property": "Background",
+            "Value": "{BackgroundDarker}"
+        },
+        {
+            "Condition": "{Item.LapsCount, Converter=NumberEquals, Parameter=0}",
+            "Property": "Source",
+            "Value": ""
+        }
+    ]
+}

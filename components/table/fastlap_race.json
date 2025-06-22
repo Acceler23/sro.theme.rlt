@@ -1,0 +1,22 @@
+{
+    "ComponentName": "fastlap_race",
+    "BlockType": "dock",
+    "RenderIf": "{ShowPBRace}",
+    "Background": "{BackgroundDefault}",
+    "Triggers": [
+        {
+            "Condition": "{Item.Index, Converter=NumberIsOdd}",
+            "Property": "Background",
+            "Value": "{BackgroundDarker}"
+        }
+    ],
+    "Items": [
+        {
+            "BlockType": "text",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Source": "{Item.FastestLapTime}",
+            "Padding": "{PaddingDefault}"
+        }
+    ]
+}

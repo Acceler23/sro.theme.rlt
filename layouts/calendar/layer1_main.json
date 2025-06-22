@@ -23,6 +23,7 @@
                     },
                     {
                         "BlockType": "stack",
+                        "RenderIf": "{Season.SeasonCurrentNumberEvent, Converter=NumberGreater, Parameter=0}",
                         "Items": [
                             {
                                 "BlockType": "text",

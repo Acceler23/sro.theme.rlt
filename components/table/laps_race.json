@@ -1,0 +1,18 @@
+{
+    "ComponentName": "Laps_Race",
+    "BlockType": "text",
+    "RenderIf": "{ShowLapsRace}",
+    "Source": "{Item.LapsCount}",
+    "VerticalAlignment": "Center",
+    "Padding": "{PaddingDefault}",
+    "HorizontalAlignment": "Left",
+    "Background": "{BackgroundDefault}",
+    "Width": 72,
+    "Triggers": [
+        {
+            "Condition": "{Item.Index, Converter=NumberIsOdd}",
+            "Property": "Background",
+            "Value": "{BackgroundDarker}"
+        }
+    ]
+}

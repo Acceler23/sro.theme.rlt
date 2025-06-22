@@ -1,6 +1,7 @@
 {
     "ComponentName": "number_cell",
     "BlockType": "text",
+    "RenderIf": "{ShowDriverNumber}",
     "Padding": "{PaddingDefault}",
     "Background": "{BackgroundDefault}",
     "TextOptions": {
