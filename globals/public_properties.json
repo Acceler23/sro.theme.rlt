@@ -77,6 +77,13 @@
             "Type": "Integer",
             "DefaultValue": 3,
             "Category": "Calendar"
+        },
+        {
+            "Name": "TeamBackground",
+            "PublicName": "Background for team logos",
+            "Type": "Bool",
+            "DefaultValue": true,
+            "Category": "Line-Ups"
         }
     ],
     "Categories": [
@@ -94,6 +101,9 @@
         },
         {
             "Name": "Calendar"
+        },
+        {
+            "Name": "Line-Ups"
         }
     ]
 }

@@ -36,10 +36,6 @@
                 ]
             },
             {
-                "BlockType": "component",
-                "Component": "standing_main_head_cell"
-            },
-            {
                 "BlockType": "stack",
                 "Orientation": "Horizontal",
                 "Items": [

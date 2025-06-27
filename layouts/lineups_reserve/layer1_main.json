@@ -36,10 +36,6 @@
                 ]
             },
             {
-                "BlockType": "component",
-                "Component": "standing_main_head_cell"
-            },
-            {
                 "BlockType": "itemstack",
                 "Orientation": "Horizontal",
                 "Width": "*",
@@ -49,6 +45,7 @@
                     "ItemTemplate": {
                         "BlockType": "stack",
                         "Orientation": "Vertical",
+                        "MarginRight": 40,
                         "Items": [
                             //team
                             {
@@ -79,6 +76,7 @@
                     "ItemTemplate": {
                         "BlockType": "stack",
                         "Orientation": "Vertical",
+                        "MarginRight": 40,
                         "Items": [
                             //team
                             {
@@ -109,6 +107,7 @@
                     "ItemTemplate": {
                         "BlockType": "stack",
                         "Orientation": "Vertical",
+                        "MarginRight": 40,
                         "Items": [
                             //team
                             {

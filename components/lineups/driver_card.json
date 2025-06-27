@@ -11,8 +11,16 @@
             "Triggers": [
                 {
                     "Condition": "{TeamSameNumber}",
-                    "Property": "RenderIf",
-                    "Value": "{Item.SeatPosition, Converter=NumberIsOdd}"
+                    "Setters": [
+                        {
+                            "Property": "RenderIf",
+                            "Value": "{Item.SeatPosition, Converter=NumberIsOdd}"
+                        },
+                        {
+                            "Property": "MarginRight",
+                            "Value": 10
+                        }
+                    ]
                 }
             ],
             "Height": 125,
@@ -105,11 +113,22 @@
         },
         {
             "BlockType": "image",
-            "Height": 125,
+            "MaxHeight": 125,
+            "MaxWidth": 125,
             "MarginLeft": 10,
+            "Background": "#FFFFFF",
+            "StretchWidth": false,
+            "StretchHeight": false,
             "ImageOptions": {
                 "Path": "{Item.Team.LogotypePath}"
-            }
+            },
+            "Triggers": [
+                {
+                    "Condition": "{TeamBackground}",
+                    "Property": "Background",
+                    "Value": "#808080"
+                }
+            ]
         },
         {
             "BlockType": "text",
@@ -168,14 +187,7 @@
                             "Source": "FULL SEASON",
                             "FontName": "{FontNameDefault}",
                             "FontSize": 14,
-                            "Foreground": "#808080",
-                            "Triggers": [
-                                {
-                                    "Condition": "{Item.IsReserve}",
-                                    "Property": "Source",
-                                    "Value": "Reserve"
-                                }
-                            ]
+                            "Foreground": "#808080"
                         }
                     ]
                 }
