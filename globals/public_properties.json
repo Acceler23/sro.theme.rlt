@@ -4,7 +4,15 @@
             "Name": "ShowLeaugeLogo",
             "PublicName": "Show League Logo",
             "Type": "Bool",
-            "DefaultValue": true
+            "DefaultValue": true,
+            "Category": "League Info"
+        },
+        {
+            "Name": "TeamSameNumber",
+            "PublicName": "Teammates have the same number",
+            "Type": "Bool",
+            "DefaultValue": false,
+            "Category": "Teams"
         },
         {
             "Name": "ShowDriverClass",
@@ -16,51 +24,76 @@
                 "DriverFeatures",
                 "TextBadge"
             ],
-            "DefaultValue": "None"
+            "DefaultValue": "None",
+            "Category": "Driver"
         },
         {
             "Name": "ShowDriverNumber",
             "PublicName": "Show Driver Number",
             "Type": "Bool",
-            "DefaultValue": true
+            "DefaultValue": true,
+            "Category": "Driver"
         },
         {
             "Name": "ShowLapsQualy",
             "PublicName": "Show Laps in Qualy",
             "Type": "Bool",
-            "DefaultValue": false
+            "DefaultValue": false,
+            "Category": "Session"
         },
         {
             "Name": "ShowLapsRace",
             "PublicName": "Show Laps in Race",
             "Type": "Bool",
-            "DefaultValue": true
+            "DefaultValue": true,
+            "Category": "Session"
         },
         {
             "Name": "ShowPBRace",
             "PublicName": "Show Best Lap in Race",
             "Type": "Bool",
-            "DefaultValue": true
+            "DefaultValue": true,
+            "Category": "Session"
         },
         {
             "Name": "ShowCarsWithTeams",
             "PublicName": "Show Cars on Team Lineups",
             "Type": "Bool",
-            "DefaultValue": false
+            "DefaultValue": false,
+            "Category": "Team"
         },
         {
             "Name": "CustomImage",
             "PublicName": "Custom Event Image",
             "Description": "Use custom images for calendar, add them on %app root%/user/themes/sro.racing.theme/images/track_images/CircuitName.png",
             "Type": "Bool",
-            "DefaultValue": false
+            "DefaultValue": false,
+            "Category": "Calendar"
         },
         {
             "Name": "RenderRows",
             "PublicName": "Number of Rows in Calendar",
             "Description": "Override the calendar row numbers to prevent extra renders",
             "Type": "Integer",
-            "DefaultValue": 3
+            "DefaultValue": 3,
+            "Category": "Calendar"
+        }
+    ],
+    "Categories": [
+        {
+            "Name": "League Info"
+        },
+        {
+            "Name": "Driver"
+        },
+        {
+            "Name": "Team"
+        },
+        {
+            "Name": "Session"
+        },
+        {
+            "Name": "Calendar"
         }
     ]
 }

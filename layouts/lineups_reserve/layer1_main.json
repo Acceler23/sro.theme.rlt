@@ -41,76 +41,87 @@
             },
             {
                 "BlockType": "itemstack",
-                "Orientation": "Vertical",
+                "Orientation": "Horizontal",
                 "Width": "*",
                 "ItemStackOptions": {
                     "ItemSource": "{Lineups.LineupsReserves}",
+                    "CollectionPart": "1/3",
                     "ItemTemplate": {
                         "BlockType": "stack",
-                        "Margin": "0,0,0,3",
-                        "Width": "*",
-                        "Height": "*",
-                        "Orientation": "Horizontal",
-                        "VerticalAlignment": "Center",
-                        "Triggers": [
-                            {
-                                "Condition": "{Item.IsNextTeam}",
-                                "Setters": [
-                                    {
-                                        "Property": "MarginTop",
-                                        "Value": 10
-                                    }
-                                ]
-                            }
-                        ],
+                        "Orientation": "Vertical",
                         "Items": [
                             //team
                             {
                                 "BlockType": "stack",
                                 "HorizontalAlignment": "Center",
                                 "VerticalAlignment": "Center",
-                                "Orientation": "Horizontal",
+                                "Orientation": "Vertical",
+                                "Background": "{BackgroundDarker}",
                                 "Items": [
                                     //Driver
                                     {
                                         "BlockType": "component",
-                                        "Component": "team_cell"
-                                    },
+                                        "Component": "ln_driver_reserve"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Horizontal",
+                "Width": "*",
+                "ItemStackOptions": {
+                    "ItemSource": "{Lineups.LineupsReserves}",
+                    "CollectionPart": "2/3",
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Items": [
+                            //team
+                            {
+                                "BlockType": "stack",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Orientation": "Vertical",
+                                "Background": "{BackgroundDarker}",
+                                "Items": [
+                                    //Driver
                                     {
                                         "BlockType": "component",
-                                        "Component": "number_cell"
-                                    },
+                                        "Component": "ln_driver_reserve"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Horizontal",
+                "Width": "*",
+                "ItemStackOptions": {
+                    "ItemSource": "{Lineups.LineupsReserves}",
+                    "CollectionPart": "3/3",
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Items": [
+                            //team
+                            {
+                                "BlockType": "stack",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Orientation": "Vertical",
+                                "Background": "{BackgroundDarker}",
+                                "Items": [
+                                    //Driver
                                     {
-                                        "BlockType": "stack",
-                                        "Orientation": "Vertical",
-                                        "Background": "{BackgroundDefault}",
-                                        "VerticalAlignment": "Center",
-                                        "Width": 170,
-                                        "Height": 52,
-                                        "PaddingTop": 10,
-                                        "Triggers": [
-                                            {
-                                                "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                                "Property": "Background",
-                                                "Value": "{BackgroundDarker}"
-                                            }
-                                        ],
-                                        "Items": [
-                                            {
-                                                "BlockType": "text",
-                                                "Source": "{Item.Driver.Name}",
-                                                "FontName": "{FontNameWide}",
-                                                "FontSize": 18
-                                            },
-                                            {
-                                                "BlockType": "image",
-                                                "Height": "25",
-                                                "ImageOptions": {
-                                                    "Path": "{Item.Driver.Nationality.LogotypePath}",
-                                                    "VerticalAlignment": "Center"
-                                                }
-                                            }
-                                        ]
+                                        "BlockType": "component",
+                                        "Component": "ln_driver_reserve"
                                     }
                                 ]
                             }

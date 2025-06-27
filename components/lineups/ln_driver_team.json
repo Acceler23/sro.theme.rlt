@@ -1,0 +1,73 @@
+{
+    "ComponentName": "ln_driver_team",
+    "BlockType": "stack",
+    "Spacing": 10,
+    "Orientation": "Vertical",
+    "Items": [
+        {
+            "BlockType": "text",
+            "Padding": "{PaddingDefault}",
+            "Background": "{Item.Team.Color}",
+            "Height": "{TableHeight}",
+            "Width": "*",
+            "Source": "{Item.Team.Name}",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Foreground": "{Item.Team.SecondaryColor}",
+            "FontSize": 20,
+            "MarginBottom": 5
+        },
+        {
+            "BlockType": "itemstack",
+            "ItemStackOptions": {
+                "ItemSource": "{Item.Lines}",
+                "Limit": 2,
+                "ItemTemplate": {
+                    "BlockType": "stack",
+                    "Items": [
+                        {
+                            "BlockType": "component",
+                            "Component": "driver_card"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "BlockType": "itemstack",
+            "ItemStackOptions": {
+                "ItemSource": "{Item.Lines}",
+                "IndexStart": 2,
+                "Limit": 2,
+                "ItemTemplate": {
+                    "BlockType": "stack",
+                    "RenderIf": "{Item.SeatPosition, Converter=NumberGreater, Parameter=2}",
+                    "Items": [
+                        {
+                            "BlockType": "component",
+                            "Component": "driver_card"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "BlockType": "itemstack",
+            "ItemStackOptions": {
+                "ItemSource": "{Item.Lines}",
+                "IndexStart": 4,
+                "Limit": 2,
+                "ItemTemplate": {
+                    "BlockType": "stack",
+                    "RenderIf": "{Item.SeatPosition, Converter=NumberGreater, Parameter=4}",
+                    "Items": [
+                        {
+                            "BlockType": "component",
+                            "Component": "driver_card"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
