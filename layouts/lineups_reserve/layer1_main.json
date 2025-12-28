@@ -23,110 +23,137 @@
                                 "BlockType": "text",
                                 "Source": ">",
                                 "FontSize": 24,
-                                "Foreground": "{HeadMain}"
+                                "Foreground": "{HeadMain}",
+                                "PaddingTop": 5
                             },
                             {
                                 "BlockType": "text",
                                 "HorizontalAlignment": "Right",
                                 "Source": " {Season.Name}  |  Reserves",
-                                "FontSize": 24
+                                "FontSize": 24,
+                                "PaddingTop": 5
                             }
                         ]
                     }
                 ]
             },
             {
-                "BlockType": "itemstack",
+                "BlockType": "stack",
                 "Orientation": "Horizontal",
-                "Width": "*",
-                "ItemStackOptions": {
-                    "ItemSource": "{Lineups.LineupsReserves}",
-                    "CollectionPart": "1/3",
-                    "ItemTemplate": {
-                        "BlockType": "stack",
+                "Spacing": 40,
+                "Items": [
+                    {
+                        "BlockType": "itemstack",
                         "Orientation": "Vertical",
-                        "MarginRight": 40,
-                        "Items": [
-                            //team
-                            {
+                        "Width": "*",
+                        "ItemStackOptions": {
+                            "ItemSource": "{Lineups.LineupsReserves}",
+                            "CollectionPart": "1/3",
+                            "ItemTemplate": {
                                 "BlockType": "stack",
-                                "HorizontalAlignment": "Center",
-                                "VerticalAlignment": "Center",
                                 "Orientation": "Vertical",
-                                "Background": "{BackgroundDarker}",
+                                "MarginTop": 10,
                                 "Items": [
-                                    //Driver
+                                    //team
                                     {
-                                        "BlockType": "component",
-                                        "Component": "ln_driver_reserve"
+                                        "BlockType": "stack",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "Orientation": "Vertical",
+                                        "Background": "{BackgroundDarker}",
+                                        "Items": [
+                                            //Driver
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "driver_card",
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "isReserve": true,
+                                                        "isReserveReverse": false
+                                                    }
+                                                }
+                                            }
+                                        ]
                                     }
                                 ]
                             }
-                        ]
-                    }
-                }
-            },
-            {
-                "BlockType": "itemstack",
-                "Orientation": "Horizontal",
-                "Width": "*",
-                "ItemStackOptions": {
-                    "ItemSource": "{Lineups.LineupsReserves}",
-                    "CollectionPart": "2/3",
-                    "ItemTemplate": {
-                        "BlockType": "stack",
+                        }
+                    },
+                    {
+                        "BlockType": "itemstack",
                         "Orientation": "Vertical",
-                        "MarginRight": 40,
-                        "Items": [
-                            //team
-                            {
+                        "Width": "*",
+                        "ItemStackOptions": {
+                            "ItemSource": "{Lineups.LineupsReserves}",
+                            "CollectionPart": "2/3",
+                            "ItemTemplate": {
                                 "BlockType": "stack",
-                                "HorizontalAlignment": "Center",
-                                "VerticalAlignment": "Center",
                                 "Orientation": "Vertical",
-                                "Background": "{BackgroundDarker}",
+                                "MarginTop": 10,
                                 "Items": [
-                                    //Driver
+                                    //team
                                     {
-                                        "BlockType": "component",
-                                        "Component": "ln_driver_reserve"
+                                        "BlockType": "stack",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "Orientation": "Vertical",
+                                        "Background": "{BackgroundDarker}",
+                                        "Items": [
+                                            //Driver
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "driver_card",
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "isReserve": true,
+                                                        "isReserveReverse": false
+                                                    }
+                                                }
+                                            }
+                                        ]
                                     }
                                 ]
                             }
-                        ]
-                    }
-                }
-            },
-            {
-                "BlockType": "itemstack",
-                "Orientation": "Horizontal",
-                "Width": "*",
-                "ItemStackOptions": {
-                    "ItemSource": "{Lineups.LineupsReserves}",
-                    "CollectionPart": "3/3",
-                    "ItemTemplate": {
-                        "BlockType": "stack",
+                        }
+                    },
+                    {
+                        "BlockType": "itemstack",
                         "Orientation": "Vertical",
-                        "MarginRight": 40,
-                        "Items": [
-                            //team
-                            {
+                        "Width": "*",
+                        "ItemStackOptions": {
+                            "ItemSource": "{Lineups.LineupsReserves}",
+                            "CollectionPart": "3/3",
+                            "ItemTemplate": {
                                 "BlockType": "stack",
-                                "HorizontalAlignment": "Center",
-                                "VerticalAlignment": "Center",
                                 "Orientation": "Vertical",
-                                "Background": "{BackgroundDarker}",
+                                "MarginTop": 10,
                                 "Items": [
-                                    //Driver
+                                    //team
                                     {
-                                        "BlockType": "component",
-                                        "Component": "ln_driver_reserve"
+                                        "BlockType": "stack",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "Orientation": "Vertical",
+                                        "Background": "{BackgroundDarker}",
+                                        "Items": [
+                                            //Driver
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "driver_card",
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "isReserve": true,
+                                                        "isReserveReverse": false
+                                                    }
+                                                }
+                                            }
+                                        ]
                                     }
                                 ]
                             }
-                        ]
+                        }
                     }
-                }
+                ]
             }
         ]
     }

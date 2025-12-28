@@ -30,6 +30,11 @@
                         "Name": "mainTable",
                         "BlockType": "table",
                         "Margin": "{MarginTable}",
+                        "Triggers": [
+                            {
+                                "Trigger": "RenderPages_Trigger"
+                            }
+                        ],
                         "TableOptions": {
                             "ItemsSource": "{Session.Drivers}",
                             "RowSpacing": 3,
@@ -45,34 +50,7 @@
                                     "Header": "     POS",
                                     "Template": {
                                         "BlockType": "component",
-                                        "Component": "position_cell",
-                                        "ComponentOptions": {
-                                            "Vars": {
-                                                "position": "{Item.PositionString}"
-                                            }
-                                        },
-                                        "Triggers": [
-                                            {
-                                                "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                                "Property": "Background",
-                                                "Value": "{BackgroundDarker}"
-                                            },
-                                            {
-                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
-                                                "Property": "Source",
-                                                "Value": "NC"
-                                            },
-                                            {
-                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
-                                                "Property": "Source",
-                                                "Value": "DNS"
-                                            },
-                                            {
-                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
-                                                "Property": "Source",
-                                                "Value": "DSQ"
-                                            }
-                                        ]
+                                        "Component": "position_cell"
                                     }
                                 },
                                 //Car Number
@@ -99,6 +77,7 @@
                                         "Component": "driver_cell"
                                     }
                                 },
+                                //Team
                                 {
                                     "Header": "TEAM",
                                     "Template": {
@@ -132,36 +111,15 @@
                                 {
                                     "Header": "GAP",
                                     "Template": {
-                                        "BlockType": "text",
-                                        "Source": "{Item.IntervalRace}",
-                                        "Padding": "{PaddingDefault}",
-                                        "VerticalAlignment": "Center",
-                                        "HorizontalAlignment": "Left",
-                                        "Width": 100,
-                                        "Background": "{BackgroundDefault}",
-                                        "Triggers": [
-                                            {
-                                                "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                                "Property": "Background",
-                                                "Value": "{BackgroundDarker}"
-                                            },
-                                            {
-                                                "Condition": "{Item.Index, Converter=NumberEquals, Parameter=0}",
-                                                "Property": "Source",
-                                                "Value": ""
-                                            },
-                                            {
-                                                "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
-                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
-                                                "Property": "Source",
-                                                "Value": ""
-                                            },
-                                            {
-                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
-                                                "Property": "Source",
-                                                "Value": ""
-                                            }
-                                        ]
+                                        "BlockType": "component",
+                                        "Component": "gap_cell"
+                                    }
+                                },
+                                {
+                                    "Header": "",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "fader_cell"
                                     }
                                 }
                             ]

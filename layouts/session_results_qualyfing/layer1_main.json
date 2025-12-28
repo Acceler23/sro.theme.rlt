@@ -26,6 +26,11 @@
                 "Name": "mainTable",
                 "BlockType": "table",
                 "Margin": "{MarginTable}",
+                "Triggers": [
+                    {
+                        "Trigger": "RenderPages_Trigger"
+                    }
+                ],
                 "TableOptions": {
                     "ItemsSource": "{Session.Drivers}",
                     "RowSpacing": 3,
@@ -103,6 +108,7 @@
                                 "Component": "team_cell"
                             }
                         },
+                        //car
                         {
                             "Header": "CAR",
                             "Template": {
@@ -113,26 +119,9 @@
                         //Fastest Lap
                         {
                             "Header": "TIME",
-                            "Width": 90,
                             "Template": {
-                                "BlockType": "dock",
-                                "Background": "{BackgroundDefault}",
-                                "Triggers": [
-                                    {
-                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                        "Property": "Background",
-                                        "Value": "{BackgroundDarker}"
-                                    }
-                                ],
-                                "Items": [
-                                    {
-                                        "BlockType": "text",
-                                        "HorizontalAlignment": "Left",
-                                        "VerticalAlignment": "Center",
-                                        "Source": "{Item.AbsoluteTime}",
-                                        "Padding": "{PaddingDefault}"
-                                    }
-                                ]
+                                "BlockType": "component",
+                                "Component": "fastlap_race"
                             }
                         },
                         //Laps
@@ -165,6 +154,13 @@
                                         "Value": ""
                                     }
                                 ]
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "fader_cell"
                             }
                         }
                     ]

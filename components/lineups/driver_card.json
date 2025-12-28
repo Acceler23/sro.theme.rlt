@@ -1,6 +1,7 @@
 {
     "ComponentName": "driver_card",
     "BlockType": "stack",
+    "MaxWidth": 850,
     "Items": [
         //number
         {
@@ -11,14 +12,15 @@
             "Triggers": [
                 {
                     "Condition": "{TeamSameNumber}",
+                    "ConditionAnd": "<isReserveReverse>",
                     "Setters": [
                         {
                             "Property": "RenderIf",
-                            "Value": "{Item.SeatPosition, Converter=NumberIsOdd}"
+                            "Value": "{Item.SeatPosition, Converter=NumberEquals, Parameter=1}"
                         },
                         {
                             "Property": "MarginRight",
-                            "Value": 10
+                            "Value": 0
                         }
                     ]
                 }
@@ -46,20 +48,30 @@
                     "FontSize": 46,
                     "PaddingTop": 5
                 }
-            ]
+            ],
         },
+        //stats
         {
-            "BlockType": "stack",
+            "BlockType": "dock",
             "Orientation": "Vertical",
             "Background": "{HeadSecond}",
             "VerticalAlignment": "Center",
             "Height": 125,
             "Width": 215,
+            "Triggers": [
+                {
+                    "Condition": "{TeamSameNumber}",
+                    "ConditionAnd": "<isReserveReverse>",
+                    "ConditionAnd": "{Item.SeatPosition, Converter=NumberGreater, Parameter=1}",
+                    //"ConditionAnd": "{Item.SeatPosition, Converter=NumberIsOdd}",
+                    "Property": "MarginLeft",
+                    "Value": 110
+                }
+            ],
             "Items": [
                 {
                     "BlockType": "stack",
                     "Orientation": "Vertical",
-                    "PaddingTop": 35,
                     "VerticalAlignment": "Center",
                     "HorizontalAlignment": "Center",
                     "Height": 67,
@@ -111,36 +123,98 @@
                 }
             ]
         },
+        //driver img
         {
-            "BlockType": "image",
-            "MaxHeight": 125,
-            "MaxWidth": 125,
+            "BlockType": "dock",
             "MarginLeft": 10,
-            "Background": "#FFFFFF",
-            "StretchWidth": false,
-            "StretchHeight": false,
-            "ImageOptions": {
-                "Path": "{Item.Team.LogotypePath}"
-            },
-            "Triggers": [
+            "Height": 125,
+            "Width": 110,
+            "Background": "#808080",
+            "Items": [
                 {
-                    "Condition": "{TeamBackground}",
-                    "Property": "Background",
-                    "Value": "#808080"
+                    "BlockType": "image",
+                    "Source": "{Item.Driver.LogotypePath}",
+                    "Height": 150,
+                    "Padding": "0,10,0,0",
+                    "VerticalAlignment": "Top",
+                    "HorizontalAlignment": "Center",
+                    "StretchWidth": false,
+                    "StretchHeight": false,
+                    "Triggers": [
+                        {
+                            "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+                            //"Condition": "{LineupImage, Converter=StringEquals, Parameter=Team}",
+                            "ConditionAnd": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+                            "Setters": [
+                                {
+                                    "Property": "Source",
+                                    "Value": "{Item.Team.LogotypePath}"
+                                },
+                                {
+                                    "Property": "Padding",
+                                    "Value": "15"
+                                },
+                                {
+                                    "Property": "Height",
+                                    "Value": 95
+                                }
+                            ]
+                        },
+                        {
+                            "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+                            //"Condition": "{LineupImage, Converter=StringEquals, Parameter=Team}",
+                            "ConditionAnd": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                            "Setters": [
+                                {
+                                    "Property": "Source",
+                                    "Value": "{Item.Car.Vendor.LogotypePath}"
+                                },
+                                {
+                                    "Property": "Padding",
+                                    "Value": "20"
+                                },
+                                {
+                                    "Property": "Height",
+                                    "Value": 85
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
+        //team abr
         {
             "BlockType": "text",
-            "HeightPercent": 100,
-            "Width": 125,
-            "RenderIf": "{Item.Team.LogotypePath, Converter=EmptyObjectToTrue}",
+            "Height": 125,
+            "Width": 110,
             "VerticalAlignment": "Center",
             "HorizontalAlignment": "Center",
             "Source": "{Item.Team.Abbreviation}",
             "FontSize": 30,
             "FontName": "{FontNameWide}",
-            "MarginLeft": 10
+            "MarginLeft": 10,
+            "Triggers": [
+                {
+                    "Condition": "{Item.Car.Vendor.LogotypePath, Converter=EmptyObjectToTrue}",
+                    "ConditionOr": "{Item.Team.LogotypePath, Converter=EmptyObjectToTrue}",
+                    "Property": "RenderIf",
+                    "Value": false
+                },
+                {
+                    "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                    "Setters": [
+                        {
+                            "Property": "Source",
+                            "Value": "{Item.Car.Vendor.Name}"
+                        },
+                        {
+                            "Property": "FontSize",
+                            "Value": 20
+                        }
+                    ]
+                }
+            ]
         },
         //driver
         {
@@ -187,7 +261,14 @@
                             "Source": "FULL SEASON",
                             "FontName": "{FontNameDefault}",
                             "FontSize": 14,
-                            "Foreground": "#808080"
+                            "Foreground": "#808080",
+                            "Triggers": [
+                                {
+                                    "Condition": "<isReserve>",
+                                    "Property": "Source",
+                                    "Value": "Reserve"
+                                }
+                            ]
                         }
                     ]
                 }

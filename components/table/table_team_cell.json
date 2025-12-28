@@ -1,24 +1,30 @@
 {
     "ComponentName": "team_cell",
-    "BlockType": "text",
-    "Padding": "{PaddingDefault}",
-    "Background": "{BackgroundDefault}",
-    "TextOptions": {
-        "HorizontalAlignment": "Left"
-    },
+    "BlockType": "dock",
     "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+    "Background": "{BackgroundDefault}",
+    "MaxWidth": 230,
+    "Height": 20,
+    "MaxHeight": 72,
     "Triggers": [
         {
-            "Condition": "{Item.Index, Converter=NumberIsOdd}",
-            "Property": "Background",
-            "Value": "{BackgroundDarker}"
+            "Trigger": "DarkerBackground"
         }
     ],
-    "Height": "{TableHeight}",
-    "Width": 200,
-    "Source": "{Item.Team.Name}",
-    "HorizontalAlignment": "Left",
-    "VerticalAlignment": "Center",
-    "FontName": "{FontNameDefault}",
-    "FontSize": 14
+    "Items": [
+        {
+            "BlockType": "text",
+            "Width": 200,
+            "Source": "{Item.Team.FullName}",
+            "Style": "mainTable_Style",
+            "Triggers": [
+                {
+                    "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+                    "ConditionAnd": "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                    "Property": "Source",
+                    "Value": "RESERVE"
+                }
+            ]
+        }
+    ]
 }

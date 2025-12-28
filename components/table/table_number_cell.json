@@ -2,23 +2,21 @@
     "ComponentName": "number_cell",
     "BlockType": "text",
     "RenderIf": "{ShowDriverNumber}",
-    "Padding": "{PaddingDefault}",
+    "Source": "{Item.Driver.RaceNumber}",
+    "Width": 65,
+    "Height": 20,
+    "MaxHeight": 72,
     "Background": "{BackgroundDefault}",
+    "Padding": "10,16,10,16",
+    "FontName": "{FontNameDefault}",
+    "FontSize": 14,
     "TextOptions": {
+        "TextAlignment": "Start",
         "HorizontalAlignment": "Left"
     },
-    "Width": 65,
-    "Height": "{TableHeight}",
     "Triggers": [
         {
-            "Condition": "{Item.Index, Converter=NumberIsOdd}",
-            "Property": "Background",
-            "Value": "{BackgroundDarker}"
+            "Trigger": "DarkerBackground"
         }
-    ],
-    "Source": "{Item.Driver.RaceNumber}",
-    "HorizontalAlignment": "Left",
-    "VerticalAlignment": "Center",
-    "FontName": "{FontNameDefault}",
-    "FontSize": 14
+    ]
 }

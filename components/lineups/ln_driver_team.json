@@ -21,7 +21,7 @@
             "BlockType": "itemstack",
             "ItemStackOptions": {
                 "ItemSource": "{Item.Lines}",
-                "Limit": 2,
+                "Limit": 3,
                 "ItemTemplate": {
                     "BlockType": "stack",
                     "Items": [
@@ -37,8 +37,8 @@
             "BlockType": "itemstack",
             "ItemStackOptions": {
                 "ItemSource": "{Item.Lines}",
-                "IndexStart": 2,
-                "Limit": 2,
+                "IndexStart": 3,
+                "Limit": 3,
                 "ItemTemplate": {
                     "BlockType": "stack",
                     "RenderIf": "{Item.SeatPosition, Converter=NumberGreater, Parameter=2}",
@@ -55,8 +55,8 @@
             "BlockType": "itemstack",
             "ItemStackOptions": {
                 "ItemSource": "{Item.Lines}",
-                "IndexStart": 4,
-                "Limit": 2,
+                "IndexStart": 6,
+                "Limit": 3,
                 "ItemTemplate": {
                     "BlockType": "stack",
                     "RenderIf": "{Item.SeatPosition, Converter=NumberGreater, Parameter=4}",

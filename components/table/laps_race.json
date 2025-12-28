@@ -1,18 +1,21 @@
 {
     "ComponentName": "Laps_Race",
-    "BlockType": "text",
-    "RenderIf": "{ShowLapsRace}",
-    "Source": "{Item.LapsCount}",
-    "VerticalAlignment": "Center",
-    "Padding": "{PaddingDefault}",
-    "HorizontalAlignment": "Left",
+    "BlockType": "dock",
     "Background": "{BackgroundDefault}",
-    "Width": 72,
+    "MaxWidth": 215,
+    "Height": 20,
+    "MaxHeight": 72,
     "Triggers": [
         {
-            "Condition": "{Item.Index, Converter=NumberIsOdd}",
-            "Property": "Background",
-            "Value": "{BackgroundDarker}"
+            "Trigger": "DarkerBackground"
+        }
+    ],
+    "Items": [
+        {
+            "BlockType": "text",
+            "Width": 60,
+            "Source": "{Item.LapsCount}",
+            "Style": "mainTable_Style"
         }
     ]
 }

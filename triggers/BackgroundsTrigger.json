@@ -1,0 +1,22 @@
+[
+    {
+        "TriggerName": "DarkerBackground",
+        "Condition": "{Item.Position, Converter=NumberIsEven}",
+        "Property": "Background",
+        "Value": "{BackgroundDarker}"
+    },
+    {
+        "TriggerName": "TeamColorBack",
+        "Condition": "{Item.Index, Converter=NumberIsOdd}",
+        "Setters": [
+            {
+                "Property": "Background",
+                "Value": "{Item.Team.Color}"
+            },
+            {
+                "Property": "Foreground",
+                "Value": "{Item.Team.Color}"
+            }
+        ]
+    }
+]

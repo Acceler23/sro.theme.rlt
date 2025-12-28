@@ -10,6 +10,7 @@
             "BlockType": "text",
             "VerticalAlignment": "Center",
             "Source": "{Item.Date, Converter=DateToDayOfMonth}  {Item.Date, Converter=DateToMonthInWords}  {Item.Date, Converter=DateToYear}",
+            "PaddingTop": 5,
             "FontSize": 16
         },
         {
@@ -17,6 +18,7 @@
             "VerticalAlignment": "Center",
             "Source": "|",
             "FontSize": 42,
+            "PaddingTop": 5,
             "Width": 4
         },
         {
@@ -24,33 +26,35 @@
             "VerticalAlignment": "Center",
             "Source": "{Item.Track.CircuitName}",
             "FontName": "{FontNameWide}",
+            "PaddingTop": 5,
             "FontSize": 16
         },
         {
             "BlockType": "text",
             "VerticalAlignment": "Center",
             "Source": "{Item.Track.CountryName}",
+            "PaddingTop": 5,
             "FontSize": 16
         },
         {
             "BlockType": "image",
             "VerticalAlignment": "Center",
             "Height": 22,
-            "ImageOptions": {
-                "Path": "{Item.Track.Nation.LogotypePath}"
-            }
+            "Source": "{Item.Track.Nation.LogotypePath}"
         },
         {
             "BlockType": "text",
             "VerticalAlignment": "Center",
             "Source": "|",
             "FontSize": 42,
+            "PaddingTop": 5,
             "Width": 4
         },
         {
             "BlockType": "text",
             "VerticalAlignment": "Center",
             "Source": "Round  {Item.Position}",
+            "PaddingTop": 5,
             "FontSize": 16
         }
     ]

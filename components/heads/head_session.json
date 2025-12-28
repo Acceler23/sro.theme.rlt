@@ -12,6 +12,7 @@
             "Items": [
                 {
                     "BlockType": "text",
+                    "PaddingTop": 5,
                     "Source": ">",
                     "FontSize": 24,
                     "Foreground": "{HeadMain}"
@@ -19,7 +20,8 @@
                 {
                     "BlockType": "text",
                     "HorizontalAlignment": "Right",
-                    "Source": " {Session.SessionType}  |  {Session.Track.Name}  |  {Season.Name}",
+                    "PaddingTop": 5,
+                    "Source": " {Session.SessionTypeString}  |  {Session.Track.Name}  |  {Season.Name}",
                     "FontSize": 24
                 }
             ]

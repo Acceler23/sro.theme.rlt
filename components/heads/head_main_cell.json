@@ -10,14 +10,21 @@
         },
         {
             "BlockType": "text",
-            "Source": "{Session.SessionType}",
+            "Source": "{Session.SessionTypeString}",
             "Background": "{HeadMain}",
             "FontSize": 16,
             "Foreground": "{BackgroundDefault}",
             "HorizontalAlignment": "Left",
             "VerticalAlignment": "Center",
             "Height": 56,
-            "Width": "*"
+            "Width": "*",
+            "Triggers": [
+                {
+                    "Condition": "{Session.RacingClass.Name, Converter=EmptyObjectToFalse}",
+                    "Property": "Source",
+                    "Value": "{Session.SessionTypeString}  |  {Session.RacingClass.Name}"
+                }
+            ]
         }
     ]
 }

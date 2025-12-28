@@ -1,6 +1,27 @@
 {
     "Properties": [
         {
+            "Name": "UsePages",
+            "PublicName": "Use Pages in Results",
+            "Type": "Bool",
+            "DefaultValue": false,
+            "Category": "Pages"
+        },
+        {
+            "Name": "PageLimit",
+            "PublicName": "Driver Limit per Page",
+            "Type": "Integer",
+            "DefaultValue": 10,
+            "Category": "Pages"
+        },
+        {
+            "Name": "RenderPage",
+            "PublicName": "Render Page Part",
+            "Type": "Integer",
+            "DefaultValue": 1,
+            "Category": "Pages"
+        },
+        {
             "Name": "ShowLeaugeLogo",
             "PublicName": "Show League Logo",
             "Type": "Bool",
@@ -12,7 +33,7 @@
             "PublicName": "Teammates have the same number",
             "Type": "Bool",
             "DefaultValue": false,
-            "Category": "Teams"
+            "Category": "Driver"
         },
         {
             "Name": "ShowDriverClass",
@@ -32,6 +53,20 @@
             "PublicName": "Show Driver Number",
             "Type": "Bool",
             "DefaultValue": true,
+            "Category": "Driver"
+        },
+        {
+            "Name": "ShowLiveryButCars",
+            "PublicName": "Show Liveries instead of car name",
+            "Type": "Bool",
+            "DefaultValue": false,
+            "Category": "Driver"
+        },
+        {
+            "Name": "ShowLiveryTeam",
+            "PublicName": "Show Liveries with Team",
+            "Type": "Bool",
+            "DefaultValue": false,
             "Category": "Driver"
         },
         {
@@ -67,16 +102,19 @@
             "PublicName": "Custom Event Image",
             "Description": "Use custom images for calendar, add them on %app root%/user/themes/sro.racing.theme/images/track_images/CircuitName.png",
             "Type": "Bool",
-            "DefaultValue": false,
+            "DefaultValue": true,
             "Category": "Calendar"
         },
         {
-            "Name": "RenderRows",
-            "PublicName": "Number of Rows in Calendar",
-            "Description": "Override the calendar row numbers to prevent extra renders",
-            "Type": "Integer",
-            "DefaultValue": 3,
-            "Category": "Calendar"
+            "Name": "LineupImage",
+            "PublicName": "Image on Line-ups",
+            "Type": "Enum",
+            "EnumValues": [
+                "Driver",
+                "Team"
+            ],
+            "DefaultValue": "Driver",
+            "Category": "Line-Ups"
         },
         {
             "Name": "TeamBackground",
@@ -87,6 +125,9 @@
         }
     ],
     "Categories": [
+        {
+            "Name": "Pages"
+        },
         {
             "Name": "League Info"
         },

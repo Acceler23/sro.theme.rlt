@@ -1,0 +1,24 @@
+[
+    {
+        "StyleName": "table_head_style",
+        "FontName": "{FontNameDefault}",
+        "FontSize": 14,
+        "Foreground": "{BackgroundDefault}",
+        "Background": "{HeadSecond}",
+        "HorizontalAlignment": "Left",
+        "VerticalAlignment": "Center",
+        "Padding": "10,18,10,18"
+    },
+    {
+        "StyleName": "mainTable_Style",
+        "Padding": "{PaddingDefault}",
+        "VerticalAlignment": "Center",
+        "FontName": "{FontNameDefault}",
+        "FontSize": 14,
+        "TextOptions": {
+            "TextAlignment": "Start",
+            "HorizontalAlignment": "Left",
+            "Wrap": true
+        }
+    }
+]

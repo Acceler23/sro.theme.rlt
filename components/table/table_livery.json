@@ -1,0 +1,9 @@
+{
+    "ComponentName": "table_livery",
+    
+    "Triggers": [
+        {
+            "Trigger": "DarkerBackground"
+        }
+    ]
+}

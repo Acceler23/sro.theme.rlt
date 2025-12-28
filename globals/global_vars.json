@@ -2,12 +2,13 @@
     "FontNameDefault": "UniviaPro-Regular",
     "FontNameWide": "UniviaPro-Medium",
     "FontNameBold": "UniviaPro-Bold",
+    "FontNameBlack": "UniviaPro-Black",
     "FontSizeDefault": 14,
     "ForegroundDefault": "#000000",
     "BackgroundDefault": "#FFFFFF",
 
     //margins
-    "MarginRoot": "80, 0, 80, 0",
+    "MarginRoot": "80, 0, 80, 40",
     "MarginTable": "0, 0",
     "PaddingDefault": "10,16,10,16",
 
@@ -15,5 +16,7 @@
     "HeadSecond": "#3e3f40",
     "BackgroundDarker": "#f7f8f9",
 
-    "TableHeight": 20
+    "TableHeight": 20,
+
+    "CustomTrackImage": "track_images/{Item.Track.CircuitName}"
 }

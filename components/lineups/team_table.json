@@ -1,0 +1,118 @@
+{
+    "ComponentName": "team_table_top",
+    "BlockType": "dock",
+    "MaxWidth": 453,
+    "HorizontalAlignment": "Center",
+    "Orientation": "Vertical",
+    "Items": [
+        {
+            "BlockType": "dock",
+            "BackgroundImage": "podium_bg",
+            "VerticalAlignment": "Top",
+            "Height": 100,
+            "Width": "*",
+            "Items": [
+                {
+                    "BlockType": "text",
+                    "Source": "{Item.Position}st",
+                    "Foreground": "{BackgroundDefault}",
+                    "Padding": "10",
+                    "MarginTop": 10,
+                    "HorizontalAlignment": "Center",
+                    "VerticalAlignment": "Center",
+                    "FontSize": 60,
+                    "FontName": "{FontNameWide}",
+                    "Triggers": [
+                        {
+                            "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                            "Property": "Source",
+                            "Value": "{Item.Position}nd"
+                        },
+                        {
+                            "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                            "Property": "Source",
+                            "Value": "{Item.Position}rd"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType": "stack",
+            "Height": 100,
+            "MaxWidth": 453,
+            "Orientation": "Horizontal",
+            "VerticalAlignment": "Bottom",
+            "Background": "{BackgroundDefault}",
+            "Items": [
+                {
+                    "BlockType": "dock",
+                    "HorizontalAlignment": "Left",
+                    "Height": 100,
+                    "Width": 88,
+                    "Items": [
+                        {
+                            "BlockType": "image",
+                            "Source": "{Item.Driver.LogotypePath}",
+                            "Height": 150,
+                            "Background": "#808080",
+                            "VerticalAlignment": "Top",
+                            "HorizontalAlignment": "Center",
+                            "Triggers": [
+                                {
+                                    "Condition": "{TeamBackground}",
+                                    "Property": "Background",
+                                    "Value": "#808080"
+                                },
+                                {
+                                    "Condition": "{LineupImage, Converter=StringEquals, Parameter=Team}",
+                                    "ConditionAnd": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+                                    "Setters": [
+                                        {
+                                            "Property": "Source",
+                                            "Value": "{Item.Team.LogotypePath}"
+                                        },
+                                        {
+                                            "Property": "Padding",
+                                            "Value": "15"
+                                        },
+                                        {
+                                            "Property": "Height",
+                                            "Value": 95
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{LineupImage, Converter=StringEquals, Parameter=Team}",
+                                    "ConditionAnd": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                                    "Setters": [
+                                        {
+                                            "Property": "Source",
+                                            "Value": "{Item.Car.Vendor.LogotypePath}"
+                                        },
+                                        {
+                                            "Property": "Padding",
+                                            "Value": "20"
+                                        },
+                                        {
+                                            "Property": "Height",
+                                            "Value": 85
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "text",
+                    "Source": "{Item.Driver.Name}",
+                    "Padding": "15,15,20,15",
+                    "Height": 100,
+                    "Width": 325,
+                    "FontSize": 18
+                }
+            ]
+        }
+    ]
+}

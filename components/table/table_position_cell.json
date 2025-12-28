@@ -1,16 +1,36 @@
 {
     "ComponentName": "position_cell",
     "BlockType": "text",
-    "Source": "<position>",
+    "Source": "{Item.Position}",
+    "MaxWidth": 66,
+    "Height": 20,
+    "MaxHeight": 72,
     "Background": "{BackgroundDefault}",
+    "Padding": "25,16,10,16",
     "FontName": "{FontNameDefault}",
-    "Padding": "{PaddingDefault}",
-    "PaddingLeft": 25,
     "FontSize": 14,
-    "Width": 35,
-    "Height": "{TableHeight}",
-    "Foreground": "{ForegroundDefault}",
     "TextOptions": {
+        "TextAlignment": "Start",
         "HorizontalAlignment": "Left"
-    }
+    },
+    "Triggers": [
+        {
+            "Trigger": "DarkerBackground"
+        },
+        {
+            "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
+            "Property": "Source",
+            "Value": "NC"
+        },
+        {
+            "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
+            "Property": "Source",
+            "Value": "DNS"
+        },
+        {
+            "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
+            "Property": "Source",
+            "Value": "DSQ"
+        }
+    ]
 }

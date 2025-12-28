@@ -1,30 +1,22 @@
 {
     "ComponentName": "car_cell",
-    "BlockType": "text",
-    "Padding": "{PaddingDefault}",
+    "BlockType": "dock",
+    "RenderIf": "{Item.Car.Name, Converter=EmptyObjectToFalse}",
     "Background": "{BackgroundDefault}",
-    "TextOptions": {
-        "HorizontalAlignment": "Left"
-    },
-    "RenderIf": false,
-    "Width": 200,
-    "Height": "{TableHeight}",
+    "MaxWidth": 215,
+    "Height": 20,
+    "MaxHeight": 72,
     "Triggers": [
         {
-            "Condition": "{Item.Index, Converter=NumberIsOdd}",
-            "Property": "Background",
-            "Value": "{BackgroundDarker}"
-        },
-        {
-            "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
-            "ConditionOr": "{ShowCarsWithTeams}",
-            "Property": "RenderIf",
-            "Value": true
+            "Trigger": "DarkerBackground"
         }
     ],
-    "Source": "{Item.Car.Name}",
-    "HorizontalAlignment": "Left",
-    "VerticalAlignment": "Center",
-    "FontName": "{FontNameDefault}",
-    "FontSize": 14
+    "Items": [
+        {
+            "BlockType": "text",
+            "Width": 200,
+            "Source": "{Item.Car.Name}",
+            "Style": "mainTable_Style"
+        }
+    ]
 }

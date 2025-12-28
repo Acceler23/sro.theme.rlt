@@ -1,23 +1,21 @@
 {
     "ComponentName": "Lap_qualy",
-    "BlockType": "text",
-    "RenderIf": "{ShowLapsQualy}",
-    "Source": "{Item.LapsCount}",
-    "VerticalAlignment": "Center",
-    "Padding": "{PaddingDefault}",
-    "HorizontalAlignment": "Left",
+    "BlockType": "dock",
     "Background": "{BackgroundDefault}",
-    "Width": 72,
+    "MaxWidth": 215,
+    "Height": 20,
+    "MaxHeight": 72,
     "Triggers": [
         {
-            "Condition": "{Item.Index, Converter=NumberIsOdd}",
-            "Property": "Background",
-            "Value": "{BackgroundDarker}"
-        },
+            "Trigger": "DarkerBackground"
+        }
+    ],
+    "Items": [
         {
-            "Condition": "{Item.LapsCount, Converter=NumberEquals, Parameter=0}",
-            "Property": "Source",
-            "Value": ""
+            "BlockType": "text",
+            "Width": 60,
+            "Source": "{Item.LapsCount}",
+            "Style": "mainTable_Style"
         }
     ]
 }

@@ -1,23 +1,22 @@
 {
     "ComponentName": "driver_cell",
-    "BlockType": "text",
-    "Padding": "{PaddingDefault}",
+    "BlockType": "dock",
     "Background": "{BackgroundDefault}",
-    "Width": 150,
-    "MaxHeight": "{TableHeight}",
+    "MaxWidth": 470,
+    "Width": "*",
+    "Height": 20,
+    "MaxHeight": 72,
     "Triggers": [
         {
-            "Condition": "{Item.Index, Converter=NumberIsOdd}",
-            "Property": "Background",
-            "Value": "{BackgroundDarker}"
+            "Trigger": "DarkerBackground"
         }
     ],
-    "TextOptions": {
-        "HorizontalAlignment": "Left"
-    },
-    "Source": "{Item.Driver.Name}",
-    "HorizontalAlignment": "Left",
-    "VerticalAlignment": "Center",
-    "FontName": "{FontNameDefault}",
-    "FontSize": 14
+    "Items": [
+        {
+            "BlockType": "text",
+            "Width": 470,
+            "Source": "{Item.Driver.Name}",
+            "Style": "mainTable_Style"
+        }
+    ]
 }

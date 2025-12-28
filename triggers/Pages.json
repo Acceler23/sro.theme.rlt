@@ -1,0 +1,30 @@
+[
+    {
+        "TriggerName": "RenderPages_Trigger",
+        "Condition": "{UsePages}",
+        "Setters": [
+            {
+                "Property": "TableOptions.IndexEnd",
+                "Value": "{{RenderPage, Converter=NumberMultiply, Parameter={PageLimit}}, Converter=NumberAdd, Parameter={PageLimit, Converter=NumberSubtract, Parameter=1}}"
+            },
+            {
+                "Property": "TableOptions.IndexStart",
+                "Value": "{RenderPage, Converter=NumberMultiply, Parameter={PageLimit}}"
+            }
+        ]
+    },
+    {
+        "TriggerName": "RenderPages_Trigger_itemstack",
+        "Condition": "{UsePages}",
+        "Setters": [
+            {
+                "Property": "ItemStackOptions.IndexEnd",
+                "Value": "{{RenderPage, Converter=NumberMultiply, Parameter={PageLimit}}, Converter=NumberAdd, Parameter={PageLimit, Converter=NumberSubtract, Parameter=1}}"
+            },
+            {
+                "Property": "ItemStackOptions.IndexStart",
+                "Value": "{RenderPage, Converter=NumberMultiply, Parameter={PageLimit}}"
+            }
+        ]
+    }
+]

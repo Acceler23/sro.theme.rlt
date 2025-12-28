@@ -17,6 +17,7 @@
                     //Head
                     {
                         "BlockType": "text",
+                        "PaddingTop": 5,
                         "Source": "{Season.LeagueInfo.LeagueName}",
                         "FontSize": 40,
                         "MarginBottom": 20
@@ -29,11 +30,13 @@
                                 "BlockType": "text",
                                 "Source": ">",
                                 "FontSize": 24,
+                                "PaddingTop": 5,
                                 "Foreground": "{HeadMain}"
                             },
                             {
                                 "BlockType": "text",
                                 "Source": " PAST EVENTS",
+                                "PaddingTop": 5,
                                 "FontSize": 24
                             }
                         ]
@@ -90,12 +93,14 @@
                                 "BlockType": "text",
                                 "Source": ">",
                                 "FontSize": 24,
+                                "PaddingTop": 5,
                                 "Foreground": "{HeadMain}"
                             },
                             {
                                 "BlockType": "text",
                                 "Source": " EVENTS",
                                 "FontSize": 24,
+                                "PaddingTop": 5,
                                 "Foreground": "#FFFFFF"
                             }
                         ]
@@ -131,185 +136,249 @@
                     {
                         "BlockType": "itemstack",
                         "Orientation": "Horizontal",
+                        "RenderIf": false,
                         "Width": 1420,
                         "Spacing": 20,
                         "Triggers": [
                             {
-                                "Condition": "{{Season.SeasonOverallNumberEvents, Converter=NumberSubtract, Parameter={Season.SeasonCurrentNumberEvent}}, Converter=NumberGreater, Parameter=2}",
-                                "ConditionOr": "{RenderRows, Converter=NumberLess, Parameter=1}",
+                                "Condition": "{Season.SeasonOverallNumberEvents, Converter=NumberGreater, Parameter=1}",
                                 "Property": "RenderIf",
-                                "Value": false
+                                "Value": true
                             }
                         ],
                         "ItemStackOptions": {
                             "ItemSource": "{Events.Events}",
-                            "Limit": 4,
-                            "IndexStart": "{Season.SeasonCurrentNumberEvent, Converter=NumberAdd, Parameter=1}",
+                            "Limit": 5,
+                            "IndexStart": 1,
                             "ItemTemplate": {
-                                "BlockType": "dock",
-                                "Orientation": "Horizontal",
-                                "MarginTop": 10,
-                                "Items": [
-                                    {
-                                        "BlockType": "component",
-                                        "Component": "next_event_track"
-                                    }
-                                ]
+                                "BlockType": "component",
+                                "Component": "next_event_track",
+                                "MarginTop": 10
                             }
                         }
                     },
-                    //Row 2
+                    //row 2
                     {
                         "BlockType": "itemstack",
                         "Orientation": "Horizontal",
+                        "RenderIf": false,
                         "Width": 1420,
                         "Spacing": 20,
                         "Triggers": [
                             {
-                                "Condition": "{{Season.SeasonOverallNumberEvents, Converter=NumberSubtract, Parameter={Season.SeasonCurrentNumberEvent}}, Converter=NumberGreater, Parameter=2}",
-                                "ConditionOr": "{RenderRows, Converter=NumberLess, Parameter=2}",
+                                "Condition": "{Season.SeasonOverallNumberEvents, Converter=NumberGreater, Parameter=5}",
                                 "Property": "RenderIf",
-                                "Value": false
+                                "Value": true
                             }
                         ],
                         "ItemStackOptions": {
                             "ItemSource": "{Events.Events}",
-                            "Limit": 4,
-                            "IndexStart": "{Season.SeasonCurrentNumberEvent, Converter=NumberAdd, Parameter=5}",
+                            "Limit": 5,
+                            "IndexStart": 5,
                             "ItemTemplate": {
-                                "BlockType": "dock",
-                                "Orientation": "Horizontal",
-                                "MarginTop": 25,
-                                "Items": [
-                                    {
-                                        "BlockType": "component",
-                                        "Component": "next_event_track"
-                                    }
-                                ]
+                                "BlockType": "component",
+                                "Component": "next_event_track",
+                                "MarginTop": 10
                             }
                         }
                     },
-                    //Row 3
+                    //row 3
                     {
                         "BlockType": "itemstack",
                         "Orientation": "Horizontal",
+                        "RenderIf": false,
                         "Width": 1420,
                         "Spacing": 20,
                         "Triggers": [
                             {
-                                "Condition": "{{Season.SeasonOverallNumberEvents, Converter=NumberSubtract, Parameter={Season.SeasonCurrentNumberEvent}}, Converter=NumberGreater, Parameter=2}",
-                                "ConditionOr": "{RenderRows, Converter=NumberLess, Parameter=3}",
+                                "Condition": "{Season.SeasonOverallNumberEvents, Converter=NumberGreater, Parameter=9}",
                                 "Property": "RenderIf",
-                                "Value": false
+                                "Value": true
                             }
                         ],
                         "ItemStackOptions": {
                             "ItemSource": "{Events.Events}",
-                            "Limit": 4,
-                            "IndexStart": "{Season.SeasonCurrentNumberEvent, Converter=NumberAdd, Parameter=9}",
+                            "Limit": 5,
+                            "IndexStart": 9,
                             "ItemTemplate": {
-                                "BlockType": "dock",
-                                "Orientation": "Horizontal",
-                                "MarginTop": 25,
-                                "Items": [
-                                    {
-                                        "BlockType": "component",
-                                        "Component": "next_event_track"
-                                    }
-                                ]
+                                "BlockType": "component",
+                                "Component": "next_event_track",
+                                "MarginTop": 10
                             }
                         }
                     },
-                    //Row 4
+                    //row 4
                     {
                         "BlockType": "itemstack",
                         "Orientation": "Horizontal",
+                        "RenderIf": false,
                         "Width": 1420,
                         "Spacing": 20,
                         "Triggers": [
                             {
-                                "Condition": "{{Season.SeasonOverallNumberEvents, Converter=NumberSubtract, Parameter={Season.SeasonCurrentNumberEvent}}, Converter=NumberGreater, Parameter=2}",
-                                "ConditionOr": "{RenderRows, Converter=NumberLess, Parameter=4}",
+                                "Condition": "{Season.SeasonOverallNumberEvents, Converter=NumberGreater, Parameter=13}",
                                 "Property": "RenderIf",
-                                "Value": false
+                                "Value": true
                             }
                         ],
                         "ItemStackOptions": {
                             "ItemSource": "{Events.Events}",
-                            "Limit": 4,
-                            "IndexStart": "{Season.SeasonCurrentNumberEvent, Converter=NumberAdd, Parameter=9}",
+                            "Limit": 5,
+                            "IndexStart": 13,
                             "ItemTemplate": {
-                                "BlockType": "dock",
-                                "Orientation": "Horizontal",
-                                "MarginTop": 25,
-                                "Items": [
-                                    {
-                                        "BlockType": "component",
-                                        "Component": "next_event_track"
-                                    }
-                                ]
+                                "BlockType": "component",
+                                "Component": "next_event_track",
+                                "MarginTop": 10
                             }
                         }
                     },
-                    //Row 5
+                    //row 5
                     {
                         "BlockType": "itemstack",
                         "Orientation": "Horizontal",
+                        "RenderIf": false,
                         "Width": 1420,
                         "Spacing": 20,
                         "Triggers": [
                             {
-                                "Condition": "{{Season.SeasonOverallNumberEvents, Converter=NumberSubtract, Parameter={Season.SeasonCurrentNumberEvent}}, Converter=NumberGreater, Parameter=2}",
-                                "ConditionOr": "{RenderRows, Converter=NumberLess, Parameter=5}",
+                                "Condition": "{Season.SeasonOverallNumberEvents, Converter=NumberGreater, Parameter=17}",
                                 "Property": "RenderIf",
-                                "Value": false
+                                "Value": true
                             }
                         ],
                         "ItemStackOptions": {
                             "ItemSource": "{Events.Events}",
-                            "Limit": 4,
-                            "IndexStart": "{Season.SeasonCurrentNumberEvent, Converter=NumberAdd, Parameter=9}",
+                            "Limit": 5,
+                            "IndexStart": 17,
                             "ItemTemplate": {
-                                "BlockType": "dock",
-                                "Orientation": "Horizontal",
-                                "MarginTop": 25,
-                                "Items": [
-                                    {
-                                        "BlockType": "component",
-                                        "Component": "next_event_track"
-                                    }
-                                ]
+                                "BlockType": "component",
+                                "Component": "next_event_track",
+                                "MarginTop": 10
                             }
                         }
                     },
-                    //Row 6
+                    //row 6
                     {
                         "BlockType": "itemstack",
                         "Orientation": "Horizontal",
+                        "RenderIf": false,
                         "Width": 1420,
                         "Spacing": 20,
                         "Triggers": [
                             {
-                                "Condition": "{{Season.SeasonOverallNumberEvents, Converter=NumberSubtract, Parameter={Season.SeasonCurrentNumberEvent}}, Converter=NumberGreater, Parameter=2}",
-                                "ConditionOr": "{RenderRows, Converter=NumberLess, Parameter=6}",
+                                "Condition": "{Season.SeasonOverallNumberEvents, Converter=NumberGreater, Parameter=21}",
                                 "Property": "RenderIf",
-                                "Value": false
+                                "Value": true
                             }
                         ],
                         "ItemStackOptions": {
                             "ItemSource": "{Events.Events}",
-                            "Limit": 4,
-                            "IndexStart": "{Season.SeasonCurrentNumberEvent, Converter=NumberAdd, Parameter=9}",
+                            "Limit": 5,
+                            "IndexStart": 21,
                             "ItemTemplate": {
-                                "BlockType": "dock",
-                                "Orientation": "Horizontal",
-                                "MarginTop": 25,
-                                "Items": [
-                                    {
-                                        "BlockType": "component",
-                                        "Component": "next_event_track"
-                                    }
-                                ]
+                                "BlockType": "component",
+                                "Component": "next_event_track",
+                                "MarginTop": 10
+                            }
+                        }
+                    },
+                    //row 7
+                    {
+                        "BlockType": "itemstack",
+                        "Orientation": "Horizontal",
+                        "RenderIf": false,
+                        "Width": 1420,
+                        "Spacing": 20,
+                        "Triggers": [
+                            {
+                                "Condition": "{Season.SeasonOverallNumberEvents, Converter=NumberGreater, Parameter=25}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ],
+                        "ItemStackOptions": {
+                            "ItemSource": "{Events.Events}",
+                            "Limit": 5,
+                            "IndexStart": 25,
+                            "ItemTemplate": {
+                                "BlockType": "component",
+                                "Component": "next_event_track",
+                                "MarginTop": 10
+                            }
+                        }
+                    },
+                    //row 8
+                    {
+                        "BlockType": "itemstack",
+                        "Orientation": "Horizontal",
+                        "RenderIf": false,
+                        "Width": 1420,
+                        "Spacing": 20,
+                        "Triggers": [
+                            {
+                                "Condition": "{Season.SeasonOverallNumberEvents, Converter=NumberGreater, Parameter=29}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ],
+                        "ItemStackOptions": {
+                            "ItemSource": "{Events.Events}",
+                            "Limit": 5,
+                            "IndexStart": 29,
+                            "ItemTemplate": {
+                                "BlockType": "component",
+                                "Component": "next_event_track",
+                                "MarginTop": 10
+                            }
+                        }
+                    },
+                    //row 9
+                    {
+                        "BlockType": "itemstack",
+                        "Orientation": "Horizontal",
+                        "RenderIf": false,
+                        "Width": 1420,
+                        "Spacing": 20,
+                        "Triggers": [
+                            {
+                                "Condition": "{Season.SeasonOverallNumberEvents, Converter=NumberGreater, Parameter=33}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ],
+                        "ItemStackOptions": {
+                            "ItemSource": "{Events.Events}",
+                            "Limit": 5,
+                            "IndexStart": 33,
+                            "ItemTemplate": {
+                                "BlockType": "component",
+                                "Component": "next_event_track",
+                                "MarginTop": 10
+                            }
+                        }
+                    },
+                    //row 10
+                    {
+                        "BlockType": "itemstack",
+                        "Orientation": "Horizontal",
+                        "RenderIf": false,
+                        "Width": 1420,
+                        "Spacing": 20,
+                        "Triggers": [
+                            {
+                                "Condition": "{Season.SeasonOverallNumberEvents, Converter=NumberGreater, Parameter=37}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ],
+                        "ItemStackOptions": {
+                            "ItemSource": "{Events.Events}",
+                            "Limit": 5,
+                            "IndexStart": 37,
+                            "ItemTemplate": {
+                                "BlockType": "component",
+                                "Component": "next_event_track",
+                                "MarginTop": 10
                             }
                         }
                     }

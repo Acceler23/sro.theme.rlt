@@ -1,0 +1,7 @@
+[
+    {
+        "TriggerName": "LiveryOverName",
+        "Condition": "{Item.LiveryPath, Converter=EmptyObjectToFalse}"
+        
+    }
+]

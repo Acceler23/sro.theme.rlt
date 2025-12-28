@@ -1,0 +1,37 @@
+{
+    "ComponentName": "gap_cell",
+    "BlockType": "dock",
+    "Background": "{BackgroundDefault}",
+    "MaxWidth": 215,
+    "Height": 20,
+    "MaxHeight": 72,
+    "Triggers": [
+        {
+            "Trigger": "DarkerBackground"
+        }
+    ],
+    "Items": [
+        {
+            "BlockType": "text",
+            "Width": 125,
+            "Source": "{Item.IntervalRace}",
+            "Style": "mainTable_Style",
+            "Triggers": [
+                {
+                    "Trigger": "DarkerBackground"
+                },
+                {
+                    "Condition": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                    "Property": "Source",
+                    "Value": ""
+                },
+                {
+                    "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
+                    "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
+                    "Property": "Source",
+                    "Value": ""
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "ComponentName": "session_stats_cell",
+    "BlockType": "stack",
+    "Background": "{BackgroundDefault}",
+    "Height": 20,
+    "MaxHeight": 72,
+    "Triggers": [
+        {
+            "Trigger": "DarkerBackground"
+        }
+    ],
+    "Items": [
+        {
+            "BlockType": "text",
+            "Style": "mainTable_Style",
+            "Source": "<{data.Value}>"
+        },
+        //stint
+        {
+            "BlockType": "itemstack",
+            "ItemStackOptions": {
+                "ItemSource": "<{data.Stints}>",
+                "ItemTemplate": {
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    "Items": [
+                        {
+                            "BlockType": "image",
+                            "Source": "tyres/tyres_{Item.Tyres}.png",
+                            "Height": 20,
+                            "MaxHeight": 72,
+                            "Padding": "10,10,0,0"
+                        },
+                        {
+                            "BlockType": "text",
+                            "Style": "mainTable_Style",
+                            "Padding": "5,16,10,16",
+                            "Source": "{Item.Laps}",
+                            "Triggers": [
+                                {
+                                    "Condition": "{Item.IsPercentage}",
+                                    "Setters": [
+                                        {
+                                            "Property": "Source",
+                                            "Value": "{Item.Percentage, Converter=StringAdd, Parameter=%}"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        //tyres
+        {
+            "BlockType": "stack",
+            "Source": "<{data.Tyres, Converter=StringFormatReverse, Parameter=tyres_SUB.png}>",
+            "Items": [
+                {
+                    "BlockType": "image",
+                    "Source": "<{data.Tyres, Converter=StringFormatReverse, Parameter=tyres_SUB.png}>"
+                }
+            ]
+        }
+    ]
+}

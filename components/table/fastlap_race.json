@@ -1,22 +1,21 @@
 {
     "ComponentName": "fastlap_race",
     "BlockType": "dock",
-    "RenderIf": "{ShowPBRace}",
     "Background": "{BackgroundDefault}",
+    "MaxWidth": 75,
+    "Height": 20,
+    "MaxHeight": 72,
     "Triggers": [
         {
-            "Condition": "{Item.Index, Converter=NumberIsOdd}",
-            "Property": "Background",
-            "Value": "{BackgroundDarker}"
+            "Trigger": "DarkerBackground"
         }
     ],
     "Items": [
         {
             "BlockType": "text",
-            "HorizontalAlignment": "Left",
-            "VerticalAlignment": "Center",
+            "Width": 75,
             "Source": "{Item.FastestLapTime}",
-            "Padding": "{PaddingDefault}"
+            "Style": "mainTable_Style"
         }
     ]
 }

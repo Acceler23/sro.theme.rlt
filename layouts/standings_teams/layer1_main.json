@@ -40,17 +40,18 @@
                 "Component": "standing_main_head_cell"
             },
             {
-                "BlockType": "text",
-                "Source": "infil",
-                "Background": "{BackgroundDarker}",
-                "Height": 50,
-                "Width": "*",
-                "MarginBottom": -50
+                "BlockType": "component",
+                "Component": "head_background_cell"
             },
             //table
             {
                 "Name": "mainTable",
                 "BlockType": "table",
+                "Triggers": [
+                    {
+                        "Trigger": "RenderPages_Trigger"
+                    }
+                ],
                 "TableOptions": {
                     "ItemsSource": "{Standings.Teams}",
                     "RowSpacing": 3,
@@ -58,8 +59,8 @@
                     "HeaderTemplate": {
                         "BlockType": "text",
                         "Style": "table_head_style",
-                        "Background": "{BackgroundDarker}",
-                        "Foreground": "{ForegroundDefault}",
+                        "Background": "{HeadSecond}",
+                        "Foreground": "{BackgroundDefault}",
                         "HorizontalAlignment": "Left"
                     },
                     "Columns": [
@@ -121,7 +122,9 @@
                                 "Items": [
                                     {
                                         "BlockType": "text",
-                                        "Source": "{Item.Track.Name}"
+                                        "Source": "{Item.Track.Name}",
+                                        "PaddingTop": 5,
+                                        "Foreground": "{BackgroundDefault}"
                                     }
                                 ]
                             },

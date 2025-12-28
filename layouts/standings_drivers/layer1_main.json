@@ -22,12 +22,14 @@
                             {
                                 "BlockType": "text",
                                 "Source": ">",
+                                "PaddingTop": 5,
                                 "FontSize": 24,
                                 "Foreground": "{HeadMain}"
                             },
                             {
                                 "BlockType": "text",
                                 "HorizontalAlignment": "Right",
+                                "PaddingTop": 5,
                                 "Source": " {Season.Name}  Standings  |   {Season.LeagueInfo.LeagueName} Drivers",
                                 "FontSize": 24
                             }
@@ -36,21 +38,72 @@
                 ]
             },
             {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "MarginBottom": 40,
+                "Width": "*",
+                "Items": [
+                    {
+                        "BlockType": "itemstack",
+                        "HorizontalAlignment": "Left",
+                        "ItemStackOptions": {
+                            "ItemSource": "{Standings.Drivers}",
+                            "Limit": 1,
+                            "IndexStart": 0,
+                            "ItemTemplate": {
+                                "BlockType": "component",
+                                "Component": "team_table_top",
+                                "HorizontalAlignment": "Center"
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "itemstack",
+                        "HorizontalAlignment": "Center",
+                        "ItemStackOptions": {
+                            "ItemSource": "{Standings.Drivers}",
+                            "Limit": 1,
+                            "IndexStart": 1,
+                            "ItemTemplate": {
+                                "BlockType": "component",
+                                "Component": "team_table_top",
+                                "HorizontalAlignment": "Center"
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "itemstack",
+                        "HorizontalAlignment": "Right",
+                        "ItemStackOptions": {
+                            "ItemSource": "{Standings.Drivers}",
+                            "Limit": 1,
+                            "IndexStart": 2,
+                            "ItemTemplate": {
+                                "BlockType": "component",
+                                "Component": "team_table_top",
+                                "HorizontalAlignment": "Center"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
                 "BlockType": "component",
                 "Component": "standing_main_head_cell"
             },
             {
-                "BlockType": "text",
-                "Source": "infil",
-                "Background": "{BackgroundDarker}",
-                "Height": 50,
-                "Width": "*",
-                "MarginBottom": -50
+                "BlockType": "component",
+                "Component": "head_background_cell"
             },
             //table
             {
                 "Name": "mainTable",
                 "BlockType": "table",
+                "Triggers": [
+                    {
+                        "Trigger": "RenderPages_Trigger"
+                    }
+                ],
                 "TableOptions": {
                     "ItemsSource": "{Standings.Drivers}",
                     "RowSpacing": 3,
@@ -58,9 +111,9 @@
                     "HeaderTemplate": {
                         "BlockType": "text",
                         "Style": "table_head_style",
-                        "Background": "{BackgroundDarker}",
-                        "Foreground": "{ForegroundDefault}",
-                        "HorizontalAlignment": "Left"
+                        "Background": "{HeadSecond}",
+                        "Foreground": "{BackgroundDefault}",
+                        "HorizontalAlignment": "Center"
                     },
                     "Columns": [
                         //position
@@ -84,8 +137,9 @@
                                 "Component": "driver_cell"
                             }
                         },
+                        //Total
                         {
-                            "Header": "      TOTAL",
+                            "Header": "TOTAL",
                             "Template": {
                                 "BlockType": "stack",
                                 "Items": [
@@ -112,16 +166,44 @@
                             }
                         },
                         {
+                            "Header": "Poles",
+                            "Template": {
+                                "BlockType": "text",
+                                "Source": "{Item.CountQualP1}",
+                                "HorizontalAlignment": "Center",
+                                "Background": "{BackgroundDefault}",
+                                "Width": "*",
+                                "Height": "*",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                                        "Property": "Background",
+                                        "Value": "{BackgroundDarker}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
                             "MultiColumnHeadersSource": "{Standings.Events}",
                             "MultiColumnItemsSource": "{Item.Events}",
                             "MultiColumnHeaderTemplate": {
                                 "BlockType": "stack",
+                                "Orientation": "Vertical",
                                 "HorizontalAlignment": "Center",
                                 "VerticalAlignment": "Center",
                                 "Items": [
                                     {
                                         "BlockType": "text",
-                                        "Source": "{Item.Track.Name}"
+                                        "Source": "R{Item.Position}",
+                                        "HorizontalAlignment": "Center",
+                                        "PaddingTop": 5,
+                                        "Foreground": "{BackgroundDefault}"
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.Track.Name}",
+                                        "PaddingTop": 5,
+                                        "Foreground": "{BackgroundDefault}"
                                     }
                                 ]
                             },
@@ -131,7 +213,6 @@
                                 "HorizontalAlignment": "Center",
                                 "Background": "{BackgroundDefault}",
                                 "Width": 80,
-                                "Height": "*",
                                 "Triggers": [
                                     {
                                         "Condition": "{Item.Index, Converter=NumberIsOdd}",
@@ -139,6 +220,13 @@
                                         "Value": "{BackgroundDarker}"
                                     }
                                 ]
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "fader_cell"
                             }
                         }
                     ]
