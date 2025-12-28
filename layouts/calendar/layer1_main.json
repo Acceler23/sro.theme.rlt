@@ -67,7 +67,8 @@
                                         "HorizontalAlignment": "Right",
                                         "Source": "{Item.WinnerString}",
                                         "VerticalAlignment": "Center",
-                                        "FontSize": 16
+                                        "FontSize": 16,
+                                        "PaddingTop": 5
                                     }
                                 ]
                             }
@@ -386,4 +387,5 @@
             }
         ]
     }
+
 }
