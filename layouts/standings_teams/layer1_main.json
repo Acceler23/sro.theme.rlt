@@ -23,12 +23,14 @@
                                 "BlockType": "text",
                                 "Source": ">",
                                 "FontSize": 24,
+                                "PaddingTop": 5,
                                 "Foreground": "{HeadMain}"
                             },
                             {
                                 "BlockType": "text",
                                 "HorizontalAlignment": "Right",
                                 "Source": " {Season.Name}  Standings  |   {Season.LeagueInfo.LeagueName} Teams",
+                                "PaddingTop": 5,
                                 "FontSize": 24
                             }
                         ]
@@ -146,6 +148,7 @@
                                         "BlockType": "text",
                                         "Source": "{Item.Points}",
                                         "HorizontalAlignment": "Center",
+                                        "PaddingTop": 5,
                                         "VerticalAlignment": "Center"
                                     },
                                     {
@@ -155,6 +158,13 @@
                                         "FontSize": 3
                                     }
                                 ]
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "fader_cell"
                             }
                         }
                     ]

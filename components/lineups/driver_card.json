@@ -233,15 +233,15 @@
                     "Items": [
                         {
                             "BlockType": "text",
-                            "PaddingTop": 2,
+                            "PaddingTop": 5,
+                            "MarginTop": -2,
                             "Source": "{Item.Driver.Name}",
                             "FontName": "{FontNameWide}",
                             "FontSize": 18
                         },
                         {
                             "BlockType": "image",
-                            "PaddingTop": 2,
-                            "Height": "25",
+                            "Height": 25,
                             "ImageOptions": {
                                 "Path": "{Item.Driver.Nationality.LogotypePath}",
                                 "VerticalAlignment": "Center"
@@ -249,7 +249,7 @@
                         },
                         {
                             "BlockType": "text",
-                            "PaddingTop": 2,
+                            "PaddingTop": 5,
                             "Source": "Racing",
                             "FontName": "{FontNameDefault}",
                             "FontSize": 14,
@@ -257,7 +257,8 @@
                         },
                         {
                             "BlockType": "text",
-                            "PaddingTop": 2,
+                            "PaddingTop": 5,
+                            "MarginTop": -2,
                             "Source": "FULL SEASON",
                             "FontName": "{FontNameDefault}",
                             "FontSize": 14,

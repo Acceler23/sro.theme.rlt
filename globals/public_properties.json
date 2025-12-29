@@ -22,13 +22,6 @@
             "Category": "Pages"
         },
         {
-            "Name": "ShowLeaugeLogo",
-            "PublicName": "Show League Logo",
-            "Type": "Bool",
-            "DefaultValue": true,
-            "Category": "League Info"
-        },
-        {
             "Name": "TeamSameNumber",
             "PublicName": "Teammates have the same number",
             "Type": "Bool",
@@ -56,20 +49,6 @@
             "Category": "Driver"
         },
         {
-            "Name": "ShowLiveryButCars",
-            "PublicName": "Show Liveries instead of car name",
-            "Type": "Bool",
-            "DefaultValue": false,
-            "Category": "Driver"
-        },
-        {
-            "Name": "ShowLiveryTeam",
-            "PublicName": "Show Liveries with Team",
-            "Type": "Bool",
-            "DefaultValue": false,
-            "Category": "Driver"
-        },
-        {
             "Name": "ShowLapsQualy",
             "PublicName": "Show Laps in Qualy",
             "Type": "Bool",
@@ -91,13 +70,6 @@
             "Category": "Session"
         },
         {
-            "Name": "ShowCarsWithTeams",
-            "PublicName": "Show Cars on Team Lineups",
-            "Type": "Bool",
-            "DefaultValue": false,
-            "Category": "Team"
-        },
-        {
             "Name": "CustomImage",
             "PublicName": "Custom Event Image",
             "Description": "Use custom images for calendar, add them on %app root%/user/themes/sro.racing.theme/images/track_images/CircuitName.png",
@@ -114,13 +86,6 @@
                 "Team"
             ],
             "DefaultValue": "Driver",
-            "Category": "Line-Ups"
-        },
-        {
-            "Name": "TeamBackground",
-            "PublicName": "Background for team logos",
-            "Type": "Bool",
-            "DefaultValue": true,
             "Category": "Line-Ups"
         }
     ],

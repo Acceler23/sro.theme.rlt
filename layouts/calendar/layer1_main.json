@@ -67,6 +67,7 @@
                                         "HorizontalAlignment": "Right",
                                         "Source": "{Item.WinnerString}",
                                         "VerticalAlignment": "Center",
+                                        "PaddingTop":   5,
                                         "FontSize": 16
                                     }
                                 ]
@@ -80,7 +81,7 @@
                 "BlockType": "stack",
                 "Orientation": "Vertical",
                 "BackgroundImage": "bg_dark",
-                "Padding": "10,10",
+                "Padding": "10",
                 "MarginTop": 10,
                 "BackgroundImageOpacity": 70,
                 "Width": 1440,
@@ -88,19 +89,20 @@
                     //Head
                     {
                         "BlockType": "stack",
+                        "Height": 30,
                         "Items": [
                             {
                                 "BlockType": "text",
                                 "Source": ">",
                                 "FontSize": 24,
-                                "PaddingTop": 5,
+                                "PaddingTop": 15,
                                 "Foreground": "{HeadMain}"
                             },
                             {
                                 "BlockType": "text",
                                 "Source": " EVENTS",
                                 "FontSize": 24,
-                                "PaddingTop": 5,
+                                "PaddingTop": 15,
                                 "Foreground": "#FFFFFF"
                             }
                         ]

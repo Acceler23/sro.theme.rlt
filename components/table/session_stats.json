@@ -12,7 +12,7 @@
     "Items": [
         {
             "BlockType": "text",
-            "Style": "mainTable_Style",
+            "Style": "mainTable_Style_noWrap",
             "Source": "<{data.Value}>"
         },
         //stint
@@ -33,7 +33,7 @@
                         },
                         {
                             "BlockType": "text",
-                            "Style": "mainTable_Style",
+                            "Style": "mainTable_Style_noWrap",
                             "Padding": "5,16,10,16",
                             "Source": "{Item.Laps}",
                             "Triggers": [

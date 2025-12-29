@@ -1,6 +1,7 @@
 {
     "ComponentName": "team_table_top",
     "BlockType": "dock",
+    "Padding": "10",
     "MaxWidth": 453,
     "HorizontalAlignment": "Center",
     "Orientation": "Vertical",

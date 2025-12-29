@@ -1,6 +1,7 @@
 {
     "ComponentName": "Lap_qualy",
     "BlockType": "dock",
+    "RenderIf": "{ShowLapsQualy}",
     "Background": "{BackgroundDefault}",
     "MaxWidth": 215,
     "Height": 20,

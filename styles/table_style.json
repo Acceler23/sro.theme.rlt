@@ -20,5 +20,12 @@
             "HorizontalAlignment": "Left",
             "Wrap": true
         }
+    },
+    {
+        "StyleName": "mainTable_Style_noWrap",
+        "Padding": "10,16,20,16",
+        "VerticalAlignment": "Center",
+        "FontName": "{FontNameDefault}",
+        "FontSize": 14
     }
 ]

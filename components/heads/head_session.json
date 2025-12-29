@@ -21,7 +21,7 @@
                     "BlockType": "text",
                     "HorizontalAlignment": "Right",
                     "PaddingTop": 5,
-                    "Source": " {Session.SessionTypeString}  |  {Session.Track.Name}  |  {Season.Name}",
+                    "Source": " {Session.SessionType}  |  {Session.Track.Name}  |  {Season.Name}",
                     "FontSize": 24
                 }
             ]

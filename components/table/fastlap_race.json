@@ -1,6 +1,7 @@
 {
     "ComponentName": "fastlap_race",
     "BlockType": "dock",
+    "RenderIf": "{ShowPBRace}",
     "Background": "{BackgroundDefault}",
     "MaxWidth": 75,
     "Height": 20,
