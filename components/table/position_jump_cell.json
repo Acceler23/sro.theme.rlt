@@ -1,0 +1,40 @@
+{
+    "ComponentName": "position_jump",
+    "BlockType": "dock",
+    "Background": "{BackgroundDefault}",
+    //"Height": 15,
+    "HorizontalAlignment": "Center",
+    "PaddingRight": 10,
+    "StretchWidth": true,
+    "MaxHeight": 72,
+    "Triggers": [
+        {
+            "Trigger": "DarkerBackground"
+        }
+    ],
+    "Items": [
+        {
+            "BlockType": "text",
+            "Source": "",
+            "Style": "mainTable_Style",
+            "HorizontalAlignment": "Center",
+            "Triggers": [
+                {
+                    "Condition": "{Item.PositionJump, Converter=NumberEquals, Parameter=0}",
+                    "Property": "Source",
+                    "Value": "="
+                },
+                {
+                    "Condition": "{Item.PositionJump, Converter=NumberGreater, Parameter=0}",
+                    "Property": "Source",
+                    "Value": "+{Item.PositionJump, Converter=NumberAbs}"
+                },
+                {
+                    "Condition": "{Item.PositionJump, Converter=NumberLess, Parameter=0}",
+                    "Property": "Source",
+                    "Value": "-{Item.PositionJump, Converter=NumberAbs}"
+                }
+            ]
+        }
+    ]
+}

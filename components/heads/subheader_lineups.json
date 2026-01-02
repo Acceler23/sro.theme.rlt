@@ -1,0 +1,36 @@
+{
+    "ComponentName": "subheader_linups",
+    "BlockType": "stack",
+    "Orientation": "Horizontal",
+    "HorizontalAlignment": "Left",
+    "MarginBottom": 10,
+    "Items": [
+        {
+            "BlockType": "stack",
+            "Items": [
+                {
+                    "BlockType": "text",
+                    "Source": ">",
+                    "FontSize": 24,
+                    "Foreground": "{red}",
+                    "PaddingTop": 15
+                },
+                {
+                    "BlockType": "text",
+                    "HorizontalAlignment": "Right",
+                    "PaddingLeft": 5,
+                    "PaddingTop": 15,
+                    "Source": "<renderData>",
+                    "FontSize": 24,
+                    "Triggers": [
+                        {
+                            "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                            "Property": "Source",
+                            "Value": "{Season.Name}  |  LINEUPS"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

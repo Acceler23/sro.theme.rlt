@@ -2,9 +2,7 @@
     "BlockRoot": {
         "Name": "mainStack",
         "BlockType": "stack",
-        "Margin": "{MarginRoot}",
         "Orientation": "Vertical",
-        "Width": 1420,
         "Items": [
             {
                 "BlockType": "component",
@@ -13,12 +11,14 @@
             {
                 "BlockType": "stack",
                 "Orientation": "Vertical",
+                "Width": 1420,
+                "Margin": "{MarginRoot}",
                 "Items": [
                     //Head
                     {
                         "BlockType": "text",
                         "PaddingTop": 5,
-                        "Source": "{Season.LeagueInfo.LeagueName}",
+                        "Source": "{Season.Name, Converter=StringToUpperString} CALENDAR",
                         "FontSize": 40,
                         "MarginBottom": 20
                     },
@@ -31,7 +31,7 @@
                                 "Source": ">",
                                 "FontSize": 24,
                                 "PaddingTop": 5,
-                                "Foreground": "{HeadMain}"
+                                "Foreground": "{red}"
                             },
                             {
                                 "BlockType": "text",
@@ -67,7 +67,7 @@
                                         "HorizontalAlignment": "Right",
                                         "Source": "{Item.WinnerString}",
                                         "VerticalAlignment": "Center",
-                                        "PaddingTop":   5,
+                                        "PaddingTop": 5,
                                         "FontSize": 16
                                     }
                                 ]
@@ -81,10 +81,19 @@
                 "BlockType": "stack",
                 "Orientation": "Vertical",
                 "BackgroundImage": "bg_dark",
+                "Margin": "{MarginRoot}",
+                "RenderIf": true,
                 "Padding": "10",
-                "MarginTop": 10,
                 "BackgroundImageOpacity": 70,
-                "Width": 1440,
+                "Width": 1400,
+                "Triggers": [
+                    {
+
+                        "Condition": "{Season.SeasonCurrentNumberEvent, Converter=NumberEquals, Parameter={Season.SeasonOverallNumberEvents}}",
+                        "Property": "RenderIf",
+                        "Value": false
+                    }
+                ],
                 "Items": [
                     //Head
                     {
@@ -96,14 +105,14 @@
                                 "Source": ">",
                                 "FontSize": 24,
                                 "PaddingTop": 15,
-                                "Foreground": "{HeadMain}"
+                                "Foreground": "{red}"
                             },
                             {
                                 "BlockType": "text",
                                 "Source": " EVENTS",
                                 "FontSize": 24,
                                 "PaddingTop": 15,
-                                "Foreground": "#FFFFFF"
+                                "Foreground": "{white}"
                             }
                         ]
                     },

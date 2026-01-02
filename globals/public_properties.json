@@ -70,23 +70,18 @@
             "Category": "Session"
         },
         {
-            "Name": "CustomImage",
-            "PublicName": "Custom Event Image",
-            "Description": "Use custom images for calendar, add them on %app root%/user/themes/sro.racing.theme/images/track_images/CircuitName.png",
+            "Name": "ShowPodium",
+            "PublicName": "Show Podium in Results",
             "Type": "Bool",
-            "DefaultValue": true,
-            "Category": "Calendar"
+            "DefaultValue": false,
+            "Category": "Session"
         },
         {
-            "Name": "LineupImage",
-            "PublicName": "Image on Line-ups",
-            "Type": "Enum",
-            "EnumValues": [
-                "Driver",
-                "Team"
-            ],
-            "DefaultValue": "Driver",
-            "Category": "Line-Ups"
+            "Name": "ShowTop3Standings",
+            "PublicName": "Show Top 3 Drivers Standings",
+            "Type": "Bool",
+            "DefaultValue": true,
+            "Category": "Standings"
         }
     ],
     "Categories": [
@@ -94,22 +89,13 @@
             "Name": "Pages"
         },
         {
-            "Name": "League Info"
-        },
-        {
             "Name": "Driver"
-        },
-        {
-            "Name": "Team"
         },
         {
             "Name": "Session"
         },
         {
-            "Name": "Calendar"
-        },
-        {
-            "Name": "Line-Ups"
+            "Name": "Standings"
         }
     ]
 }

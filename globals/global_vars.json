@@ -4,19 +4,25 @@
     "FontNameBold": "UniviaPro-Bold",
     "FontNameBlack": "UniviaPro-Black",
     "FontSizeDefault": 14,
-    "ForegroundDefault": "#000000",
-    "BackgroundDefault": "#FFFFFF",
+    "ForegroundDefault": "{black}",
+    "BackgroundDefault": "{white}",
 
     //margins
-    "MarginRoot": "80, 0, 80, 40",
+    "MarginRoot": "80, 40, 80, 40",
     "MarginTable": "0, 0",
     "PaddingDefault": "10,16,10,16",
 
-    "HeadMain": "#d91d10",
-    "HeadSecond": "#3e3f40",
-    "BackgroundDarker": "#f7f8f9",
+    "red": "#d91d10",
+    "black": "#000000",
+    "grey": "#808080",
+    "darkGrey": "#3e3f40",
+    "lightdarkGrey": "#b3b3b3",
+    "white": "#ffffff",
+    "darkWhite": "#f7f8f9",
 
     "TableHeight": 20,
 
-    "CustomTrackImage": "track_images/{Item.Track.CircuitName}"
+    "CustomTrackImage": "track_images/{Item.Track.CircuitName}",
+    "TrackLayout": "track_layouts/{Item.Track.CircuitName}",
+    "TrackPaddock": "track_map/{Item.Track.CircuitName}"
 }

@@ -1,0 +1,29 @@
+{
+    "ComponentName": "penalty_cell",
+    "BlockType": "dock",
+    "Background": "{BackgroundDefault}",
+    //"Height": 15,
+    "HorizontalAlignment": "Center",
+    "StretchWidth": true,
+    "MaxHeight": 72,
+    "Triggers": [
+        {
+            "Trigger": "DarkerBackground"
+        }
+    ],
+    "Items": [
+        {
+            "BlockType": "text",
+            "Source": "<penalData>",
+            "Style": "mainTable_Style",
+            "HorizontalAlignment": "Center",
+            "Triggers": [
+                {
+                    "Condition": "<{penalData, Converter=StringEquals, Parameter=Item.PenaltyPositions}>",
+                    "Property": "Source",
+                    "Value": "{Item.PenaltyPositions}s"
+                }
+            ]
+        }
+    ]
+}

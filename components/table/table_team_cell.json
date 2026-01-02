@@ -4,7 +4,8 @@
     "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
     "Background": "{BackgroundDefault}",
     "MaxWidth": 230,
-    "Height": 20,
+    "StretchWidth": true,
+    //"Height": 15,
     "MaxHeight": 72,
     "Triggers": [
         {

@@ -1,0 +1,369 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Orientation": "Horizontal",
+        "Items": [
+            {
+                "BlockType": "itemstack",
+                "ItemStackOptions": {
+                    "ItemSource": "{Events.Events}",
+                    "TakeItemIndex": "{Season.SeasonCurrentNumberEvent}",
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Items": [
+                            {
+                                "BlockType": "canvas",
+                                "Height": 400,
+                                "Width": 1600,
+                                "Items": [
+                                    {
+                                        "BlockType": "dock",
+                                        "Height": 590,
+                                        "Width": 1600,
+                                        "Items": [
+                                            {
+                                                "BlockType": "image",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "Source": "{Item.Track.Nation.LogotypePath}",
+                                                "Width": 1600
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "Height": 400,
+                                        "Width": 1600,
+                                        "Items": [
+                                            {
+                                                "BlockType": "image",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "Source": "{CustomTrackImage}",
+                                                "Width": 1600
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "BackgroundImage": "bg_dark",
+                                        "Spacing": -10,
+                                        "Width": 1400,
+                                        "BackgroundImageOpacity": 70,
+                                        "PositionX": 100,
+                                        "PositionY": 100,
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.Description, Converter=StringToUpperString}",
+                                                "FontSize": 50,
+                                                "Padding": "20,30,20,10",
+                                                "Foreground": "{white}",
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{Item.Description, Converter=EmptyObjectToTrue}",
+                                                        "Property": "Source",
+                                                        "Value": "{Item.Track.CircuitFullName, Converter=StringToUpperString}"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "stack",
+                                                "Orientation": "Horizontal",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "{Item.Track.Nation.Name, Converter=StringToUpperString}",
+                                                        "VerticalAlignment": "Center",
+                                                        "FontSize": 34,
+                                                        "Padding": "20,10,0,10",
+                                                        "Foreground": "{white}"
+                                                    },
+                                                    {
+                                                        "BlockType": "image",
+                                                        "Source": "{Item.Track.Nation.LogotypePath}",
+                                                        "VerticalAlignment": "Center",
+                                                        "Padding": "10,0,0,10",
+                                                        "Height": 40
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "ROUND {Item.Position}  |  {Item.Date, Converter=DateCustomFormat, Parameter=dd MMMM yyyy}",
+                                                "FontSize": 16,
+                                                "Padding": "20,30,20,10",
+                                                "Foreground": "{white}",
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{Item.IsChampionshipStatus, Converter=BoolReverse}",
+                                                        "Property": "Source",
+                                                        "Value": "TEST DAY  |  {Item.Date, Converter=DateCustomFormat, Parameter=dd MMMM yyyy}"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "stack",
+                                        "PositionX": 100,
+                                        "PositionY": 330,
+                                        "Orientation": "Horizontal",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.Track.CircuitFullName, Converter=TruncateString, Parameter=40}",
+                                                "PaddingTop": 5,
+                                                "Padding": "20",
+                                                "HorizontalAlignment": "Left",
+                                                "FontSize": 14,
+                                                "Foreground": "{BackgroundDefault}",
+                                                "Background": "{darkGrey}",
+                                                "Orientation": "Horizontal"
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "> {Item.Track.Description}",
+                                                "HorizontalAlignment": "Left",
+                                                "Padding": "20",
+                                                "PaddingTop": 5,
+                                                "FontSize": 14,
+                                                "Foreground": "{BackgroundDefault}",
+                                                "Background": "{red}",
+                                                "Orientation": "Horizontal"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "stack",
+                                "Width": 1400,
+                                "Margin": "100, 40, 100, 0",
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    {
+                                        "BlockType": "component",
+                                        "Component": "subheader_tables",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "renderData": "TRACK INFORMATION"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "stack",
+                                "Width": 1400,
+                                "Margin": "100, 20, 100, 40",
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "HorizontalAlignment": "Left",
+                                        "Height": 500,
+                                        "Spacing": -20,
+                                        "Items": [
+                                            {
+                                                "BlockType": "shape",
+                                                "Width": 284,
+                                                "Height": 3,
+                                                "ShapeOptions": {
+                                                    "Fill": "{grey}",
+                                                    "ShapeType": "rectangle"
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "ADDRESS",
+                                                "MarginTop": 23,
+                                                "MarginLeft": -15,
+                                                "Padding": "15",
+                                                "FontName": "{FontNameWide}",
+                                                "FontSize": 18
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.Track.LocationName, Converter=StringToUpperString}, {Item.Track.Nation.Name, Converter=StringToUpperString}",
+                                                "MarginLeft": -15,
+                                                "Width": 270,
+                                                "VerticalAlignment": "Top",
+                                                "Padding": "15",
+                                                "FontSize": 16,
+                                                "TextOptions": {
+                                                    "Wrap": true,
+                                                    "VerticalAlignment": "Top"
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "shape",
+                                                "MarginTop": 35,
+                                                "Width": 284,
+                                                "Height": 3,
+                                                "ShapeOptions": {
+                                                    "Fill": "{grey}",
+                                                    "ShapeType": "rectangle"
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "CIRCUIT LENGTH",
+                                                "MarginTop": 23,
+                                                "MarginLeft": -15,
+                                                "Padding": "15",
+                                                "FontName": "{FontNameWide}",
+                                                "FontSize": 18
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.Track.Length, Converter=NumberGroupWithSeparator, Parameter=,} km",
+                                                "MarginLeft": -15,
+                                                "Width": 270,
+                                                "VerticalAlignment": "Top",
+                                                "Padding": "15",
+                                                "FontSize": 16,
+                                                "TextOptions": {
+                                                    "Wrap": true,
+                                                    "VerticalAlignment": "Top"
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "shape",
+                                                "MarginTop": 35,
+                                                "Width": 284,
+                                                "Height": 3,
+                                                "ShapeOptions": {
+                                                    "Fill": "{grey}",
+                                                    "ShapeType": "rectangle"
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "NUMBER OF TURNS",
+                                                "MarginTop": 23,
+                                                "MarginLeft": -15,
+                                                "Padding": "15",
+                                                "FontName": "{FontNameWide}",
+                                                "FontSize": 18
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.Track.NumberTurns}",
+                                                "MarginLeft": -15,
+                                                "Width": 270,
+                                                "VerticalAlignment": "Top",
+                                                "Padding": "15",
+                                                "FontSize": 16,
+                                                "TextOptions": {
+                                                    "Wrap": true,
+                                                    "VerticalAlignment": "Top"
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "shape",
+                                                "MarginTop": 35,
+                                                "Width": 284,
+                                                "Height": 3,
+                                                "ShapeOptions": {
+                                                    "Fill": "{grey}",
+                                                    "ShapeType": "rectangle"
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "LAP RECORD",
+                                                "MarginTop": 23,
+                                                "MarginLeft": -15,
+                                                "Padding": "15",
+                                                "FontName": "{FontNameWide}",
+                                                "FontSize": 18
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.Track.RaceLapRecordTime}",
+                                                "MarginLeft": -15,
+                                                "Width": 270,
+                                                "VerticalAlignment": "Top",
+                                                "Padding": "15",
+                                                "FontSize": 16,
+                                                "TextOptions": {
+                                                    "Wrap": true,
+                                                    "VerticalAlignment": "Top"
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.Track.RaceLapRecordDriverName}",
+                                                "MarginLeft": -15,
+                                                "Width": 270,
+                                                "MarginTop": -25,
+                                                "VerticalAlignment": "Top",
+                                                "Padding": "15",
+                                                "FontSize": 16,
+                                                "TextOptions": {
+                                                    "Wrap": true,
+                                                    "VerticalAlignment": "Top"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "Width": 1081,
+                                        "Height": 797,
+                                        "BackgroundImage": "bg_dark",
+                                        "BackgroundImageOpacity": 70,
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{TrackPaddock, Converter=EmptyObjectToFalse}",
+                                                "Property": "BackgroundImageOpacity",
+                                                "Value": 1
+                                            }
+                                        ],
+                                        "Items": [
+                                            {
+                                                "BlockType": "image",
+                                                "VerticalAlignment": "Top",
+                                                "HorizontalAlignment": "Right",
+                                                "Width": 1050,
+                                                "Source": "{TrackPaddock}",
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{TrackPaddock, Converter=EmptyObjectToTrue}",
+                                                        "Setters": [
+                                                            {
+                                                                "Property": "Width",
+                                                                "Value": 900
+                                                            },
+                                                            {
+                                                                "Property": "Source",
+                                                                "Value": "{TrackLayout}"
+                                                            },
+                                                            {
+                                                                "Property": "VerticalAlignment",
+                                                                "Value": "Center"
+                                                            },
+                                                            {
+                                                                "Property": "HorizontalAlignment",
+                                                                "Value": "Center"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

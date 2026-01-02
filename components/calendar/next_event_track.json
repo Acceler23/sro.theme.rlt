@@ -50,7 +50,6 @@
                     "Items": [
                         {
                             "BlockType": "image",
-                            "RenderIf": "{CustomImage}",
                             "Source": "{CustomTrackImage}",
                             "VerticalAlignment": "Center",
                             "HorizontalAlignment": "Center",
@@ -78,7 +77,7 @@
                             "BlockType": "stack",
                             "Orientation": "Vertical",
                             "Padding": "10,15",
-                            "Background": "{HeadMain}",
+                            "Background": "{red}",
                             "Height": 100,
                             "MaxWidth": 132,
                             "Items": [
@@ -112,13 +111,13 @@
                 },
                 {
                     "BlockType": "image",
-                    "Source": "track_layouts/{Item.Track.CircuitName}.png",
+                    "Source": "{TrackLayout}",
                     "Padding": "10",
                     "Height": 80,
                     "HorizontalAlignment": "Right",
                     "VerticalAlignment": "Center",
                     "Colorize": {
-                        "Color": "#ffffff"
+                        "Color": "{white}"
                     }
                 }
             ]
@@ -156,7 +155,7 @@
                             "HorizontalAlignment": "Left",
                             "PaddingTop": 5,
                             "FontSize": 14,
-                            "Foreground": "#B3B3B3"
+                            "Foreground": "{lightdarkGrey}"
                         },
                         {
                             "BlockType": "image",
@@ -177,7 +176,7 @@
                     "HorizontalAlignment": "Left",
                     "PaddingTop": 5,
                     "FontSize": 14,
-                    "Foreground": "#B3B3B3"
+                    "Foreground": "{lightdarkGrey}"
                 },
                 {
                     "BlockType": "text",
@@ -186,7 +185,7 @@
                     "HorizontalAlignment": "Left",
                     "PaddingTop": 5,
                     "FontSize": 14,
-                    "Foreground": "#B3B3B3"
+                    "Foreground": "{lightdarkGrey}"
                 }
             ]
         },
@@ -200,7 +199,7 @@
             "Height": 61,
             "Width": 335,
             "Foreground": "{BackgroundDefault}",
-            "Background": "#3e3f40",
+            "Background": "{darkGrey}",
             "Orientation": "Horizontal",
             "PaddingLeft": 40
         }

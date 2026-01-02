@@ -2,7 +2,6 @@
     "BlockRoot": {
         "Name": "mainStack",
         "BlockType": "stack",
-        "Margin": "{MarginRoot}",
         "Orientation": "Vertical",
         "Items": [
             {
@@ -11,47 +10,23 @@
             },
             {
                 "BlockType": "stack",
-                "Orientation": "Horizontal",
-                "Padding": "{PaddingDefault}",
-                "HorizontalAlignment": "Left",
-                "MarginBottom": 10,
+                "Orientation": "Vertical",
+                "Margin": "{MarginRoot}",
                 "Items": [
                     {
-                        "BlockType": "stack",
-                        "Items": [
-                            {
-                                "BlockType": "text",
-                                "Source": ">",
-                                "FontSize": 24,
-                                "Foreground": "{HeadMain}",
-                                "PaddingTop": 5
-                            },
-                            {
-                                "BlockType": "text",
-                                "HorizontalAlignment": "Right",
-                                "PaddingTop": 5,
-                                "Source": " {Season.Name}  |  Teams",
-                                "FontSize": 24,
-                                "Triggers": [
-                                    {
-                                        "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
-                                        "Property": "Source",
-                                        "Value": " {Season.Name}  |  Lineup"
-                                    }
-                                ]
+                        "BlockType": "component",
+                        "Component": "subheader_linups",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "renderData": "{Season.Name, Converter=StringToUpperString}  |  TEAMS"
                             }
-                        ]
-                    }
-                ]
-            },
-            {
-                "BlockType": "stack",
-                "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
-                "Padding": "0,0,0,20",
-                "Orientation": "Horizontal",
-                "Items": [
+                        }
+                    },
                     {
+                        "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
                         "BlockType": "itemstack",
+                        "Width": "*",
+                        "Spacing": 20,
                         "Orientation": "Vertical",
                         "Triggers": [
                             {
@@ -62,100 +37,88 @@
                             "ItemSource": "{Lineups.Teams}",
                             "ItemTemplate": {
                                 "BlockType": "stack",
-                                "Orientation": "Horizontal",
+                                "Width": "*",
+                                "HorizontalAlignment": "Center",
                                 "VerticalAlignment": "Center",
-                                "PaddingBottom": 20,
+                                "Orientation": "Vertical",
+                                "Background": "#80ffffff",
                                 "Items": [
-                                    //team
                                     {
                                         "BlockType": "stack",
-                                        "HorizontalAlignment": "Center",
-                                        "VerticalAlignment": "Center",
                                         "Orientation": "Vertical",
-                                        "Background": "{BackgroundDarker}",
-                                        "Padding": "20",
                                         "Items": [
                                             {
-                                                "BlockType": "stack",
-                                                "Orientation": "Vertical",
-                                                "Items": [
-                                                    {
-                                                        "BlockType": "component",
-                                                        "Component": "ln_driver_team"
-                                                    }
-                                                ]
+                                                "BlockType": "component",
+                                                "Component": "ln_driver_team"
                                             }
                                         ]
                                     }
                                 ]
-                            }
-                        }
-                    }
-                ]
-            },
-            {
-                "BlockType": "stack",
-                "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
-                "Orientation": "Horizontal",
-                "Padding": "0,0,0,20",
-                "Items": [
-                    {
-                        "BlockType": "itemstack",
-                        "Orientation": "Vertical",
-                        "ItemStackOptions": {
-                            "CollectionPart": "1/4",
-                            "ItemSource": "{Lineups.Lineups}",
-                            "ItemTemplate": {
-                                "BlockType": "component",
-                                "Component": "driver_card",
-                                "PaddingBottom": 10
-                            }
-                        }
-                    },
-                    {
-                        "BlockType": "itemstack",
-                        "Orientation": "Vertical",
-                        "MarginLeft": 30,
-                        "ItemStackOptions": {
-                            "CollectionPart": "2/4",
-                            "ItemSource": "{Lineups.Lineups}",
-                            "ItemTemplate": {
-                                "BlockType": "component",
-                                "Component": "driver_card",
-                                "PaddingBottom": 10
-                            }
-                        }
-                    },
-                    {
-                        "BlockType": "itemstack",
-                        "Orientation": "Vertical",
-                        "MarginLeft": 30,
-                        "ItemStackOptions": {
-                            "CollectionPart": "3/4",
-                            "ItemSource": "{Lineups.Lineups}",
-                            "ItemTemplate": {
-                                "BlockType": "component",
-                                "Component": "driver_card",
-                                "PaddingBottom": 10
-                            }
-                        }
-                    },
-                    {
-                        "BlockType": "itemstack",
-                        "Orientation": "Vertical",
-                        "MarginLeft": 30,
-                        "ItemStackOptions": {
-                            "CollectionPart": "4/4",
-                            "ItemSource": "{Lineups.Lineups}",
-                            "ItemTemplate": {
-                                "BlockType": "component",
-                                "Component": "driver_card",
-                                "PaddingBottom": 10
-                            }
-                        }
-                    }
-                ]
 
+
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "stack",
+                        "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                        "Orientation": "Horizontal",
+                        "Padding": "0,0,0,20",
+                        "Items": [
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "ItemStackOptions": {
+                                    "CollectionPart": "1/4",
+                                    "ItemSource": "{Lineups.Lineups}",
+                                    "ItemTemplate": {
+                                        "BlockType": "component",
+                                        "Component": "driver_card"
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "MarginLeft": 30,
+                                "ItemStackOptions": {
+                                    "CollectionPart": "2/4",
+                                    "ItemSource": "{Lineups.Lineups}",
+                                    "ItemTemplate": {
+                                        "BlockType": "component",
+                                        "Component": "driver_card"
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "MarginLeft": 30,
+                                "ItemStackOptions": {
+                                    "CollectionPart": "3/4",
+                                    "ItemSource": "{Lineups.Lineups}",
+                                    "ItemTemplate": {
+                                        "BlockType": "component",
+                                        "Component": "driver_card"
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "MarginLeft": 30,
+                                "ItemStackOptions": {
+                                    "CollectionPart": "4/4",
+                                    "ItemSource": "{Lineups.Lineups}",
+                                    "ItemTemplate": {
+                                        "BlockType": "component",
+                                        "Component": "driver_card"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }

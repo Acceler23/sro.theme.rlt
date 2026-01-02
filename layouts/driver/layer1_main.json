@@ -3,199 +3,269 @@
         "Name": "mainStack",
         "BlockType": "stack",
         "Margin": "100",
-        "Orientation": "Horizontal",
+        "Orientation": "Vertical",
         "Items": [
             {
                 "BlockType": "stack",
-                "Orientation": "Vertical",
+                "Orientation": "Horizontal",
                 "Items": [
                     {
                         "BlockType": "stack",
-                        "Orientation": "Horizontal",
+                        "Orientation": "Vertical",
                         "Items": [
-                            {
-                                "BlockType": "text",
-                                "Source": "{DriverInfo.Driver.Name}",
-                                "PaddingTop": 8,
-                                "FontSize": 46,
-                                "FontName": "{FontNameWide}"
-                            },
-                            {
-                                "BlockType": "text",
-                                "Source": "  -  {Season.Name}",
-                                "PaddingTop": 8,
-                                "FontSize": 46,
-                                "Foreground": "#5a5a5a"
-                            }
-                        ]
-                    },
-                    //Team
-                    {
-                        "BlockType": "text",
-                        "Source": "{DriverInfo.Team.FullName}",
-                        "PaddingTop": 5,
-                        "FontSize": 46,
-                        "Foreground": "#5a5a5a"
-                    },
-                    //infos
-                    {
-                        "BlockType": "stack",
-                        "Orientation": "Horizontal",
-                        "Spacing": 10,
-                        "Padding": "17",
-                        "Items": [
-                            //Left side
                             {
                                 "BlockType": "stack",
-                                "Orientation": "Vertical",
-                                "MarginTop": 40,
-                                "HorizontalAlignment": "Left",
+                                "Orientation": "Horizontal",
                                 "Items": [
-                                    //Roles
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{DriverInfo.Driver.Name}",
+                                        "PaddingTop": 8,
+                                        "FontSize": 46,
+                                        "FontName": "{FontNameWide}"
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "  -  {Season.Name}",
+                                        "PaddingTop": 8,
+                                        "FontSize": 46,
+                                        "Foreground": "{darkGrey}"
+                                    }
+                                ]
+                            },
+                            //Team
+                            {
+                                "BlockType": "text",
+                                "Source": "{DriverInfo.Team.FullName}",
+                                "PaddingTop": 5,
+                                "FontSize": 30,
+                                "Foreground": "{darkGrey}"
+                            },
+                            //infos
+                            {
+                                "BlockType": "stack",
+                                "Orientation": "Horizontal",
+                                "Spacing": 10,
+                                "Padding": "17",
+                                "Items": [
+                                    //Left side
                                     {
                                         "BlockType": "stack",
                                         "Orientation": "Vertical",
-                                        "Width": 350,
-                                        "Height": 150,
+                                        "MarginTop": 40,
                                         "HorizontalAlignment": "Left",
                                         "Items": [
+                                            //Roles
                                             {
-                                                "BlockType": "shape",
-                                                "Width": 320,
-                                                "Height": 2,
-                                                "ShapeOptions": {
-                                                    "Fill": "#5a5a5a",
-                                                    "ShapeType": "rectangle"
-                                                }
+                                                "BlockType": "stack",
+                                                "Orientation": "Vertical",
+                                                "Width": 350,
+                                                "Height": 150,
+                                                "HorizontalAlignment": "Left",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "shape",
+                                                        "Width": 320,
+                                                        "Height": 2,
+                                                        "ShapeOptions": {
+                                                            "Fill": "{darkGrey}",
+                                                            "ShapeType": "rectangle"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "stack",
+                                                        "MarginTop": 15,
+                                                        "Orientation": "Vertical",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "PaddingTop": 5,
+                                                                "Source": "League Roles",
+                                                                "FontSize": 16,
+                                                                "FontName": "{FontNameWide}"
+                                                            },
+                                                            {
+                                                                "BlockType": "itemstack",
+                                                                "MarginTop": 10,
+                                                                "Orientation": "Vertical",
+                                                                "ItemStackOptions": {
+                                                                    "ItemSource": "{DriverInfo.Driver.LeagueRoles}",
+                                                                    "ItemTemplate": {
+                                                                        "BlockType": "text",
+                                                                        "Source": "{Item.Name}",
+                                                                        "FontSize": 16,
+                                                                        "PaddingTop": 5,
+                                                                        "MarginTop": 3,
+                                                                        "FontName": "{FontNameDefault}"
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "BlockType": "stack",
-                                                "MarginTop": 15,
                                                 "Orientation": "Vertical",
+                                                "Width": 350,
+                                                "Height": 150,
+                                                "HorizontalAlignment": "Left",
                                                 "Items": [
                                                     {
-                                                        "BlockType": "text",
-                                                        "PaddingTop": 5,
-                                                        "Source": "League Roles",
-                                                        "FontSize": 16,
-                                                        "FontName": "{FontNameWide}"
+                                                        "BlockType": "shape",
+                                                        "Width": 320,
+                                                        "Height": 2,
+                                                        "ShapeOptions": {
+                                                            "Fill": "{darkGrey}",
+                                                            "ShapeType": "rectangle"
+                                                        }
                                                     },
                                                     {
-                                                        "BlockType": "itemstack",
-                                                        "MarginTop": 10,
+                                                        "BlockType": "stack",
+                                                        "MarginTop": 15,
                                                         "Orientation": "Vertical",
-                                                        "ItemStackOptions": {
-                                                            "ItemSource": "{DriverInfo.Driver.LeagueRoles}",
-                                                            "ItemTemplate": {
+                                                        "Items": [
+                                                            {
                                                                 "BlockType": "text",
-                                                                "Source": "{Item.Name}",
+                                                                "PaddingTop": 5,
+                                                                "Source": "Car",
+                                                                "FontSize": 16,
+                                                                "FontName": "{FontNameWide}"
+                                                            },
+                                                            {
+                                                                "BlockType": "text",
+                                                                "VerticalAlignment": "Center",
+                                                                "Source": "{DriverInfo.Car.Name}",
                                                                 "FontSize": 16,
                                                                 "PaddingTop": 5,
-                                                                "MarginTop": 3,
-                                                                "FontName": "{FontNameDefault}"
+                                                                "MarginTop": 12
                                                             }
-                                                        }
+                                                        ]
                                                     }
                                                 ]
                                             }
                                         ]
                                     },
+                                    //Right Side
                                     {
                                         "BlockType": "stack",
                                         "Orientation": "Vertical",
-                                        "Width": 350,
-                                        "Height": 150,
-                                        "HorizontalAlignment": "Left",
-                                        "Items": [
-                                            {
-                                                "BlockType": "shape",
-                                                "Width": 320,
-                                                "Height": 2,
-                                                "ShapeOptions": {
-                                                    "Fill": "#5a5a5a",
-                                                    "ShapeType": "rectangle"
-                                                }
-                                            },
-                                            {
-                                                "BlockType": "stack",
-                                                "MarginTop": 15,
-                                                "Orientation": "Vertical",
-                                                "Items": [
-                                                    {
-                                                        "BlockType": "text",
-                                                        "PaddingTop": 5,
-                                                        "Source": "Car",
-                                                        "FontSize": 16,
-                                                        "FontName": "{FontNameWide}"
-                                                    },
-                                                    {
-                                                        "BlockType": "text",
-                                                        "VerticalAlignment": "Center",
-                                                        "Source": "{DriverInfo.Car.Name}",
-                                                        "FontSize": 16,
-                                                        "PaddingTop": 5,
-                                                        "MarginTop": 12
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            //Right Side
-                            {
-                                "BlockType": "stack",
-                                "Orientation": "Vertical",
-                                "MarginTop": 40,
-                                "HorizontalAlignment": "Right",
-                                "Items": [
-                                    //Nationality
-                                    {
-                                        "BlockType": "stack",
-                                        "Orientation": "Vertical",
-                                        "Width": 350,
-                                        "Height": 150,
+                                        "MarginTop": 40,
                                         "HorizontalAlignment": "Right",
                                         "Items": [
-                                            {
-                                                "BlockType": "shape",
-                                                "Width": 320,
-                                                "Height": 2,
-                                                "ShapeOptions": {
-                                                    "Fill": "#5a5a5a",
-                                                    "ShapeType": "rectangle"
-                                                }
-                                            },
+                                            //Nationality
                                             {
                                                 "BlockType": "stack",
-                                                "MarginTop": 15,
                                                 "Orientation": "Vertical",
+                                                "Width": 350,
+                                                "Height": 150,
+                                                "HorizontalAlignment": "Right",
                                                 "Items": [
                                                     {
-                                                        "BlockType": "text",
-                                                        "PaddingTop": 5,
-                                                        "Source": "Nationality",
-                                                        "FontSize": 16,
-                                                        "FontName": "{FontNameWide}"
+                                                        "BlockType": "shape",
+                                                        "Width": 320,
+                                                        "Height": 2,
+                                                        "ShapeOptions": {
+                                                            "Fill": "{darkGrey}",
+                                                            "ShapeType": "rectangle"
+                                                        }
                                                     },
                                                     {
                                                         "BlockType": "stack",
-                                                        "Orientation": "Horizontal",
-                                                        "MarginTop": 10,
+                                                        "MarginTop": 15,
+                                                        "Orientation": "Vertical",
                                                         "Items": [
                                                             {
-                                                                "BlockType": "image",
-                                                                "Height": 35,
-                                                                "VerticalAlignment": "Center",
-                                                                "ImageOptions": {
-                                                                    "Path": "{DriverInfo.Driver.Nationality.LogotypePath}",
-                                                                    "VerticalAlignment": "Center"
-                                                                }
+                                                                "BlockType": "text",
+                                                                "PaddingTop": 5,
+                                                                "Source": "Nationality",
+                                                                "FontSize": 16,
+                                                                "FontName": "{FontNameWide}"
+                                                            },
+                                                            {
+                                                                "BlockType": "stack",
+                                                                "Orientation": "Horizontal",
+                                                                "MarginTop": 10,
+                                                                "Items": [
+                                                                    {
+                                                                        "BlockType": "image",
+                                                                        "Height": 35,
+                                                                        "VerticalAlignment": "Center",
+                                                                        "ImageOptions": {
+                                                                            "Path": "{DriverInfo.Driver.Nationality.LogotypePath}",
+                                                                            "VerticalAlignment": "Center"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "BlockType": "text",
+                                                                        "VerticalAlignment": "Center",
+                                                                        "Source": "  {DriverInfo.Driver.Nationality.Name}",
+                                                                        "FontSize": 16,
+                                                                        "PaddingTop": 5,
+                                                                        "MarginTop": 3
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "stack",
+                                                "Orientation": "Vertical",
+                                                "Width": 350,
+                                                "Height": 150,
+                                                "HorizontalAlignment": "Right",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "shape",
+                                                        "Width": 320,
+                                                        "Height": 2,
+                                                        "ShapeOptions": {
+                                                            "Fill": "{darkGrey}",
+                                                            "ShapeType": "rectangle"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "stack",
+                                                        "MarginTop": 15,
+                                                        "Orientation": "Vertical",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "PaddingTop": 5,
+                                                                "Source": "Gamertags",
+                                                                "FontSize": 16,
+                                                                "FontName": "{FontNameWide}"
                                                             },
                                                             {
                                                                 "BlockType": "text",
                                                                 "VerticalAlignment": "Center",
-                                                                "Source": "  {DriverInfo.Driver.Nationality.Name}",
+                                                                "Source": "{DriverInfo.Driver.RealName}",
+                                                                "FontSize": 16,
+                                                                "PaddingTop": 5,
+                                                                "MarginTop": 12
+                                                            },
+                                                            {
+                                                                "BlockType": "text",
+                                                                "VerticalAlignment": "Center",
+                                                                "Source": "{DriverInfo.Driver.InGameName}",
+                                                                "FontSize": 16,
+                                                                "PaddingTop": 5,
+                                                                "MarginTop": 3
+                                                            },
+                                                            {
+                                                                "BlockType": "text",
+                                                                "VerticalAlignment": "Center",
+                                                                "Source": "{DriverInfo.Driver.DiscordLink}",
+                                                                "FontSize": 16,
+                                                                "PaddingTop": 5,
+                                                                "MarginTop": 3
+                                                            },
+                                                            {
+                                                                "BlockType": "text",
+                                                                "VerticalAlignment": "Center",
+                                                                "Source": "{DriverInfo.Driver.SteamName}",
                                                                 "FontSize": 16,
                                                                 "PaddingTop": 5,
                                                                 "MarginTop": 3
@@ -205,152 +275,342 @@
                                                 ]
                                             }
                                         ]
+                                    }
+                                ]
+                            },
+                            //stats
+                            {
+                                "BlockType": "stack",
+                                "Orientation": "Vertical",
+                                "Padding": "17",
+                                "Items": [
+                                    {
+                                        "BlockType": "shape",
+                                        "Width": 680,
+                                        "Height": 2,
+                                        "ShapeOptions": {
+                                            "Fill": "{darkGrey}",
+                                            "ShapeType": "rectangle"
+                                        }
                                     },
                                     {
-                                        "BlockType": "stack",
-                                        "Orientation": "Vertical",
-                                        "Width": 350,
-                                        "Height": 150,
-                                        "HorizontalAlignment": "Right",
-                                        "Items": [
-                                            {
-                                                "BlockType": "shape",
-                                                "Width": 320,
-                                                "Height": 2,
-                                                "ShapeOptions": {
-                                                    "Fill": "#5a5a5a",
-                                                    "ShapeType": "rectangle"
+                                        "BlockType": "text",
+                                        "MarginTop": 15,
+                                        "PaddingTop": 5,
+                                        "Source": "Badges",
+                                        "FontSize": 16,
+                                        "FontName": "{FontNameWide}"
+                                    },
+                                    {
+                                        "BlockType": "itemstack",
+                                        "MarginTop": 12,
+                                        "Orientation": "Horizontal",
+                                        "Spacing": 10,
+                                        "ItemStackOptions": {
+                                            "ItemSource": "{DriverInfo.Driver.BadgeImages}",
+                                            "ItemTemplate": {
+                                                "BlockType": "image",
+                                                "PaddingTop": 5,
+                                                "Height": 30,
+                                                "ImageOptions": {
+                                                    "Path": "{Item}"
                                                 }
-                                            },
-                                            {
-                                                "BlockType": "stack",
-                                                "MarginTop": 15,
-                                                "Orientation": "Vertical",
-                                                "Items": [
-                                                    {
-                                                        "BlockType": "text",
-                                                        "PaddingTop": 5,
-                                                        "Source": "Gamertags",
-                                                        "FontSize": 16,
-                                                        "FontName": "{FontNameWide}"
-                                                    },
-                                                    {
-                                                        "BlockType": "text",
-                                                        "VerticalAlignment": "Center",
-                                                        "Source": "{DriverInfo.Driver.RealName}",
-                                                        "FontSize": 16,
-                                                        "PaddingTop": 5,
-                                                        "MarginTop": 12
-                                                    },
-                                                    {
-                                                        "BlockType": "text",
-                                                        "VerticalAlignment": "Center",
-                                                        "Source": "{DriverInfo.Driver.InGameName}",
-                                                        "FontSize": 16,
-                                                        "PaddingTop": 5,
-                                                        "MarginTop": 3
-                                                    },
-                                                    {
-                                                        "BlockType": "text",
-                                                        "VerticalAlignment": "Center",
-                                                        "Source": "{DriverInfo.Driver.DiscordLink}",
-                                                        "FontSize": 16,
-                                                        "PaddingTop": 5,
-                                                        "MarginTop": 3
-                                                    },
-                                                    {
-                                                        "BlockType": "text",
-                                                        "VerticalAlignment": "Center",
-                                                        "Source": "{DriverInfo.Driver.SteamName}",
-                                                        "FontSize": 16,
-                                                        "PaddingTop": 5,
-                                                        "MarginTop": 3
-                                                    }
-                                                ]
                                             }
-                                        ]
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "VerticalAlignment": "Center",
+                                        "Source": "{DriverInfo.Driver.BadgeText}",
+                                        "FontSize": 16,
+                                        "PaddingTop": 5,
+                                        "MarginTop": 12
+                                    },
+
+                                    {
+                                        "BlockType": "text",
+                                        "VerticalAlignment": "Center",
+                                        "Source": "{DriverInfo.Driver.Description}",
+                                        "FontSize": 16,
+                                        "PaddingTop": 5,
+                                        "MarginTop": 12
                                     }
                                 ]
                             }
                         ]
                     },
-                    //stats
                     {
-                        "BlockType": "stack",
-                        "Orientation": "Vertical",
-                        "Padding": "17",
+                        "BlockType": "dock",
+                        "RenderIf": "{DriverInfo.Driver.LogotypePath, Converter=EmptyObjectToFalse}",
+                        "Width": 670,
+                        "Height": 670,
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Bottom",
+                        "BackgroundImage": "bg_dark",
+                        "BackgroundImageOpacity": 40,
                         "Items": [
                             {
-                                "BlockType": "shape",
-                                "Width": 680,
-                                "Height": 2,
-                                "ShapeOptions": {
-                                    "Fill": "#5a5a5a",
-                                    "ShapeType": "rectangle"
-                                }
-                            },
-                            {
-                                "BlockType": "text",
-                                "MarginTop": 15,
-                                "PaddingTop": 5,
-                                "Source": "Badges",
-                                "FontSize": 16,
-                                "FontName": "{FontNameWide}"
-                            },
-                            {
-                                "BlockType": "itemstack",
-                                "MarginTop": 12,
-                                "Orientation": "Horizontal",
-                                "Spacing": 10,
-                                "ItemStackOptions": {
-                                    "ItemSource": "{DriverInfo.Driver.BadgeImages}",
-                                    "ItemTemplate": {
-                                        "BlockType": "image",
-                                        "PaddingTop": 5,
-                                        "Height": 30,
-                                        "ImageOptions": {
-                                            "Path": "{Item}"
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                "BlockType": "text",
-                                "VerticalAlignment": "Center",
-                                "Source": "{DriverInfo.Driver.BadgeText}",
-                                "FontSize": 16,
-                                "PaddingTop": 5,
-                                "MarginTop": 12
-                            },
-
-                            {
-                                "BlockType": "text",
-                                "VerticalAlignment": "Center",
-                                "Source": "{DriverInfo.Driver.Description}",
-                                "FontSize": 16,
-                                "PaddingTop": 5,
-                                "MarginTop": 12
+                                "BlockType": "image",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Top",
+                                "PaddingTop": 40,
+                                "Height": 1200,
+                                "Source": "{DriverInfo.Driver.LogotypePath}"
                             }
                         ]
+                    }
+
+                ]
+            },
+            {
+                "BlockType": "stack",
+                "Orientation": "Horizontal",
+                "Width": "*",
+                "RenderIf": true,
+                "Triggers": [
+                    {
+                        "Condition": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+                        "Property": "RenderIf",
+                        "Value": false
+                    }
+                ],
+                "Items": [
+                    {
+                        "BlockType": "component",
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Left",
+                        "Component": "subheader_tables",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "renderData": "TEAM MATES"
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "text",
+                        "VerticalAlignment": "Top",
+                        "Width": "*",
+                        "Height": 3,
+                        "Source": ".",
+                        "Foreground": "{grey}",
+                        "Background": "{grey}",
+                        "Margin": "10,25,0,0"
                     }
                 ]
             },
             {
                 "BlockType": "dock",
-                "RenderIf": "{DriverInfo.Driver.LogotypePath, Converter=EmptyObjectToFalse}",
-                "Width": 670,
-                "Height": 670,
-                "HorizontalAlignment": "Right",
-                "VerticalAlignment": "Bottom",
-                "BackgroundImage": "bg_dark",
-                "BackgroundImageOpacity": 40,
+                "Orientation": "Horizontal",
+                "RenderIf": true,
+                "Triggers": [
+                    {
+                        "Condition": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+                        "Property": "RenderIf",
+                        "Value": false
+                    }
+                ],
                 "Items": [
                     {
-                        "BlockType": "image",
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Background": "#80ffffff",
                         "HorizontalAlignment": "Center",
-                        "VerticalAlignment": "Top",
-                        "Width": 670,
-                        "Source": "{DriverInfo.Driver.LogotypePath}"
+                        "Items": [
+                            {
+                                "BlockType": "itemstack",
+                                "Padding": "10",
+                                "Spacing": 20,
+                                "HorizontalAlignment": "Left",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{DriverInfo.TeammatesSeason}",
+                                    //"IndexStart": 0,
+                                    "Limit": 2,
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Horizontal",
+                                        "Spacing": 20,
+                                        "RenderIf": false,
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Item.Driver.Name, Converter=StringNotEquals, Parameter={DriverInfo.Driver.Name}}",
+                                                "ConditionAnd": "{Item.SeatPosition, Converter=NumberGreater, Parameter=0}",
+                                                "Property": "RenderIf",
+                                                "Value": true
+                                            }
+                                        ],
+                                        "Items": [
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "number_season",
+                                                "RenderIf": true,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{Item.Index, Converter=NumberGreater, Parameter=0}",
+                                                        "ConditionAnd": "{TeamSameNumber}",
+                                                        "Property": "RenderIf",
+                                                        "Value": false
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "driver_image_info"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+                                        "Property": "ItemStackOptions.IndexStart",
+                                        "Value": 0
+                                    }
+                                ],
+                                "Padding": "10",
+                                "HorizontalAlignment": "Left",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{DriverInfo.TeammatesSeason}",
+                                    "IndexStart": 2,
+                                    "Limit": 2,
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Horizontal",
+                                        "Spacing": 20,
+                                        "RenderIf": false,
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Item.Driver.Name, Converter=StringNotEquals, Parameter={DriverInfo.Driver.Name}}",
+                                                "ConditionAnd": "{Item.SeatPosition, Converter=NumberGreater, Parameter=2}",
+                                                "Property": "RenderIf",
+                                                "Value": true
+                                            }
+                                        ],
+                                        "Items": [
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "number_season",
+                                                "RenderIf": true,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{Item.Index, Converter=NumberGreater, Parameter=0}",
+                                                        "ConditionAnd": "{TeamSameNumber}",
+                                                        "Property": "RenderIf",
+                                                        "Value": false
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "driver_image_info"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+                                        "Property": "ItemStackOptions.IndexStart",
+                                        "Value": 0
+                                    }
+                                ],
+                                "Padding": "10",
+                                "HorizontalAlignment": "Left",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{DriverInfo.TeammatesSeason}",
+                                    "IndexStart": 4,
+                                    "Limit": 2,
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Horizontal",
+                                        "Spacing": 20,
+                                        "RenderIf": false,
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Item.Driver.Name, Converter=StringNotEquals, Parameter={DriverInfo.Driver.Name}}",
+                                                "ConditionAnd": "{Item.SeatPosition, Converter=NumberGreater, Parameter=4}",
+                                                "Property": "RenderIf",
+                                                "Value": true
+                                            }
+                                        ],
+                                        "Items": [
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "number_season",
+                                                "RenderIf": true,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{Item.Index, Converter=NumberGreater, Parameter=0}",
+                                                        "ConditionAnd": "{TeamSameNumber}",
+                                                        "Property": "RenderIf",
+                                                        "Value": false
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "driver_image_info"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+                                        "Property": "ItemStackOptions.IndexStart",
+                                        "Value": 0
+                                    }
+                                ],
+                                "Padding": "10",
+                                "HorizontalAlignment": "Left",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{DriverInfo.TeammatesSeason}",
+                                    "IndexStart": 6,
+                                    "Limit": 2,
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Horizontal",
+                                        "Spacing": 20,
+                                        "RenderIf": false,
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Item.Driver.Name, Converter=StringNotEquals, Parameter={DriverInfo.Driver.Name}}",
+                                                "ConditionAnd": "{Item.SeatPosition, Converter=NumberGreater, Parameter=6}",
+                                                "Property": "RenderIf",
+                                                "Value": true
+                                            }
+                                        ],
+                                        "Items": [
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "number_season",
+                                                "RenderIf": true,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{Item.Index, Converter=NumberGreater, Parameter=0}",
+                                                        "ConditionAnd": "{TeamSameNumber}",
+                                                        "Property": "RenderIf",
+                                                        "Value": false
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "driver_image_info"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
                     }
                 ]
             }

@@ -14,32 +14,13 @@
                 "Orientation": "Vertical",
                 "Items": [
                     {
-                        "BlockType": "stack",
-                        "Orientation": "Horizontal",
-                        "Padding": "{PaddingDefault}",
-                        "HorizontalAlignment": "Left",
-                        "MarginBottom": 10,
-                        "Items": [
-                            {
-                                "BlockType": "stack",
-                                "Items": [
-                                    {
-                                        "BlockType": "text",
-                                        "Source": ">",
-                                        "PaddingTop": 5,
-                                        "FontSize": 24,
-                                        "Foreground": "{HeadMain}"
-                                    },
-                                    {
-                                        "BlockType": "text",
-                                        "HorizontalAlignment": "Right",
-                                        "PaddingTop": 5,
-                                        "Source": " {Season.Name}  Statistics  |   {Season.LeagueInfo.LeagueName} Drivers",
-                                        "FontSize": 24
-                                    }
-                                ]
+                        "BlockType": "component",
+                        "Component": "subheader_tables",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "renderData": "{Season.Name, Converter=StringToUpperString}  STATISTICS  |   {Season.LeagueInfo.LeagueName, Converter=StringToUpperString} DRIVERS"
                             }
-                        ]
+                        }
                     },
                     {
                         "BlockType": "component",

@@ -1,3 +1,4 @@
 {
-    "RenderType": "DriverSessionStatistics"
+    "RenderType": "DriverSessionStatistics",
+    "RenderCaption": "Render Session Statistics"
 }

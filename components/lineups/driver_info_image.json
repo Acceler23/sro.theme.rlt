@@ -1,0 +1,192 @@
+{
+    "ComponentName": "driver_image_info",
+    "BlockType": "canvas",
+    "Width": 335,
+    "Items": [
+        {
+            "BlockType": "canvas",
+            "PositionZ": 2,
+            "Height": 125,
+            "Width": 110,
+            "BackgroundImage": "bg_lineup",
+            "ColorizeBackground": {
+                "Color": "{black}",
+                "BlendPercentage": 100,
+                "ColorBlendingMode": "Normal",
+                "Enabled": false
+            },
+            "Triggers": [
+                {
+                    "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+                    "Property": "Width",
+                    "Value": 125
+                },
+                {
+                    "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToFalse}",
+                    "Property": "ColorizeBackground.Enabled",
+                    "Value": true
+                }
+            ],
+            "Items": [
+                {
+                    "BlockType": "dock",
+                    "RenderIf": false,
+                    "Height": 125,
+                    "Width": 125,
+                    "Triggers": [
+                        {
+                            "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+                            "ConditionAnd": "{Item.Team.LogotypePath, Converter=EmptyObjectToTrue}",
+                            "Property": "RenderIf",
+                            "Value": true
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "BlockType": "image",
+                            "Source": "{Item.Team.Car.Vendor.LogotypePath}",
+                            "Height": 90,
+                            "VerticalAlignment": "Center",
+                            "HorizontalAlignment": "Center",
+                            "Triggers": [
+                                {
+                                    "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                                    "Property": "Source",
+                                    "Value": "{Item.Car.Vendor.LogotypePath}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "dock",
+                    "RenderIf": false,
+                    "Height": 125,
+                    "Width": 125,
+                    "Triggers": [
+                        {
+                            "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+                            "Property": "RenderIf",
+                            "Value": true
+
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "BlockType": "image",
+                            "Source": "{Item.Team.LogotypePath}",
+                            "Height": 120,
+                            "VerticalAlignment": "Center",
+                            "HorizontalAlignment": "Center"
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "dock",
+                    "Height": 125,
+                    "Width": 110,
+                    "Items": [
+                        {
+                            "BlockType": "image",
+                            "PaddingTop": 15,
+                            "Source": "{Item.Driver.LogotypePath}",
+                            "Height": 220,
+                            "VerticalAlignment": "Top",
+                            "HorizontalAlignment": "Center"
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "image",
+                    "Source": "bg_lineup_hide",
+                    "Height": 125,
+                    "Width": 110,
+                    "Triggers": [
+                        {
+                            "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+                            "Property": "Width",
+                            "Value": 125
+                        }
+                    ]
+                }
+            ]
+        },
+        //driver
+        {
+            "BlockType": "dock",
+            "PositionZ": 1,
+            "PositionX": 85,
+            "Width": 250,
+            "Orientation": "Vertical",
+            //"Background": "{BackgroundDefault}",
+            "BackgroundImage": "stats_bg",
+            "ColorizeBackground": {
+                "Color": "{white}"
+            },
+            "VerticalAlignment": "Center",
+            "Height": 125,
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    //"Width": 215,
+                    "Orientation": "Vertical",
+                    "Padding": "42,17,0,17",
+                    "Triggers": [
+                        {
+                            "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+                            "Property": "Padding",
+                            "Value": "57,17,0,17"
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "PaddingTop": 5,
+                            "Source": "{Item.Driver.Name}",
+                            "FontName": "{FontNameWide}",
+                            "FontSize": 18
+                        },
+                        {
+                            "BlockType": "image",
+                            "Height": 30,
+                            "ImageOptions": {
+                                "Path": "{Item.Driver.Nationality.LogotypePath}",
+                                "VerticalAlignment": "Center"
+                            }
+                        },
+                        {
+                            "BlockType": "text",
+                            //"MarginTop": 4,
+                            "PaddingTop": 3,
+                            "Source": "Racing",
+                            "FontName": "{FontNameDefault}",
+                            "FontSize": 14,
+                            "Foreground": "{grey}"
+                        },
+                        {
+                            "BlockType": "text",
+                            "PaddingTop": 3,
+                            "Source": "FULL SEASON",
+                            "FontName": "{FontNameDefault}",
+                            "FontSize": 14,
+                            "Foreground": "{grey}",
+                            "Triggers": [
+                                {
+                                    "Condition": "{Item.SeatType, Converter=EnumEquals, Parameter=Reserve}",
+                                    "Property": "Source",
+                                    "Value": "Reserve"
+                                },
+                                {
+                                    "Condition": "{Item.SeatType, Converter=EnumEquals, Parameter=No Seat}",
+                                    "Property": "Source",
+                                    "Value": "No Seat"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

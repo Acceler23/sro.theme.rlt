@@ -1,0 +1,181 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "league_head_cell"
+            },
+            {
+                "BlockType": "stack",
+                "Orientation": "Vertical",
+                "Margin": "{MarginRoot}",
+                "Items": [
+                    {
+                        "BlockType": "component",
+                        "Component": "subheader_tables",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "renderData": "{Session.SessionType, Converter=StringToUpperString}  |  {Session.Track.Name, Converter=StringToUpperString}  |  {Season.Name, Converter=StringToUpperString}"
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "component",
+                        "Component": "main_head_cell"
+                    },
+                    {
+                        "BlockType": "component",
+                        "Component": "head_background_cell"
+                    },
+                    //table
+                    {
+                        "Name": "mainTable",
+                        "BlockType": "table",
+                        "Margin": "{MarginTable}",
+                        "Triggers": [
+                            {
+                                "Trigger": "RenderPages_Trigger"
+                            }
+                        ],
+                        "TableOptions": {
+                            "ItemsSource": "{Session.Drivers}",
+                            "RowSpacing": 3,
+                            "ColSpacing": 0,
+                            "HeaderTemplate": {
+                                "BlockType": "text",
+                                "Style": "table_head_style",
+                                "HorizontalAlignment": "Left"
+                            },
+                            "Columns": [
+                                //position
+                                {
+                                    "Header": "    POS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "position_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "position": "{Item.PositionString}"
+                                            }
+                                        },
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                                                "Property": "Background",
+                                                "Value": "{darkWhite}"
+                                            },
+                                            {
+                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
+                                                "Property": "Source",
+                                                "Value": "NC"
+                                            },
+                                            {
+                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
+                                                "Property": "Source",
+                                                "Value": "DNS"
+                                            },
+                                            {
+                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
+                                                "Property": "Source",
+                                                "Value": "DSQ"
+                                            }
+                                        ]
+                                    }
+                                },
+                                //Car Number
+                                {
+                                    "Header": "CAR #",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "number_cell"
+                                    }
+                                },
+                                //Class
+                                {
+                                    "Header": "CLASS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "class_cell"
+                                    }
+                                },
+                                //Driver Name
+                                {
+                                    "Header": "DRIVERS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "driver_cell"
+                                    }
+                                },
+                                //Team
+                                {
+                                    "Header": "TEAM",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "team_cell"
+                                    }
+                                },
+                                //car
+                                {
+                                    "Header": "CAR",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "car_cell"
+                                    }
+                                },
+                                {
+                                    "Header": "QUALY 1",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Padding": "10,0",
+                                        "Component": "sessionSimple_stats_cell",
+                                        "ComponentOptions": {
+                                                "Vars": {
+                                                    "statsData": "{Item.QualQ1Time}"
+                                                }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "QUALY 2",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Padding": "10,0",
+                                        "Component": "sessionSimple_stats_cell",
+                                        "ComponentOptions": {
+                                                "Vars": {
+                                                    "statsData": "{Item.QualQ2Time}"
+                                                }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "QUALY 3",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Padding": "10,0",
+                                        "Component": "sessionSimple_stats_cell",
+                                        "ComponentOptions": {
+                                                "Vars": {
+                                                    "statsData": "{Item.QualQ3Time}"
+                                                }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "fader_cell"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

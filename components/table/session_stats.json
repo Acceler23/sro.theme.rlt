@@ -2,7 +2,8 @@
     "ComponentName": "session_stats_cell",
     "BlockType": "stack",
     "Background": "{BackgroundDefault}",
-    "Height": 20,
+    //"Height": 15,
+    "StretchWidth": true,
     "MaxHeight": 72,
     "Triggers": [
         {

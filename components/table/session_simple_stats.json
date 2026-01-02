@@ -1,0 +1,22 @@
+{
+    "ComponentName": "sessionSimple_stats_cell",
+    "BlockType": "dock",
+    "Background": "{BackgroundDefault}",
+    //"Height": 15,
+    "HorizontalAlignment": "Center",
+    "StretchWidth": true,
+    "MaxHeight": 72,
+    "Triggers": [
+        {
+            "Trigger": "DarkerBackground"
+        }
+    ],
+    "Items": [
+        {
+            "BlockType": "text",
+            "Source": "<statsData>",
+            "Style": "mainTable_Style",
+            "HorizontalAlignment": "Left"
+        }
+    ]
+}

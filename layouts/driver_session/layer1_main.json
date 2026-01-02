@@ -25,7 +25,7 @@
                                 "Source": "  -  {Season.Name}",
                                 "PaddingTop": 8,
                                 "FontSize": 46,
-                                "Foreground": "#5a5a5a"
+                                "Foreground": "{darkGrey}"
                             }
                         ]
                     },
@@ -35,7 +35,7 @@
                         "Source": "{DriverInfo.Driver.Team.FullName}",
                         "PaddingTop": 5,
                         "FontSize": 46,
-                        "Foreground": "#5a5a5a"
+                        "Foreground": "{darkGrey}"
                     },
                     //infos
                     {
@@ -64,7 +64,7 @@
                                                 "Width": 320,
                                                 "Height": 2,
                                                 "ShapeOptions": {
-                                                    "Fill": "#5a5a5a",
+                                                    "Fill": "{darkGrey}",
                                                     "ShapeType": "rectangle"
                                                 }
                                             },
@@ -133,7 +133,7 @@
                                                 "Width": 320,
                                                 "Height": 2,
                                                 "ShapeOptions": {
-                                                    "Fill": "#5a5a5a",
+                                                    "Fill": "{darkGrey}",
                                                     "ShapeType": "rectangle"
                                                 }
                                             },
@@ -183,7 +183,7 @@
                                                 "Width": 320,
                                                 "Height": 2,
                                                 "ShapeOptions": {
-                                                    "Fill": "#5a5a5a",
+                                                    "Fill": "{darkGrey}",
                                                     "ShapeType": "rectangle"
                                                 }
                                             },
@@ -239,7 +239,7 @@
                                                 "Width": 320,
                                                 "Height": 2,
                                                 "ShapeOptions": {
-                                                    "Fill": "#5a5a5a",
+                                                    "Fill": "{darkGrey}",
                                                     "ShapeType": "rectangle"
                                                 }
                                             },
@@ -306,7 +306,7 @@
                                 "Width": 680,
                                 "Height": 2,
                                 "ShapeOptions": {
-                                    "Fill": "#5a5a5a",
+                                    "Fill": "{darkGrey}",
                                     "ShapeType": "rectangle"
                                 }
                             },

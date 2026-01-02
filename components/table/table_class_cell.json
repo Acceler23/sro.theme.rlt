@@ -3,7 +3,8 @@
     "BlockType": "dock",
     "Background": "{BackgroundDefault}",
     "MaxWidth": 90,
-    "Height": 20,
+    "StretchWidth": true,
+    //"Height": 15,
     "MaxHeight": 72,
     "Triggers": [
         {

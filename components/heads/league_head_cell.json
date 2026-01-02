@@ -1,18 +1,50 @@
 {
     "ComponentName": "league_head_cell",
     "BlockType": "dock",
-    "PaddingTop": 10,
-    "RenderIf": "{ShowLeaugeLogo}",
     "HorizontalAlignment": "Center",
+    "Background": "#242627",
     "Width": "*",
-    "StretchWidth": true,
+    "MarginTop": -20,
+    "Height": 140,
     "Items": [
         {
-            "BlockType": "image",
+            "BlockType": "stack",
+            "MarginTop": 20,
+            "BackgroundImage": "head_bg",
             "HorizontalAlignment": "Center",
             "VerticalAlignment": "Top",
-            "Width": 124,
-            "Source": "{Season.LeagueInfo.LeagueLogo}"
+            "Items": [
+                {
+                    "BlockType": "image",
+                    "Height": 120,
+                    "Source": "top_left",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Top"
+                },
+                {
+                    "BlockType": "image",
+                    "Height": 110,
+                    "Source": "{Season.LeagueInfo.LeagueLogo}",
+                    "Padding": "5,10,5,0",
+                    "HorizontalAlignment": "Center",
+                    "VerticalAlignment": "Top"
+                },
+                {
+                    "BlockType": "image",
+                    "Height": 110,
+                    "Source": "{Season.LogotypePath}",
+                    "Padding": "5,10,5,0",
+                    "HorizontalAlignment": "Center",
+                    "VerticalAlignment": "Top"
+                },
+                {
+                    "BlockType": "image",
+                    "Height": 120,
+                    "Source": "top_right",
+                    "HorizontalAlignment": "Right",
+                    "VerticalAlignment": "Top"
+                }
+            ]
         }
     ]
 }

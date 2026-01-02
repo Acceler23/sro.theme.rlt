@@ -1,0 +1,23 @@
+{
+    "ComponentName": "standings_stats_cell",
+    "BlockType": "dock",
+    "Background": "{BackgroundDefault}",
+    //"Height": 15,
+    "HorizontalAlignment": "Center",
+    "Padding": "10, 0",
+    "MaxHeight": 72,
+    "Triggers": [
+        {
+            "Trigger": "DarkerBackground"
+        }
+    ],
+    "Items": [
+        {
+            "BlockType": "text",
+            "Source": "<statsData>",
+            "Style": "mainTable_Style_noWrap",
+            "Padding": "0, 16",
+            "HorizontalAlignment": "Center"
+        }
+    ]
+}

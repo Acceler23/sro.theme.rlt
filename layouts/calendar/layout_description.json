@@ -1,3 +1,5 @@
 {
-    "RenderType": "Calendar"
+    "RenderType": "Calendar",
+    "RenderVersion": 1,
+    "RenderCaption": "Render Calendar"
 }

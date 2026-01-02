@@ -11,7 +11,7 @@
         {
             "BlockType": "text",
             "Source": "{Session.SessionTypeString}",
-            "Background": "{HeadMain}",
+            "Background": "{red}",
             "FontSize": 16,
             "Foreground": "{BackgroundDefault}",
             "HorizontalAlignment": "Left",
@@ -25,6 +25,13 @@
                     "Value": "{Session.SessionTypeString}  |  {Session.RacingClass.Name}"
                 }
             ]
+        },
+        {
+            "BlockType": "image",
+            "Source": "fader",
+            "Width": 30,
+            "Background": "{red}",
+            "Height": 56
         }
     ]
 }

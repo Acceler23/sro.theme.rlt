@@ -1,0 +1,29 @@
+{
+    "ComponentName": "subheader_tables",
+    "BlockType": "stack",
+    "Orientation": "Horizontal",
+    "HorizontalAlignment": "Left",
+    "MarginBottom": 20,
+    "Items": [
+        {
+            "BlockType": "stack",
+            "Items": [
+                {
+                    "BlockType": "text",
+                    "PaddingTop": 15,
+                    "Source": ">",
+                    "FontSize": 24,
+                    "Foreground": "{red}"
+                },
+                {
+                    "BlockType": "text",
+                    "HorizontalAlignment": "Right",
+                    "PaddingTop": 15,
+                    "PaddingLeft": 5,
+                    "Source": "<renderData>",
+                    "FontSize": 24
+                }
+            ]
+        }
+    ]
+}

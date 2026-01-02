@@ -2,7 +2,6 @@
     "BlockRoot": {
         "Name": "mainStack",
         "BlockType": "stack",
-        "Margin": "{MarginRoot}",
         "Orientation": "Vertical",
         "Items": [
             {
@@ -11,147 +10,67 @@
             },
             {
                 "BlockType": "stack",
-                "Orientation": "Horizontal",
-                "Padding": "{PaddingDefault}",
-                "HorizontalAlignment": "Left",
-                "MarginBottom": 10,
+                "Orientation": "Vertical",
+                "Margin": "{MarginRoot}",
                 "Items": [
+                    {
+                        "BlockType": "component",
+                        "Component": "subheader_linups",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "renderData": "{Season.Name, Converter=StringToUpperString}  |  RESERVES"
+                            }
+                        }
+                    },
                     {
                         "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "Background": "#80ffffff",
+                        "Spacing": 40,
                         "Items": [
                             {
-                                "BlockType": "text",
-                                "Source": ">",
-                                "FontSize": 24,
-                                "Foreground": "{HeadMain}",
-                                "PaddingTop": 5
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "Width": "*",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Lineups.LineupsReserves}",
+                                    "CollectionPart": "1/3",
+                                    "ItemTemplate": {
+                                        "BlockType": "component",
+                                        "Component": "driver_card",
+                                        "Padding": "10"
+                                    }
+                                }
                             },
                             {
-                                "BlockType": "text",
-                                "HorizontalAlignment": "Right",
-                                "Source": " {Season.Name}  |  Reserves",
-                                "FontSize": 24,
-                                "PaddingTop": 5
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "Width": "*",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Lineups.LineupsReserves}",
+                                    "CollectionPart": "2/3",
+                                    "ItemTemplate": {
+                                        "BlockType": "component",
+                                        "Component": "driver_card",
+                                        "Padding": "10"
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "Width": "*",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Lineups.LineupsReserves}",
+                                    "CollectionPart": "3/3",
+                                    "ItemTemplate": {
+                                        "BlockType": "component",
+                                        "Component": "driver_card",
+                                        "Padding": "10"
+                                    }
+                                }
                             }
                         ]
-                    }
-                ]
-            },
-            {
-                "BlockType": "stack",
-                "Orientation": "Horizontal",
-                "Spacing": 40,
-                "Items": [
-                    {
-                        "BlockType": "itemstack",
-                        "Orientation": "Vertical",
-                        "Width": "*",
-                        "ItemStackOptions": {
-                            "ItemSource": "{Lineups.LineupsReserves}",
-                            "CollectionPart": "1/3",
-                            "ItemTemplate": {
-                                "BlockType": "stack",
-                                "Orientation": "Vertical",
-                                "MarginTop": 10,
-                                "Items": [
-                                    //team
-                                    {
-                                        "BlockType": "stack",
-                                        "HorizontalAlignment": "Center",
-                                        "VerticalAlignment": "Center",
-                                        "Orientation": "Vertical",
-                                        "Background": "{BackgroundDarker}",
-                                        "Items": [
-                                            //Driver
-                                            {
-                                                "BlockType": "component",
-                                                "Component": "driver_card",
-                                                "ComponentOptions": {
-                                                    "Vars": {
-                                                        "isReserve": true,
-                                                        "isReserveReverse": false
-                                                    }
-                                                }
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "BlockType": "itemstack",
-                        "Orientation": "Vertical",
-                        "Width": "*",
-                        "ItemStackOptions": {
-                            "ItemSource": "{Lineups.LineupsReserves}",
-                            "CollectionPart": "2/3",
-                            "ItemTemplate": {
-                                "BlockType": "stack",
-                                "Orientation": "Vertical",
-                                "MarginTop": 10,
-                                "Items": [
-                                    //team
-                                    {
-                                        "BlockType": "stack",
-                                        "HorizontalAlignment": "Center",
-                                        "VerticalAlignment": "Center",
-                                        "Orientation": "Vertical",
-                                        "Background": "{BackgroundDarker}",
-                                        "Items": [
-                                            //Driver
-                                            {
-                                                "BlockType": "component",
-                                                "Component": "driver_card",
-                                                "ComponentOptions": {
-                                                    "Vars": {
-                                                        "isReserve": true,
-                                                        "isReserveReverse": false
-                                                    }
-                                                }
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "BlockType": "itemstack",
-                        "Orientation": "Vertical",
-                        "Width": "*",
-                        "ItemStackOptions": {
-                            "ItemSource": "{Lineups.LineupsReserves}",
-                            "CollectionPart": "3/3",
-                            "ItemTemplate": {
-                                "BlockType": "stack",
-                                "Orientation": "Vertical",
-                                "MarginTop": 10,
-                                "Items": [
-                                    //team
-                                    {
-                                        "BlockType": "stack",
-                                        "HorizontalAlignment": "Center",
-                                        "VerticalAlignment": "Center",
-                                        "Orientation": "Vertical",
-                                        "Background": "{BackgroundDarker}",
-                                        "Items": [
-                                            //Driver
-                                            {
-                                                "BlockType": "component",
-                                                "Component": "driver_card",
-                                                "ComponentOptions": {
-                                                    "Vars": {
-                                                        "isReserve": true,
-                                                        "isReserveReverse": false
-                                                    }
-                                                }
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        }
                     }
                 ]
             }

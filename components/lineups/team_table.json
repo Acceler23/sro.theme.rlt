@@ -1,8 +1,9 @@
 {
     "ComponentName": "team_table_top",
     "BlockType": "dock",
-    "Padding": "10",
-    "MaxWidth": 453,
+    "Margin": "10",
+    "Width": 453,
+    "Height": 205,
     "HorizontalAlignment": "Center",
     "Orientation": "Vertical",
     "Items": [
@@ -11,107 +12,192 @@
             "BackgroundImage": "podium_bg",
             "VerticalAlignment": "Top",
             "Height": 100,
-            "Width": "*",
             "Items": [
                 {
-                    "BlockType": "text",
-                    "Source": "{Item.Position}st",
-                    "Foreground": "{BackgroundDefault}",
-                    "Padding": "10",
-                    "MarginTop": 10,
+                    "BlockType": "stack",
+                    "Orientation": "Horizontal",
                     "HorizontalAlignment": "Center",
-                    "VerticalAlignment": "Center",
-                    "FontSize": 60,
-                    "FontName": "{FontNameWide}",
-                    "Triggers": [
+                    "VerticalAlignment": "Bottom",
+                    "Items": [
                         {
-                            "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
-                            "Property": "Source",
-                            "Value": "{Item.Position}nd"
+                            "BlockType": "text",
+                            "Source": "{Item.Position}",
+                            "VerticalAlignment": "Bottom",
+                            "Foreground": "{BackgroundDefault}",
+                            "Padding": "0,10,0,10",
+                            "FontSize": 60,
+                            "FontName": "{FontNameWide}"
                         },
                         {
-                            "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
-                            "Property": "Source",
-                            "Value": "{Item.Position}rd"
+                            "BlockType": "text",
+                            "Source": "st",
+                            "VerticalAlignment": "Bottom",
+                            "Foreground": "{BackgroundDefault}",
+                            "Padding": "0,10,0,35",
+                            "FontSize": 18,
+                            "FontName": "{FontNameWide}",
+                            "Triggers": [
+                                {
+                                    "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                    "Property": "Source",
+                                    "Value": "nd"
+                                },
+                                {
+                                    "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                    "Property": "Source",
+                                    "Value": "rd"
+                                }
+                            ]
                         }
                     ]
                 }
             ]
         },
         {
-            "BlockType": "stack",
+            "BlockType": "canvas",
             "Height": 100,
-            "MaxWidth": 453,
+            "Width": 453,
             "Orientation": "Horizontal",
             "VerticalAlignment": "Bottom",
-            "Background": "{BackgroundDefault}",
             "Items": [
                 {
-                    "BlockType": "dock",
-                    "HorizontalAlignment": "Left",
+                    "BlockType": "canvas",
+                    "PositionZ": 2,
                     "Height": 100,
-                    "Width": 88,
+                    "Width": 80,
+                    "BackgroundImage": "bg_lineup",
+                    "ColorizeBackground": {
+                        "Color": "{black}",
+                        "BlendPercentage": 100,
+                        "ColorBlendingMode": "Normal",
+                        "Enabled": false
+                    },
+                    "Triggers": [
+                        {
+                            "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+                            "Property": "Width",
+                            "Value": 100
+                        },
+                        {
+                            "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToFalse}",
+                            "Property": "ColorizeBackground.Enabled",
+                            "Value": true
+                        }
+                    ],
                     "Items": [
                         {
-                            "BlockType": "image",
-                            "Source": "{Item.Driver.LogotypePath}",
-                            "Height": 150,
-                            "Background": "#808080",
-                            "VerticalAlignment": "Top",
-                            "HorizontalAlignment": "Center",
+                            "BlockType": "dock",
+                            "RenderIf": false,
+                            "Height": 100,
+                            "Width": 100,
                             "Triggers": [
                                 {
-                                    "Condition": "{TeamBackground}",
-                                    "Property": "Background",
-                                    "Value": "#808080"
-                                },
+                                    "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+                                    "ConditionAnd": "{Item.Team.LogotypePath, Converter=EmptyObjectToTrue}",
+                                    "Property": "RenderIf",
+                                    "Value": true
+                                }
+                            ],
+                            "Items": [
                                 {
-                                    "Condition": "{LineupImage, Converter=StringEquals, Parameter=Team}",
-                                    "ConditionAnd": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
-                                    "Setters": [
+                                    "BlockType": "image",
+                                    "Source": "{Item.Team.Car.Vendor.LogotypePath}",
+                                    "Height": 90,
+                                    "VerticalAlignment": "Center",
+                                    "HorizontalAlignment": "Center",
+                                    "Triggers": [
                                         {
-                                            "Property": "Source",
-                                            "Value": "{Item.Team.LogotypePath}"
-                                        },
-                                        {
-                                            "Property": "Padding",
-                                            "Value": "15"
-                                        },
-                                        {
-                                            "Property": "Height",
-                                            "Value": 95
-                                        }
-                                    ]
-                                },
-                                {
-                                    "Condition": "{LineupImage, Converter=StringEquals, Parameter=Team}",
-                                    "ConditionAnd": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
-                                    "Setters": [
-                                        {
+                                            "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
                                             "Property": "Source",
                                             "Value": "{Item.Car.Vendor.LogotypePath}"
-                                        },
-                                        {
-                                            "Property": "Padding",
-                                            "Value": "20"
-                                        },
-                                        {
-                                            "Property": "Height",
-                                            "Value": 85
                                         }
                                     ]
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "dock",
+                            "RenderIf": false,
+                            "Height": 100,
+                            "Width": 100,
+                            "Triggers": [
+                                {
+                                    "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+                                    "Property": "RenderIf",
+                                    "Value": true
+
+                                }
+                            ],
+                            "Items": [
+                                {
+                                    "BlockType": "image",
+                                    "Source": "{Item.Team.LogotypePath}",
+                                    "Height": 100,
+                                    "VerticalAlignment": "Center",
+                                    "HorizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "dock",
+                            "Height": 100,
+                            "Width": 80,
+                            "Items": [
+                                {
+                                    "BlockType": "image",
+                                    "Source": "{Item.Driver.LogotypePath}",
+                                    "PaddingTop": 10,
+                                    "Height": 200,
+                                    "VerticalAlignment": "Top",
+                                    "HorizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "image",
+                            "Source": "bg_lineup_hide",
+                            "Height": 100,
+                            "Width": 80,
+                            "Triggers": [
+                                {
+                                    "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+                                    "Property": "Width",
+                                    "Value": 100
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    "BlockType": "text",
-                    "Source": "{Item.Driver.Name}",
-                    "Padding": "15,15,20,15",
+                    "BlockType": "dock",
+                    "PositionZ": 1,
+                    "PositionX": 50,
                     "Height": 100,
-                    "Width": 325,
-                    "FontSize": 18
+                    "Width": 405,
+                    "BackgroundImage": "podium_bg",
+                    "ColorizeBackground": {
+                        "Color": "{white}"
+                    },
+                    "Orientation": "Vertical",
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            //"Background": "{BackgroundDefault}",
+                            "Source": "{Item.Driver.Name}",
+                            "Padding": "45,15,20,15",
+                            "VerticalAlignment": "Center",
+                            "HorizontalAlignment": "Left",
+                            "Width": 365,
+                            "FontSize": 18,
+                            "Triggers": [
+                                {
+                                    "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+                                    "Property": "Padding",
+                                    "Value": "65,15,20,15"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }

@@ -1,9 +1,18 @@
 {
     "ComponentName": "head_background_cell",
-    "BlockType": "text",
-    "Source": "infil",
-    "Background": "{HeadSecond}",
+    "BlockType": "dock",
+    "Background": "{darkGrey}",
     "Height": 50,
     "Width": "*",
-    "MarginBottom": -50
+    "MarginBottom": -50,
+    "Items": [
+        {
+            "BlockType": "image",
+            "HorizontalAlignment": "Right",
+            "Source": "fader",
+            "Width": 30,
+            "Background": "{darkGrey}",
+            "Height": 56
+        }
+    ]
 }

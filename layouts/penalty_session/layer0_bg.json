@@ -1,0 +1,10 @@
+{
+    "BlockRoot": {
+        "Name": "root",
+        "BlockType": "shape",
+        "ShapeOptions": {
+            "Fill": "{white}",
+            "ShapeType": "rectangle"
+        }
+    }
+}

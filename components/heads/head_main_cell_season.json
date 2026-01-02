@@ -11,13 +11,20 @@
         {
             "BlockType": "text",
             "Source": "{Statistics.Header}",
-            "Background": "{HeadMain}",
+            "Background": "{red}",
             "FontSize": 16,
             "Foreground": "{BackgroundDefault}",
             "HorizontalAlignment": "Left",
             "VerticalAlignment": "Center",
             "Height": 56,
             "Width": "*"
+        },
+        {
+            "BlockType": "image",
+            "Source": "fader",
+            "Width": 30,
+            "Background": "{red}",
+            "Height": 56
         }
     ]
 }

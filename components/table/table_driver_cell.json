@@ -4,7 +4,8 @@
     "Background": "{BackgroundDefault}",
     "MaxWidth": 470,
     "Width": "*",
-    "Height": 20,
+    "StretchWidth": true,
+    //"Height": 52,
     "MaxHeight": 72,
     "Triggers": [
         {
@@ -14,7 +15,7 @@
     "Items": [
         {
             "BlockType": "text",
-            "Width": 470,
+            "Width": 370,
             "Source": "{Item.Driver.Name}",
             "Style": "mainTable_Style"
         }

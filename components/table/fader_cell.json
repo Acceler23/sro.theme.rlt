@@ -2,10 +2,9 @@
     "ComponentName": "fader_cell",
     "BlockType": "image",
     "Source": "fader",
-    //"Background": "#ff0000",
     "Background": "{BackgroundDefault}",
     "Width": 30,
-    "Height": 20,
+    //"Height": 20,
     "MaxHeight": 72,
     "Triggers": [
         {

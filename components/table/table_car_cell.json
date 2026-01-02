@@ -1,10 +1,12 @@
 {
     "ComponentName": "car_cell",
     "BlockType": "dock",
-    "RenderIf": "{Item.Car.Name, Converter=EmptyObjectToFalse}",
+    //"RenderIf": "{Item.Car.Name, Converter=EmptyObjectToFalse}",
+    //"RenderIf": false,
     "Background": "{BackgroundDefault}",
     "MaxWidth": 215,
-    "Height": 20,
+    "StretchWidth": true,
+    //"Height": 20,
     "MaxHeight": 72,
     "Triggers": [
         {
@@ -14,7 +16,8 @@
     "Items": [
         {
             "BlockType": "text",
-            "Width": 200,
+            "RenderIf": "{Item.Car.Name, Converter=EmptyObjectToFalse}",
+            "Width": 190,
             "Source": "{Item.Car.Name}",
             "Style": "mainTable_Style"
         }

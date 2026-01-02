@@ -3,7 +3,8 @@
     "BlockType": "text",
     "Source": "{Item.Position}",
     "MaxWidth": 66,
-    "Height": 20,
+    "StretchWidth": true,
+    //"Height": 15,
     "MaxHeight": 72,
     "Background": "{BackgroundDefault}",
     "Padding": "25,16,10,16",
@@ -18,17 +19,17 @@
             "Trigger": "DarkerBackground"
         },
         {
-            "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
+            "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
             "Property": "Source",
             "Value": "NC"
         },
         {
-            "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
+            "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
             "Property": "Source",
             "Value": "DNS"
         },
         {
-            "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
+            "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
             "Property": "Source",
             "Value": "DSQ"
         }

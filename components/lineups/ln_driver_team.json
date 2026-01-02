@@ -1,21 +1,49 @@
 {
     "ComponentName": "ln_driver_team",
     "BlockType": "stack",
-    "Spacing": 10,
     "Orientation": "Vertical",
+    "Width": "*",
     "Items": [
         {
-            "BlockType": "text",
-            "Padding": "{PaddingDefault}",
-            "Background": "{Item.Team.Color}",
-            "Height": "{TableHeight}",
+            "BlockType": "stack",
+            "Padding": "10",
+            "Orientation": "Horizontal",
             "Width": "*",
-            "Source": "{Item.Team.Name}",
-            "HorizontalAlignment": "Left",
-            "VerticalAlignment": "Center",
-            "Foreground": "{Item.Team.SecondaryColor}",
-            "FontSize": 20,
-            "MarginBottom": 5
+            "Items": [
+                {
+                    "BlockType": "image",
+                    "Source": "back_main_cut",
+                    "Height": 52,
+                    "Colorize": {
+                        "Color": "{Item.Team.Color}",
+                        "ColorBlendingMode": "Normal"
+                    }
+                },
+                {
+                    "BlockType": "text",
+                    "Background": "{Item.Team.Color}",
+                    "PaddingTop": 10,
+                    "Height": "*",
+                    "Width": "*",
+                    "Source": "{Item.Team.FullName, Converter=StringToUpperString}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "Foreground": "{Item.Team.SecondaryColor}",
+                    "FontSize": 20
+                },
+                {
+                    "BlockType": "image",
+                    "Source": "back_main_cut",
+                    "Height": 52,
+                    "Colorize": {
+                        "Color": "{Item.Team.Color}",
+                        "ColorBlendingMode": "Normal"
+                    },
+                    "ImageOptions": {
+                        "Rotation": 180
+                    }
+                }
+            ]
         },
         {
             "BlockType": "itemstack",
@@ -24,10 +52,33 @@
                 "Limit": 3,
                 "ItemTemplate": {
                     "BlockType": "stack",
+                    "Orientation": "Horizontal",
+                    "Spacing": 10,
+                    "RenderIf": false,
+                    "Triggers": [
+                        {
+                            "Condition": "{Item.SeatPosition, Converter=NumberGreater, Parameter=0}",
+                            "Property": "RenderIf",
+                            "Value": true
+                        }
+                    ],
                     "Items": [
                         {
                             "BlockType": "component",
-                            "Component": "driver_card"
+                            "Component": "number_season",
+                            "RenderIf": true,
+                            "Triggers": [
+                                {
+                                    "Condition": "{Item.Index, Converter=NumberGreater, Parameter=0}",
+                                    "ConditionAnd": "{TeamSameNumber}",
+                                    "Property": "RenderIf",
+                                    "Value": false
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "component",
+                            "Component": "driver_image_info"
                         }
                     ]
                 }
@@ -35,17 +86,46 @@
         },
         {
             "BlockType": "itemstack",
+            "Padding": "10",
+            "Triggers": [
+                {
+                    "Condition": "{TeamSameNumber}",
+                    "Property": "ItemStackOptions.Limit",
+                    "Value": 4
+                }
+            ],
             "ItemStackOptions": {
                 "ItemSource": "{Item.Lines}",
                 "IndexStart": 3,
                 "Limit": 3,
                 "ItemTemplate": {
                     "BlockType": "stack",
-                    "RenderIf": "{Item.SeatPosition, Converter=NumberGreater, Parameter=2}",
+                    "Orientation": "Horizontal",
+                    "Spacing": 20,
+                    "RenderIf": false,
+                    "Triggers": [
+                        {
+                            "Condition": "{Item.SeatPosition, Converter=NumberGreater, Parameter=3}",
+                            "Property": "RenderIf",
+                            "Value": true
+                        }
+                    ],
                     "Items": [
                         {
                             "BlockType": "component",
-                            "Component": "driver_card"
+                            "Component": "number_season",
+                            "RenderIf": true,
+                            "Triggers": [
+                                {
+                                    "Condition": "{TeamSameNumber}",
+                                    "Property": "RenderIf",
+                                    "Value": false
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "component",
+                            "Component": "driver_image_info"
                         }
                     ]
                 }
@@ -53,17 +133,46 @@
         },
         {
             "BlockType": "itemstack",
+            "Padding": "10",
+            "Triggers": [
+                {
+                    "Condition": "{TeamSameNumber}",
+                    "Property": "ItemStackOptions.Limit",
+                    "Value": 4
+                }
+            ],
             "ItemStackOptions": {
                 "ItemSource": "{Item.Lines}",
                 "IndexStart": 6,
                 "Limit": 3,
                 "ItemTemplate": {
                     "BlockType": "stack",
-                    "RenderIf": "{Item.SeatPosition, Converter=NumberGreater, Parameter=4}",
+                    "Orientation": "Horizontal",
+                    "Spacing": 20,
+                    "RenderIf": false,
+                    "Triggers": [
+                        {
+                            "Condition": "{Item.SeatPosition, Converter=NumberGreater, Parameter=6}",
+                            "Property": "RenderIf",
+                            "Value": true
+                        }
+                    ],
                     "Items": [
                         {
                             "BlockType": "component",
-                            "Component": "driver_card"
+                            "Component": "number_season",
+                            "RenderIf": true,
+                            "Triggers": [
+                                {
+                                    "Condition": "{TeamSameNumber}",
+                                    "Property": "RenderIf",
+                                    "Value": false
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "component",
+                            "Component": "driver_image_info"
                         }
                     ]
                 }

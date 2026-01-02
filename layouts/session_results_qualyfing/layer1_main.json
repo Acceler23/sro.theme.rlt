@@ -2,7 +2,6 @@
     "BlockRoot": {
         "Name": "mainStack",
         "BlockType": "stack",
-        "Margin": "{MarginRoot}",
         "Orientation": "Vertical",
         "Items": [
             {
@@ -10,161 +9,158 @@
                 "Component": "league_head_cell"
             },
             {
-                "BlockType": "component",
-                "Component": "session_header"
-            },
-            {
-                "BlockType": "component",
-                "Component": "main_head_cell"
-            },
-            {
-                "BlockType": "component",
-                "Component": "head_background_cell"
-            },
-            //table
-            {
-                "Name": "mainTable",
-                "BlockType": "table",
-                "Margin": "{MarginTable}",
-                "Triggers": [
+                "BlockType": "stack",
+                "Orientation": "Vertical",
+                "Margin": "{MarginRoot}",
+                "Items": [
                     {
-                        "Trigger": "RenderPages_Trigger"
-                    }
-                ],
-                "TableOptions": {
-                    "ItemsSource": "{Session.Drivers}",
-                    "RowSpacing": 3,
-                    "ColSpacing": 0,
-                    "HeaderTemplate": {
-                        "BlockType": "text",
-                        "Style": "table_head_style",
-                        "HorizontalAlignment": "Left"
-                    },
-                    "Columns": [
-                        //position
-                        {
-                            "Header": "    POS",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "position_cell",
-                                "ComponentOptions": {
-                                    "Vars": {
-                                        "position": "{Item.PositionString}"
-                                    }
-                                },
-                                "Triggers": [
-                                    {
-                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                        "Property": "Background",
-                                        "Value": "{BackgroundDarker}"
-                                    },
-                                    {
-                                        "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
-                                        "Property": "Source",
-                                        "Value": "NC"
-                                    },
-                                    {
-                                        "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
-                                        "Property": "Source",
-                                        "Value": "DNS"
-                                    },
-                                    {
-                                        "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
-                                        "Property": "Source",
-                                        "Value": "DSQ"
-                                    }
-                                ]
-                            }
-                        },
-                        //Car Number
-                        {
-                            "Header": "CAR #",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "number_cell"
-                            }
-                        },
-                        //Class
-                        {
-                            "Header": "CLASS",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "class_cell"
-                            }
-                        },
-                        //Driver Name
-                        {
-                            "Header": "DRIVERS",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "driver_cell"
-                            }
-                        },
-                        //Team
-                        {
-                            "Header": "TEAM",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "team_cell"
-                            }
-                        },
-                        //car
-                        {
-                            "Header": "CAR",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "car_cell"
-                            }
-                        },
-                        //Fastest Lap
-                        {
-                            "Header": "TIME",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "fastlap_race"
-                            }
-                        },
-                        //Laps
-                        {
-                            "Header": "LAPS",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "Lap_qualy"
-                            }
-                        },
-                        {
-                            "Header": "GAP",
-                            "Template": {
-                                "BlockType": "text",
-                                "Source": "{Item.Time}",
-                                "Padding": "{PaddingDefault}",
-                                "VerticalAlignment": "Center",
-                                "HorizontalAlignment": "Left",
-                                "Width": 100,
-                                "Background": "{BackgroundDefault}",
-                                "Triggers": [
-                                    {
-                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                        "Property": "Background",
-                                        "Value": "{BackgroundDarker}"
-                                    },
-                                    {
-                                        "Condition": "{Item.Index, Converter=NumberEquals, Parameter=0}",
-                                        "Property": "Source",
-                                        "Value": ""
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "Header": "",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "fader_cell"
+                        "BlockType": "component",
+                        "Component": "subheader_tables",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "renderData": "{Session.SessionType, Converter=StringToUpperString}  |  {Session.Track.Name, Converter=StringToUpperString}  |  {Season.Name, Converter=StringToUpperString}"
                             }
                         }
-                    ]
-                }
+                    },
+                    {
+                        "BlockType": "component",
+                        "Component": "main_head_cell"
+                    },
+                    {
+                        "BlockType": "component",
+                        "Component": "head_background_cell"
+                    },
+                    //table
+                    {
+                        "Name": "mainTable",
+                        "BlockType": "table",
+                        "Margin": "{MarginTable}",
+                        "Triggers": [
+                            {
+                                "Trigger": "RenderPages_Trigger"
+                            }
+                        ],
+                        "TableOptions": {
+                            "ItemsSource": "{Session.Drivers}",
+                            "RowSpacing": 3,
+                            "ColSpacing": 0,
+                            "HeaderTemplate": {
+                                "BlockType": "text",
+                                "Style": "table_head_style",
+                                "HorizontalAlignment": "Left"
+                            },
+                            "Columns": [
+                                //position
+                                {
+                                    "Header": "    POS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "position_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "position": "{Item.PositionString}"
+                                            }
+                                        },
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                                                "Property": "Background",
+                                                "Value": "{darkWhite}"
+                                            },
+                                            {
+                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
+                                                "Property": "Source",
+                                                "Value": "NC"
+                                            },
+                                            {
+                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
+                                                "Property": "Source",
+                                                "Value": "DNS"
+                                            },
+                                            {
+                                                "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
+                                                "Property": "Source",
+                                                "Value": "DSQ"
+                                            }
+                                        ]
+                                    }
+                                },
+                                //Car Number
+                                {
+                                    "Header": "CAR #",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "number_cell"
+                                    }
+                                },
+                                //Class
+                                {
+                                    "Header": "CLASS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "class_cell"
+                                    }
+                                },
+                                //Driver Name
+                                {
+                                    "Header": "DRIVERS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "driver_cell"
+                                    }
+                                },
+                                //Team
+                                {
+                                    "Header": "TEAM",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "team_cell"
+                                    }
+                                },
+                                //car
+                                {
+                                    "Header": "CAR",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "car_cell"
+                                    }
+                                },
+                                //Fastest Lap
+                                {
+                                    "Header": "TIME",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "fastlap_race"
+                                    }
+                                },
+                                //Laps
+                                {
+                                    "Header": "LAPS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "Laps_Race",
+                                        "RenderIf": "{ShowLapsQualy}"
+
+                                    }
+                                },
+                                {
+                                    "Header": "GAP",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "gap_cell"
+                                    }
+                                },
+                                {
+                                    "Header": "",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "fader_cell"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
             }
         ]
     }

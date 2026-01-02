@@ -1,0 +1,441 @@
+{
+    "ComponentName": "penalty_component",
+    "BlockType": "stack",
+    "Height": "*",
+    "Orientation": "Vertical",
+    "Items": [
+        {
+            "BlockType": "text",
+            "Source": "BULLETIN No. <{Penalty.PenaltyId}>",
+            "Padding": "5",
+            "FontName": "{FontNameWide}",
+            "FontSize": 24,
+            "HorizontalAlignment": "Center"
+        },
+        {
+            "BlockType": "shape",
+            "Height": 2,
+            "Width": 1024,
+            "HorizontalAlignment": "Center",
+            "ShapeOptions": {
+                "ShapeType": "rectangle",
+                "Fill": "{black}"
+            }
+        },
+        {
+            "BlockType": "dock",
+            "HorizontalAlignment": "Center",
+            "MarginTop": 10,
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Left",
+                    "Orientation": "Vertical",
+                    "Items": [
+                        {
+                            "BlockType": "dock",
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                {
+                                    "BlockType": "text",
+                                    "Width": 60,
+                                    "Source": "From:",
+                                    "FontName": "{FontNameBlack}",
+                                    "PaddingTop": 5
+                                },
+                                {
+                                    "BlockType": "text",
+                                    "Source": "The Stewards\n<{Penalty.Submitter.Name}>",
+                                    "PaddingTop": 5
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "dock",
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                {
+                                    "BlockType": "text",
+                                    "Width": 60,
+                                    "Source": "To:",
+                                    "FontName": "{FontNameBlack}",
+                                    "PaddingTop": 5
+                                },
+                                {
+                                    "BlockType": "stack",
+                                    "Orientation": "Vertical",
+                                    "Items": [
+                                        {
+                                            "BlockType": "text",
+                                            "Source": "<{Penalty.Team.Name}>",
+                                            "PaddingTop": 5
+                                        },
+                                        {
+                                            "BlockType": "itemstack",
+                                            "Orientation": "Vertical",
+                                            "ItemStackOptions": {
+                                                "ItemSource": "<{Penalty.DriversInvolved}>",
+                                                "ItemTemplate": {
+                                                    "BlockType": "text",
+                                                    "Source": "{Item.Name}",
+                                                    "PaddingTop": 5
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Right",
+                    "MarginRight": 60,
+                    "Orientation": "Vertical",
+                    "Items": [
+                        {
+                            "BlockType": "dock",
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                {
+                                    "BlockType": "text",
+                                    "Width": 65,
+                                    "Source": "Date:",
+                                    "FontName": "{FontNameBlack}",
+                                    "PaddingTop": 5
+                                },
+                                {
+                                    "BlockType": "text",
+                                    "Source": "<{Penalty.Date, Converter=DateCustomFormat, Parameter=dd MMMM yyyy}>",
+                                    "PaddingTop": 5
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "dock",
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                {
+                                    "BlockType": "text",
+                                    "Width": 65,
+                                    "Source": "Time:",
+                                    "FontName": "{FontNameBlack}",
+                                    "PaddingTop": 5
+                                },
+                                {
+                                    "BlockType": "text",
+                                    "Source": "<{Penalty.Date, Converter=DateCustomFormat, Parameter=hh:mm}> hrs",
+                                    "PaddingTop": 5
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "dock",
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                {
+                                    "BlockType": "text",
+                                    "Width": 65,
+                                    "Source": "Session:",
+                                    "FontName": "{FontNameBlack}",
+                                    "PaddingTop": 5
+                                },
+                                {
+                                    "BlockType": "text",
+                                    "Source": "<{Penalty.Session.SessionType}>",
+                                    "PaddingTop": 5
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType": "shape",
+            "HorizontalAlignment": "Center",
+            "Height": 2,
+            "MarginTop": 5,
+            "Width": 1024,
+            "ShapeOptions": {
+                "ShapeType": "rectangle",
+                "Fill": "{black}"
+            }
+        },
+        {
+            "BlockType": "text",
+            "HorizontalAlignment": "Left",
+            "Source": "The Stewards notify <{Penalty.Driver.Name}> of the following:",
+            "MarginTop": 10,
+            "PaddingTop": 5,
+            "Width": 1024,
+            "Height": "*",
+            "TextOptions": {
+                "Wrap": true
+            }
+        },
+        {
+            "BlockType": "text",
+            "HorizontalAlignment": "Left",
+            "Source": "<{Penalty.Offense}>",
+            "FontName": "{FontNameWide}",
+            "MarginTop": 10,
+            "PaddingTop": 5,
+            "Height": "*",
+            "Width": 1024,
+            "TextOptions": {
+                "Wrap": true
+            }
+        },
+        {
+            "BlockType": "text",
+            "HorizontalAlignment": "Left",
+            "Source": "<{Penalty.Description}>",
+            "MarginTop": 10,
+            "PaddingTop": 5,
+            "Height": "*",
+            "Width": 1024,
+            "TextOptions": {
+                "Wrap": true
+            }
+        },
+        {
+            "BlockType": "stack",
+            "HorizontalAlignment": "Left",
+            "MarginTop": 10,
+            "MarginBottom": 10,
+            "Orientation": "Horizontal",
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Left",
+                    "RenderIf": true,
+                    "MarginTop": 5,
+                    "MarginLeft": 20,
+                    "Orientation": "Horizontal",
+                    "Triggers": [
+                        {
+                            "Condition": "<{Penalty.Lap, Converter=NumberNotEquals, Parameter=0}>",
+                            "Property": "RenderIf",
+                            "Value": false
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "Source": "Lap:",
+                            "FontName": "{FontNameBlack}",
+                            "PaddingTop": 5,
+                            "PaddingRight": 5
+                        },
+                        {
+                            "BlockType": "text",
+                            "Source": "<{Penalty.Lap}>",
+                            "PaddingTop": 5
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "stack",
+                    "RenderIf": true,
+                    "HorizontalAlignment": "Left",
+                    "MarginTop": 5,
+                    "MarginLeft": 100,
+                    "Orientation": "Horizontal",
+                    "Triggers": [
+                        {
+                            "Condition": "<{Penalty.Turn, Converter=NumberNotEquals, Parameter=0}>",
+                            "Property": "RenderIf",
+                            "Value": false
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "Source": "Turn:",
+                            "FontName": "{FontNameBlack}",
+                            "PaddingTop": 5,
+                            "PaddingRight": 5
+                        },
+                        {
+                            "BlockType": "text",
+                            "Source": "<{Penalty.Turn}>",
+                            "PaddingTop": 5
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType": "dock",
+            "MarginTop": 20,
+            "MarginLeft": 20,
+            "HorizontalAlignment": "Left",
+            "Orientation": "Horizontal",
+            "Items": [
+                {
+                    "BlockType": "text",
+                    "Width": 70,
+                    "Source": "Veredict:",
+                    "FontName": "{FontNameBlack}",
+                    "PaddingTop": 5,
+                    "PaddingRight": 5
+                },
+                {
+                    "BlockType": "text",
+                    "Source": "<{Penalty.Verdict}>",
+                    "PaddingTop": 5
+                }
+            ]
+        },
+        {
+            "BlockType": "dock",
+            "HorizontalAlignment": "Left",
+            "MarginTop": 20,
+            "MarginLeft": 20,
+            "Orientation": "Horizontal",
+            "Items": [
+                {
+                    "BlockType": "text",
+                    "Source": "Penalty:",
+                    "Width": 70,
+                    "FontName": "{FontNameBlack}",
+                    "PaddingTop": 5,
+                    "PaddingRight": 5
+                }
+            ]
+        },
+        {
+            "BlockType": "stack",
+            "HorizontalAlignment": "Left",
+            "Orientation": "Horizontal",
+            "MarginLeft": 40,
+            "MarginTop": 10,
+            "MarginBottom": 10,
+            "Spacing": 50,
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberNotEquals, Parameter=0}>",
+                    "Orientation": "Horizontal",
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "Source": "Pen. Points:",
+                            "FontName": "{FontNameBlack}",
+                            "PaddingTop": 5,
+                            "PaddingRight": 5
+                        },
+                        {
+                            "BlockType": "text",
+                            "Source": "<{Penalty.PenaltyPoints}>",
+                            "PaddingTop": 5
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "stack",
+                    "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberNotEquals, Parameter=0}>",
+                    "Orientation": "Horizontal",
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "Source": "Pen. Seconds:",
+                            "FontName": "{FontNameBlack}",
+                            "PaddingTop": 5,
+                            "PaddingRight": 5
+                        },
+                        {
+                            "BlockType": "text",
+                            "Source": "<{Penalty.PenaltySeconds}>",
+                            "PaddingTop": 5
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "stack",
+                    "RenderIf": "<{Penalty.PenaltyWarnings, Converter=NumberNotEquals, Parameter=0}>",
+                    "Orientation": "Horizontal",
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "Source": "Pen. Warnings:",
+                            "FontName": "{FontNameBlack}",
+                            "PaddingTop": 5,
+                            "PaddingRight": 5
+                        },
+                        {
+                            "BlockType": "text",
+                            "Source": "<{Penalty.PenaltyWarnings}>",
+                            "PaddingTop": 5
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType": "dock",
+            "HorizontalAlignment": "Left",
+            "MarginTop": 40,
+            "RenderIf": "<{Penalty.IsDisqualified}>",
+            "Orientation": "Horizontal",
+            "Items": [
+                {
+                    "BlockType": "text",
+                    "Source": "Decision:",
+                    "FontName": "{FontNameBlack}",
+                    "PaddingTop": 5,
+                    "PaddingRight": 5
+                },
+                {
+                    "BlockType": "text",
+                    "Source": "DESQUALIFIED",
+                    "PaddingTop": 5
+                }
+            ]
+        },
+        {
+            "BlockType": "dock",
+            "HorizontalAlignment": "Left",
+            "MarginTop": 40,
+            "RenderIf": "<{Penalty.IsNoPunishment}>",
+            "Orientation": "Horizontal",
+            "Items": [
+                {
+                    "BlockType": "text",
+                    "Source": "Decision:",
+                    "FontName": "{FontNameBlack}",
+                    "PaddingTop": 5,
+                    "PaddingRight": 5
+                },
+                {
+                    "BlockType": "text",
+                    "Source": "No Futher Action",
+                    "PaddingTop": 5
+                }
+            ]
+        },
+        {
+            "BlockType": "dock",
+            "HorizontalAlignment": "Left",
+            "MarginTop": 40,
+            "RenderIf": "<{Penalty.IsCancelled}>",
+            "Orientation": "Horizontal",
+            "Items": [
+                {
+                    "BlockType": "text",
+                    "Source": "Decision:",
+                    "FontName": "{FontNameBlack}",
+                    "PaddingTop": 5,
+                    "PaddingRight": 5
+                },
+                {
+                    "BlockType": "text",
+                    "Source": "Revoked Penalty",
+                    "PaddingTop": 5
+                }
+            ]
+        }
+    ]
+}

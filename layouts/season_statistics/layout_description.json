@@ -1,3 +1,4 @@
 {
-    "RenderType": "DriverSeasonStatistics"
+    "RenderType": "DriverSeasonStatistics",
+    "RenderCaption": "Render Season Statistics"
 }

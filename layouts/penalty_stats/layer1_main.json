@@ -1,0 +1,189 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "league_head_cell"
+            },
+            {
+                "BlockType": "stack",
+                "Margin": "{MarginRoot}",
+                "Orientation": "Vertical",
+                "Items": [
+                    {
+                        "BlockType": "component",
+                        "Component": "subheader_tables",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "renderData": "{Season.Name, Converter=StringToUpperString}  PENALTIES  |   {Season.LeagueInfo.LeagueName, Converter=StringToUpperString} DRIVERS"
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "dock",
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "Source": "back_main_cut",
+                                "Width": 30,
+                                "Height": 56
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "Penalty",
+                                "Background": "{red}",
+                                "FontSize": 16,
+                                "Foreground": "{BackgroundDefault}",
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Center",
+                                "Height": 56,
+                                "Width": "*"
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "component",
+                        "Component": "head_background_cell"
+                    },
+                    //table
+                    {
+                        "Name": "mainTable",
+                        "BlockType": "table",
+                        "Margin": "{MarginTable}",
+                        "Triggers": [
+                            {
+                                "Trigger": "RenderPages_Trigger"
+                            }
+                        ],
+                        "TableOptions": {
+                            "ItemsSource": "{Penalties.Drivers}",
+                            "RowSpacing": 3,
+                            "ColSpacing": 3,
+                            "HeaderTemplate": {
+                                "BlockType": "text",
+                                "Style": "table_head_style",
+                                "HorizontalAlignment": "Left",
+                                "Width": 80,
+                                "Height": 14,
+                                "TextOptions": {
+                                    "Wrap": true
+                                }
+                            },
+                            "Columns": [
+                                //Driver Name
+                                {
+                                    "Header": "DRIVERS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "driver_cell"
+                                    }
+                                },
+                                {
+                                    "Header": "CAR",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "car_cell"
+                                    }
+                                },
+                                {
+                                    "Header": "POINTS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "penalty_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "penalData": "{Item.PenaltyPointsActive, Converter=NumberZeroToEmpty}"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "WARNINGS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "penalty_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "penalData": "{Item.PenaltyWarningsActive, Converter=NumberZeroToEmpty}"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "TIME (S)",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "penalty_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "penalData": "{Item.PenaltySeconds, Converter=NumberZeroToEmpty}"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "POSITIONS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "penalty_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "penalData": "{Item.PenaltyPositions, Converter=NumberZeroToEmpty}"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "GAME TIME (S)",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "penalty_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "penalData": "{Item.PenaltyIngameSeconds, Converter=NumberZeroToEmpty}"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "TOTAL POINTS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "penalty_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "penalData": "{Item.PenaltyPointsOverall, Converter=NumberZeroToEmpty}"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "TOTAL WARNINGS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "penalty_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "penalData": "{Item.PenaltyWarningsOverall, Converter=NumberZeroToEmpty}"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "fader_cell"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

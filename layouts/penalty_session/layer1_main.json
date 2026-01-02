@@ -1,0 +1,81 @@
+{
+    "BlockRoot": {
+        "BlockType": "stack",
+        "Margin": "60",
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType": "stack",
+                "Orientation": "Vertical",
+                "HorizontalAlignment": "Right",
+                "MarginBottom": 20,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "HorizontalAlignment": "Right",
+                        "Source": "{Season.LeagueInfo.LeagueLogo}",
+                        "Height": 150,
+                        "MarginBottom": 10
+                    },
+                    {
+                        "BlockType": "text",
+                        "HorizontalAlignment": "Right",
+                        "Source": "{Season.LeagueInfo.LeagueName}",
+                        "PaddingTop": 5
+                    },
+                    {
+                        "BlockType": "text",
+                        "HorizontalAlignment": "Right",
+                        "Source": "{Season.Name}",
+                        "PaddingTop": 5
+                    },
+                    {
+                        "BlockType": "text",
+                        "HorizontalAlignment": "Right",
+                        "Source": "{Event.Track.CircuitFullName} {Event.Date, Converter=DateCustomFormat, Parameter=yyyy}",
+                        "PaddingTop": 5
+                    }
+                ]
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "Spacing": 50,
+                "Triggers": [
+                    {
+                        "Trigger": "RenderPages_Trigger_itemstack"
+                    }
+                ],
+                "ItemStackOptions": {
+                    "ItemSource": "{Penalties.Penalties}",
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Items": [
+                            {
+                                "BlockType": "component",
+                                "Component": "penalty_component",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "Penalty": "Item"
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "shape",
+                                "HorizontalAlignment": "Center",
+                                "MarginTop": 40,
+                                "Height": 2,
+                                "Width": 700,
+                                "ShapeOptions": {
+                                    "Fill": "{black}",
+                                    "ShapeType": "rectangle"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

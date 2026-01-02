@@ -16,15 +16,23 @@
                     "Source": "{Item.Track.Nation.LogotypePath}",
                     "VerticalAlignment": "Center",
                     "HorizontalAlignment": "Center",
-                    "Width": 1420,
-                    "Triggers": [
-                        {
-                            "Condition": "{CustomImage}",
-                            "ConditionAnd": "{track_images/{Item.Track.CircuitName}, Converter=EmptyObjectToFalse}",
-                            "Property": "Source",
-                            "Value": "track_images/{Item.Track.CircuitName}"
-                        }
-                    ]
+                    "Width": 1420
+                }
+            ]
+        },
+        {
+            "BlockType": "dock",
+            "PositionX": 0,
+            "PositionY": 0,
+            "Width": 1420,
+            "Height": 383,
+            "Items": [
+                {
+                    "BlockType": "image",
+                    "Source": "{CustomTrackImage}",
+                    "VerticalAlignment": "Center",
+                    "HorizontalAlignment": "Center",
+                    "Width": 1420
                 }
             ]
         },
@@ -44,7 +52,7 @@
                             "BlockType": "stack",
                             "Orientation": "Vertical",
                             "Padding": "10,15",
-                            "Background": "{HeadMain}",
+                            "Background": "{red}",
                             "Height": 100,
                             "MaxWidth": 132,
                             "Items": [
@@ -78,13 +86,13 @@
                 },
                 {
                     "BlockType": "image",
-                    "Source": "track_layouts/{Item.Track.CircuitName}.png",
+                    "Source": "{TrackLayout}",
                     "Padding": "10",
                     "Height": 80,
                     "HorizontalAlignment": "Right",
                     "VerticalAlignment": "Center",
                     "Colorize": {
-                        "Color": "#ffffff"
+                        "Color": "{white}"
                     }
                 }
             ]
@@ -100,7 +108,7 @@
                 "ColorBlendingMode": "Normal",
                 "BlendPercentage": 50,
                 "AlphaCompositionMode": "DestAtop",
-                "Color": "#000000"
+                "Color": "{black}"
             },
             "Items": [
                 {
@@ -121,7 +129,7 @@
                             "HorizontalAlignment": "Left",
                             "PaddingTop": 5,
                             "FontSize": 22,
-                            "Foreground": "#FFFFFF"
+                            "Foreground": "{white}"
                         },
                         {
                             "BlockType": "image",
@@ -141,7 +149,7 @@
                     "VerticalAlignment": "Center",
                     "HorizontalAlignment": "Left",
                     "FontSize": 18,
-                    "Foreground": "#B3B3B3"
+                    "Foreground": "{lightdarkGrey}"
                 },
                 {
                     "BlockType": "text",
@@ -150,7 +158,7 @@
                     "VerticalAlignment": "Center",
                     "HorizontalAlignment": "Left",
                     "FontSize": 18,
-                    "Foreground": "#B3B3B3"
+                    "Foreground": "{lightdarkGrey}"
                 },
                 {
                     "BlockType": "stack",
@@ -165,7 +173,7 @@
                             "HorizontalAlignment": "Left",
                             "FontSize": 14,
                             "Foreground": "{BackgroundDefault}",
-                            "Background": "#3e3f40",
+                            "Background": "{darkGrey}",
                             "Orientation": "Horizontal"
                         },
                         {
@@ -176,7 +184,7 @@
                             "PaddingTop": 5,
                             "FontSize": 14,
                             "Foreground": "{BackgroundDefault}",
-                            "Background": "{HeadMain}",
+                            "Background": "{red}",
                             "Orientation": "Horizontal"
                         }
                     ]

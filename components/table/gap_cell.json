@@ -3,7 +3,8 @@
     "BlockType": "dock",
     "Background": "{BackgroundDefault}",
     "MaxWidth": 215,
-    "Height": 20,
+    "StretchWidth": true,
+    //"Height": 15,
     "MaxHeight": 72,
     "Triggers": [
         {
@@ -14,7 +15,7 @@
         {
             "BlockType": "text",
             "Width": 125,
-            "Source": "{Item.IntervalRace}",
+            "Source": "{Item.Time}",
             "Style": "mainTable_Style",
             "Triggers": [
                 {
@@ -26,8 +27,17 @@
                     "Value": ""
                 },
                 {
-                    "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
-                    "ConditionOr": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
+                    "Condition": "{Item.Time, Converter=StringEquals, Parameter=DSQ}",
+                    "Property": "Source",
+                    "Value": ""
+                },
+                {
+                    "Condition": "{Item.Time, Converter=StringEquals, Parameter=DNF}",
+                    "Property": "Source",
+                    "Value": ""
+                },
+                {
+                    "Condition": "{Item.Time, Converter=StringEquals, Parameter=DNS}",
                     "Property": "Source",
                     "Value": ""
                 }

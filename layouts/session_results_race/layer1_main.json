@@ -15,7 +15,63 @@
                 "Items": [
                     {
                         "BlockType": "component",
-                        "Component": "session_header"
+                        "Component": "subheader_tables",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "renderData": "{Session.SessionType, Converter=StringToUpperString}  |  {Session.Track.Name, Converter=StringToUpperString}  |  {Season.Name, Converter=StringToUpperString}"
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "dock",
+                        "Orientation": "Horizontal",
+                        "RenderIf": "{ShowPodium}",
+                        "MarginBottom": 40,
+                        "Width": "*",
+                        "Items": [
+                            {
+                                "BlockType": "itemstack",
+                                "HorizontalAlignment": "Left",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "Limit": 1,
+                                    "IndexStart": 0,
+                                    "ItemTemplate": {
+                                        "BlockType": "component",
+                                        "Component": "team_table_top",
+                                        "HorizontalAlignment": "Center"
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "Limit": 1,
+                                    "IndexStart": 1,
+                                    "ItemTemplate": {
+                                        "BlockType": "component",
+                                        "Component": "team_table_top",
+                                        "HorizontalAlignment": "Center"
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "HorizontalAlignment": "Right",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "Limit": 1,
+                                    "IndexStart": 2,
+                                    "ItemTemplate": {
+                                        "BlockType": "component",
+                                        "Component": "team_table_top",
+                                        "HorizontalAlignment": "Center"
+                                    }
+                                }
+                            }
+                        ]
                     },
                     {
                         "BlockType": "component",
@@ -41,10 +97,12 @@
                             "ColSpacing": 0,
                             "HeaderTemplate": {
                                 "BlockType": "text",
+                                "HorizontalAlignment": "Left",
                                 "Style": "table_head_style",
-                                "HorizontalAlignment": "Left"
+                                "StretchWidth": true
                             },
                             "Columns": [
+
                                 //position
                                 {
                                     "Header": "     POS",
@@ -97,7 +155,8 @@
                                     "Header": "TIME",
                                     "Template": {
                                         "BlockType": "component",
-                                        "Component": "fastlap_race"
+                                        "Component": "fastlap_race",
+                                        "RenderIf": "{ShowPBRace}"
                                     }
                                 },
                                 //Laps
@@ -105,7 +164,8 @@
                                     "Header": "LAPS",
                                     "Template": {
                                         "BlockType": "component",
-                                        "Component": "Laps_Race"
+                                        "Component": "Laps_Race",
+                                        "RenderIf": "{ShowLapsRace}"
                                     }
                                 },
                                 {

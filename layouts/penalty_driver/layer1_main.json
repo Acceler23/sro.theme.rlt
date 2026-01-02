@@ -1,0 +1,49 @@
+{
+    "BlockRoot": {
+        "BlockType": "stack",
+        "Margin": "40",
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType": "stack",
+                "Orientation": "Vertical",
+                "HorizontalAlignment": "Right",
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "HorizontalAlignment": "Right",
+                        "Source": "{Season.LeagueInfo.LeagueLogo}",
+                        "Height": 150
+                    },
+                    {
+                        "BlockType": "text",
+                        "HorizontalAlignment": "Right",
+                        "Source": "{Season.LeagueInfo.LeagueName}",
+                        "PaddingTop": 5
+                    },
+                    {
+                        "BlockType": "text",
+                        "HorizontalAlignment": "Right",
+                        "Source": "{Season.Name}",
+                        "PaddingTop": 5
+                    },
+                    {
+                        "BlockType": "text",
+                        "HorizontalAlignment": "Right",
+                        "Source": "{Penalty.Session.Track.CircuitFullName} {Penalty.Date, Converter=DateCustomFormat, Parameter=yyyy}",
+                        "PaddingTop": 5
+                    }
+                ]
+            },
+            {
+                "BlockType": "component",
+                "Component": "penalty_component",
+                "ComponentOptions": {
+                    "Vars": {
+                        "Penalty": "Penalty"
+                    }
+                }
+            }
+        ]
+    }
+}

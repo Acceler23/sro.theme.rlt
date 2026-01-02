@@ -40,6 +40,7 @@
             "BlockType": "image",
             "VerticalAlignment": "Center",
             "Height": 22,
+            "MarginTop": -2,
             "Source": "{Item.Track.Nation.LogotypePath}"
         },
         {

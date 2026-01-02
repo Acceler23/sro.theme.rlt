@@ -1,10 +1,10 @@
 {
     "ComponentName": "Laps_Race",
     "BlockType": "dock",
-    "RenderIf": "{ShowLapsRace}",
     "Background": "{BackgroundDefault}",
     "MaxWidth": 215,
-    "Height": 20,
+    "StretchWidth": true,
+    //"Height": 15,
     "MaxHeight": 72,
     "Triggers": [
         {

@@ -1,0 +1,367 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "100",
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType": "stack",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Items": [
+                            {
+                                "BlockType": "stack",
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{DriverInfo.Driver.Name}",
+                                        "PaddingTop": 8,
+                                        "FontSize": 46,
+                                        "FontName": "{FontNameWide}"
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "  -  {Season.Name}",
+                                        "PaddingTop": 8,
+                                        "FontSize": 46,
+                                        "Foreground": "{darkGrey}"
+                                    }
+                                ]
+                            },
+                            //Team
+                            {
+                                "BlockType": "text",
+                                "Source": "{DriverInfo.Team.FullName}",
+                                "PaddingTop": 5,
+                                "FontSize": 30,
+                                "Foreground": "{darkGrey}"
+                            },
+                            //infos
+                            {
+                                "BlockType": "stack",
+                                "Orientation": "Horizontal",
+                                "Spacing": 10,
+                                "Padding": "17",
+                                "Items": [
+                                    //Left side
+                                    {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "MarginTop": 40,
+                                        "HorizontalAlignment": "Left",
+                                        "Items": [
+                                            //Roles
+                                            {
+                                                "BlockType": "stack",
+                                                "Orientation": "Vertical",
+                                                "Width": 350,
+                                                "Height": 150,
+                                                "HorizontalAlignment": "Left",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "shape",
+                                                        "Width": 320,
+                                                        "Height": 2,
+                                                        "ShapeOptions": {
+                                                            "Fill": "{darkGrey}",
+                                                            "ShapeType": "rectangle"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "stack",
+                                                        "MarginTop": 15,
+                                                        "Orientation": "Vertical",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "PaddingTop": 5,
+                                                                "Source": "League Roles",
+                                                                "FontSize": 16,
+                                                                "FontName": "{FontNameWide}"
+                                                            },
+                                                            {
+                                                                "BlockType": "itemstack",
+                                                                "MarginTop": 10,
+                                                                "Orientation": "Vertical",
+                                                                "ItemStackOptions": {
+                                                                    "ItemSource": "{DriverInfo.Driver.LeagueRoles}",
+                                                                    "ItemTemplate": {
+                                                                        "BlockType": "text",
+                                                                        "Source": "{Item.Name}",
+                                                                        "FontSize": 16,
+                                                                        "PaddingTop": 5,
+                                                                        "MarginTop": 3,
+                                                                        "FontName": "{FontNameDefault}"
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "stack",
+                                                "Orientation": "Vertical",
+                                                "Width": 350,
+                                                "Height": 150,
+                                                "HorizontalAlignment": "Left",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "shape",
+                                                        "Width": 320,
+                                                        "Height": 2,
+                                                        "ShapeOptions": {
+                                                            "Fill": "{darkGrey}",
+                                                            "ShapeType": "rectangle"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "stack",
+                                                        "MarginTop": 15,
+                                                        "Orientation": "Vertical",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "PaddingTop": 5,
+                                                                "Source": "Car",
+                                                                "FontSize": 16,
+                                                                "FontName": "{FontNameWide}"
+                                                            },
+                                                            {
+                                                                "BlockType": "text",
+                                                                "VerticalAlignment": "Center",
+                                                                "Source": "{DriverInfo.Car.Name}",
+                                                                "FontSize": 16,
+                                                                "PaddingTop": 5,
+                                                                "MarginTop": 12
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    //Right Side
+                                    {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "MarginTop": 40,
+                                        "HorizontalAlignment": "Right",
+                                        "Items": [
+                                            //Nationality
+                                            {
+                                                "BlockType": "stack",
+                                                "Orientation": "Vertical",
+                                                "Width": 350,
+                                                "Height": 150,
+                                                "HorizontalAlignment": "Right",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "shape",
+                                                        "Width": 320,
+                                                        "Height": 2,
+                                                        "ShapeOptions": {
+                                                            "Fill": "{darkGrey}",
+                                                            "ShapeType": "rectangle"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "stack",
+                                                        "MarginTop": 15,
+                                                        "Orientation": "Vertical",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "PaddingTop": 5,
+                                                                "Source": "Nationality",
+                                                                "FontSize": 16,
+                                                                "FontName": "{FontNameWide}"
+                                                            },
+                                                            {
+                                                                "BlockType": "stack",
+                                                                "Orientation": "Horizontal",
+                                                                "MarginTop": 10,
+                                                                "Items": [
+                                                                    {
+                                                                        "BlockType": "image",
+                                                                        "Height": 35,
+                                                                        "VerticalAlignment": "Center",
+                                                                        "ImageOptions": {
+                                                                            "Path": "{DriverInfo.Driver.Nationality.LogotypePath}",
+                                                                            "VerticalAlignment": "Center"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "BlockType": "text",
+                                                                        "VerticalAlignment": "Center",
+                                                                        "Source": "  {DriverInfo.Driver.Nationality.Name}",
+                                                                        "FontSize": 16,
+                                                                        "PaddingTop": 5,
+                                                                        "MarginTop": 3
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "stack",
+                                                "Orientation": "Vertical",
+                                                "Width": 350,
+                                                "Height": 150,
+                                                "HorizontalAlignment": "Right",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "shape",
+                                                        "Width": 320,
+                                                        "Height": 2,
+                                                        "ShapeOptions": {
+                                                            "Fill": "{darkGrey}",
+                                                            "ShapeType": "rectangle"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "stack",
+                                                        "MarginTop": 15,
+                                                        "Orientation": "Vertical",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "PaddingTop": 5,
+                                                                "Source": "Gamertags",
+                                                                "FontSize": 16,
+                                                                "FontName": "{FontNameWide}"
+                                                            },
+                                                            {
+                                                                "BlockType": "text",
+                                                                "VerticalAlignment": "Center",
+                                                                "Source": "{DriverInfo.Driver.RealName}",
+                                                                "FontSize": 16,
+                                                                "PaddingTop": 5,
+                                                                "MarginTop": 12
+                                                            },
+                                                            {
+                                                                "BlockType": "text",
+                                                                "VerticalAlignment": "Center",
+                                                                "Source": "{DriverInfo.Driver.InGameName}",
+                                                                "FontSize": 16,
+                                                                "PaddingTop": 5,
+                                                                "MarginTop": 3
+                                                            },
+                                                            {
+                                                                "BlockType": "text",
+                                                                "VerticalAlignment": "Center",
+                                                                "Source": "{DriverInfo.Driver.DiscordLink}",
+                                                                "FontSize": 16,
+                                                                "PaddingTop": 5,
+                                                                "MarginTop": 3
+                                                            },
+                                                            {
+                                                                "BlockType": "text",
+                                                                "VerticalAlignment": "Center",
+                                                                "Source": "{DriverInfo.Driver.SteamName}",
+                                                                "FontSize": 16,
+                                                                "PaddingTop": 5,
+                                                                "MarginTop": 3
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            //stats
+                            {
+                                "BlockType": "stack",
+                                "Orientation": "Vertical",
+                                "Padding": "17",
+                                "Items": [
+                                    {
+                                        "BlockType": "shape",
+                                        "Width": 680,
+                                        "Height": 2,
+                                        "ShapeOptions": {
+                                            "Fill": "{darkGrey}",
+                                            "ShapeType": "rectangle"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "MarginTop": 15,
+                                        "PaddingTop": 5,
+                                        "Source": "Badges",
+                                        "FontSize": 16,
+                                        "FontName": "{FontNameWide}"
+                                    },
+                                    {
+                                        "BlockType": "itemstack",
+                                        "MarginTop": 12,
+                                        "Orientation": "Horizontal",
+                                        "Spacing": 10,
+                                        "ItemStackOptions": {
+                                            "ItemSource": "{DriverInfo.Driver.BadgeImages}",
+                                            "ItemTemplate": {
+                                                "BlockType": "image",
+                                                "PaddingTop": 5,
+                                                "Height": 30,
+                                                "ImageOptions": {
+                                                    "Path": "{Item}"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "VerticalAlignment": "Center",
+                                        "Source": "{DriverInfo.Driver.BadgeText}",
+                                        "FontSize": 16,
+                                        "PaddingTop": 5,
+                                        "MarginTop": 12
+                                    },
+
+                                    {
+                                        "BlockType": "text",
+                                        "VerticalAlignment": "Center",
+                                        "Source": "{DriverInfo.Driver.Description}",
+                                        "FontSize": 16,
+                                        "PaddingTop": 5,
+                                        "MarginTop": 12
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "dock",
+                        "RenderIf": "{DriverInfo.Driver.LogotypePath, Converter=EmptyObjectToFalse}",
+                        "Width": 670,
+                        "Height": 670,
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Bottom",
+                        "BackgroundImage": "bg_dark",
+                        "BackgroundImageOpacity": 40,
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Top",
+                                "PaddingTop": 40,
+                                "Height": 1200,
+                                "Source": "{DriverInfo.Driver.LogotypePath}"
+                            }
+                        ]
+                    }
+
+                ]
+            }
+        ]
+    }
+}

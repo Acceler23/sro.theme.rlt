@@ -1,3 +1,4 @@
 {
-    "RenderType": "DriverSession"
+    "RenderType": "DriverSession",
+    "RenderCaption": "Render Driver Session"
 }
