@@ -1,7 +1,7 @@
 [
     {
         "TriggerName": "DarkerBackground",
-        "Condition": "{Item.Position, Converter=NumberIsEven}",
+        "Condition": "{Item.Index, Converter=NumberIsOdd}",
         "Property": "Background",
         "Value": "{darkWhite}"
     },
@@ -19,5 +19,4 @@
             }
         ]
     }
-
 ]
