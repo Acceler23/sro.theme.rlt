@@ -156,10 +156,8 @@
                                         },
                                         "Triggers": [
                                             {
-                                                "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                                "Property": "Background",
-                                                "Value": "{BackgroundDarker}"
-                                            }
+            "Trigger": "DarkerBackground"
+        }
                                         ]
                                     }
                                 ]
@@ -176,10 +174,8 @@
                                 "Height": "*",
                                 "Triggers": [
                                     {
-                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                        "Property": "Background",
-                                        "Value": "{BackgroundDarker}"
-                                    }
+            "Trigger": "DarkerBackground"
+        }
                                 ]
                             }
                         },
@@ -215,10 +211,8 @@
                                 "Width": 80,
                                 "Triggers": [
                                     {
-                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                        "Property": "Background",
-                                        "Value": "{BackgroundDarker}"
-                                    }
+            "Trigger": "DarkerBackground"
+        }
                                 ]
                             }
                         },
@@ -234,4 +228,5 @@
             }
         ]
     }
+
 }
