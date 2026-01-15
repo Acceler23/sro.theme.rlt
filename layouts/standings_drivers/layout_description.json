@@ -1,3 +1,4 @@
 {
-    "RenderType": "DriverStandings"
+    "RenderType": "DriverStandings",
+    "RenderCaption": "Render Driver Standings"
 }

@@ -22,7 +22,7 @@
                     "Trigger": "DarkerBackground"
                 },
                 {
-                    "Condition": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                    "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
                     "Property": "Source",
                     "Value": ""
                 },

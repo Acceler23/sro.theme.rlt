@@ -3,7 +3,6 @@
     "BlockType": "stack",
     "Background": "{BackgroundDefault}",
     //"Height": 15,
-    "StretchWidth": true,
     "MaxHeight": 72,
     "Triggers": [
         {
@@ -14,11 +13,13 @@
         {
             "BlockType": "text",
             "Style": "mainTable_Style_noWrap",
-            "Source": "<{data.Value}>"
+            "Source": "<{data.Value}>",
+            "PaddingLeft": 10
         },
         //stint
         {
             "BlockType": "itemstack",
+            "HorizontalAlignment": "Left",
             "ItemStackOptions": {
                 "ItemSource": "<{data.Stints}>",
                 "ItemTemplate": {
@@ -53,6 +54,7 @@
                 }
             }
         },
+        /*
         //tyres
         {
             "BlockType": "stack",
@@ -63,6 +65,6 @@
                     "Source": "<{data.Tyres, Converter=StringFormatReverse, Parameter=tyres_SUB.png}>"
                 }
             ]
-        }
+        }*/
     ]
 }

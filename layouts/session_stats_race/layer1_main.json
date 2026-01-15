@@ -1,0 +1,283 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "league_head_cell"
+            },
+            {
+                "BlockType": "stack",
+                "Margin": "{MarginRoot}",
+                "Orientation": "Vertical",
+                "Items": [
+                    {
+                        "BlockType": "component",
+                        "Component": "subheader_tables",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "renderData": "{Session.SessionType, Converter=StringToUpperString}  |  {Session.Track.Name, Converter=StringToUpperString}  |  {Season.Name, Converter=StringToUpperString}"
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "component",
+                        "Component": "main_head_cell"
+                    },
+                    {
+                        "BlockType": "component",
+                        "Component": "head_background_cell"
+                    },
+                    //table
+                    {
+                        "Name": "mainTable",
+                        "BlockType": "table",
+                        "Margin": "{MarginTable}",
+                        "Triggers": [
+                            {
+                                "Trigger": "RenderPages_Trigger"
+                            }
+                        ],
+                        "TableOptions": {
+                            "ItemsSource": "{Session.Drivers}",
+                            "RowSpacing": 3,
+                            "ColSpacing": 0,
+                            "HeaderTemplate": {
+                                "BlockType": "text",
+                                "HorizontalAlignment": "Left",
+                                "Style": "table_head_style",
+                                "StretchWidth": true
+                            },
+                            "Columns": [
+
+                                //position
+                                {
+                                    "Header": "     POS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "position_cell"
+                                    }
+                                },
+                                {
+                                    "Header": "START",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "sessionSimple_stats_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "statsData": "{Item.GridPosition}"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "+/-",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "position_jump"
+                                    }
+                                },
+                                {
+                                    "Header": "PASSES",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "sessionSimple_stats_cell",
+                                        "RenderIf": "{Item.OvertakesCount, Converter=NumberNotEquals, Parameter=0}",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "statsData": "{Item.OvertakesCount}"
+                                            }
+                                        }
+                                    }
+                                },
+                                //Car Number
+                                {
+                                    "Header": "CAR #",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "number_cell"
+                                    }
+                                },
+                                //Class
+                                {
+                                    "Header": "CLASS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "class_cell"
+                                    }
+                                },
+                                //Driver Name
+                                {
+                                    "Header": "DRIVERS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "driver_cell"
+                                    }
+                                },
+                                //Team
+                                {
+                                    "Header": "TEAM",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "team_cell"
+                                    }
+                                },
+                                {
+                                    "Header": "CAR",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "car_cell"
+                                    }
+                                },
+                                {
+                                    "Header": "POINTS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "sessionSimple_stats_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "statsData": "{Item.DriverPoints}"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "TEAM P.",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "sessionSimple_stats_cell",
+                                        "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "statsData": "{Item.TeamPoints}"
+                                            }
+                                        }
+                                    }
+                                },
+                                //Fastest Lap
+                                {
+                                    "Header": "RACE TIME",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "sessionSimple_stats_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "statsData": "{Item.AbsoluteTime}"
+                                            }
+                                        }
+                                    }
+                                },
+                                //Laps
+                                {
+                                    "Header": "LAPS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "Laps_Race"
+                                    }
+                                },
+                                {
+                                    "Header": "GAP",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "gap_cell"
+                                    }
+                                },
+                                {
+                                    "Header": "FASTEST LAP",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "fastlap_race",
+                                        "StretchWidth": true
+                                    }
+                                },
+                                {
+                                    "Header": "S1",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "sessionSimple_stats_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "statsData": "{Item.FastestLapSector1}"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "S2",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "sessionSimple_stats_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "statsData": "{Item.FastestLapSector2}"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "S3",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "sessionSimple_stats_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "statsData": "{Item.FastestLapSector3}"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "PITS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "sessionSimple_stats_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "statsData": "{Item.PitsCount, Converter=NumberZeroToEmpty}"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "MAX SPEED",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        //"RenderIf": "{Item.MaxSpeed, Converter=NumberNotEquals, Parameter=0}",
+                                        "Component": "sessionSimple_stats_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "statsData": "{Item.MaxSpeed, Converter=NumberZeroToEmpty}"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "LEAD",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        //"RenderIf": "{Item.LeadLaps, Converter=NumberNotEquals, Parameter=0}",
+                                        "Component": "sessionSimple_stats_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "statsData": "{Item.LeadLaps, Converter=NumberZeroToEmpty}"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "Header": "",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "fader_cell"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

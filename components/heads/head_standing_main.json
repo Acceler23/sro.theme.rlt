@@ -10,7 +10,7 @@
         },
         {
             "BlockType": "text",
-            "Source": "{Season.LeagueInfo.LeagueName}",
+            "Source": "{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}",
             "Background": "{red}",
             "FontSize": 16,
             "Foreground": "{BackgroundDefault}",

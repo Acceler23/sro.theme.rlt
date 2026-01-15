@@ -67,6 +67,7 @@
                         "Items": [
                             {
                                 "BlockType": "itemstack",
+                                "Spacing": 20,
                                 "Orientation": "Vertical",
                                 "ItemStackOptions": {
                                     "CollectionPart": "1/4",
@@ -79,6 +80,7 @@
                             },
                             {
                                 "BlockType": "itemstack",
+                                "Spacing": 20,
                                 "Orientation": "Vertical",
                                 "MarginLeft": 30,
                                 "ItemStackOptions": {
@@ -92,6 +94,7 @@
                             },
                             {
                                 "BlockType": "itemstack",
+                                "Spacing": 20,
                                 "Orientation": "Vertical",
                                 "MarginLeft": 30,
                                 "ItemStackOptions": {
@@ -105,6 +108,7 @@
                             },
                             {
                                 "BlockType": "itemstack",
+                                "Spacing": 20,
                                 "Orientation": "Vertical",
                                 "MarginLeft": 30,
                                 "ItemStackOptions": {

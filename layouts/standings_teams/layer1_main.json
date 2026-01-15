@@ -2,7 +2,6 @@
     "BlockRoot": {
         "Name": "mainStack",
         "BlockType": "stack",
-        "Margin": "{MarginRoot}",
         "Orientation": "Vertical",
         "Items": [
             {
@@ -11,164 +10,171 @@
             },
             {
                 "BlockType": "stack",
-                "Orientation": "Horizontal",
-                "Padding": "{PaddingDefault}",
-                "HorizontalAlignment": "Left",
-                "MarginBottom": 10,
+                "Orientation": "Vertical",
+                "Margin": "{MarginRoot}",
                 "Items": [
                     {
                         "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "Padding": "{PaddingDefault}",
+                        "HorizontalAlignment": "Left",
+                        "MarginBottom": 10,
                         "Items": [
                             {
-                                "BlockType": "text",
-                                "Source": ">",
-                                "FontSize": 24,
-                                "PaddingTop": 5,
-                                "Foreground": "{HeadMain}"
-                            },
-                            {
-                                "BlockType": "text",
-                                "HorizontalAlignment": "Right",
-                                "Source": " {Season.Name}  Standings  |   {Season.LeagueInfo.LeagueName} Teams",
-                                "PaddingTop": 5,
-                                "FontSize": 24
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "BlockType": "component",
-                "Component": "standing_main_head_cell"
-            },
-            {
-                "BlockType": "component",
-                "Component": "head_background_cell"
-            },
-            //table
-            {
-                "Name": "mainTable",
-                "BlockType": "table",
-                "Triggers": [
-                    {
-                        "Trigger": "RenderPages_Trigger"
-                    }
-                ],
-                "TableOptions": {
-                    "ItemsSource": "{Standings.Teams}",
-                    "RowSpacing": 3,
-                    "ColSpacing": 3,
-                    "HeaderTemplate": {
-                        "BlockType": "text",
-                        "Style": "table_head_style",
-                        "Background": "{HeadSecond}",
-                        "Foreground": "{BackgroundDefault}",
-                        "HorizontalAlignment": "Left"
-                    },
-                    "Columns": [
-                        //position
-                        {
-                            "Header": "    POS",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "position_cell",
-                                "ComponentOptions": {
-                                    "Vars": {
-                                        "position": "{Item.PositionString}"
-                                    }
-                                }
-                            }
-                        },
-                        //Driver Name
-                        {
-                            "Header": "TEAM",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "team_cell"
-                            }
-                        },
-                        {
-                            "Header": "       TOTAL",
-                            "Template": {
                                 "BlockType": "stack",
                                 "Items": [
                                     {
                                         "BlockType": "text",
-                                        "Source": "{Item.Points.StringValue}",
+                                        "Source": ">",
+                                        "FontSize": 24,
+                                        "PaddingTop": 5,
+                                        "Foreground": "{red}"
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "HorizontalAlignment": "Right",
+                                        "Source": " {Season.Name, Converter=StringToUpperString}  STANDINGS  |   {Season.LeagueInfo.LeagueName, Converter=StringToUpperString} TEAMS",
+                                        "PaddingTop": 5,
+                                        "FontSize": 24
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "component",
+                        "Component": "standing_main_head_cell"
+                    },
+                    {
+                        "BlockType": "component",
+                        "Component": "head_background_cell"
+                    },
+                    //table
+                    {
+                        "Name": "mainTable",
+                        "BlockType": "table",
+                        "Triggers": [
+                            {
+                                "Trigger": "RenderPages_Trigger"
+                            }
+                        ],
+                        "TableOptions": {
+                            "ItemsSource": "{Standings.Teams}",
+                            "RowSpacing": 3,
+                            "ColSpacing": 3,
+                            "HeaderTemplate": {
+                                "BlockType": "text",
+                                "Style": "table_head_style",
+                                "Background": "{darkGrey}",
+                                "Foreground": "{BackgroundDefault}",
+                                "HorizontalAlignment": "Left"
+                            },
+                            "Columns": [
+                                //position
+                                {
+                                    "Header": "    POS",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "position_cell",
+                                        "ComponentOptions": {
+                                            "Vars": {
+                                                "position": "{Item.PositionString}"
+                                            }
+                                        }
+                                    }
+                                },
+                                //Driver Name
+                                {
+                                    "Header": "TEAM",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "team_cell"
+                                    }
+                                },
+                                {
+                                    "Header": "       TOTAL",
+                                    "Template": {
+                                        "BlockType": "stack",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.Points.StringValue}",
+                                                "Background": "{BackgroundDefault}",
+                                                "Height": "*",
+                                                "Width": 82,
+                                                "Padding": "{PaddingDefault}",
+                                                "TextOptions": {
+                                                    "HorizontalAlignment": "Center",
+                                                    "VerticalAlignment": "Center"
+                                                },
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                                                        "Property": "Background",
+                                                        "Value": "{darkWhite}"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "MultiColumnHeadersSource": "{Standings.Events}",
+                                    "MultiColumnItemsSource": "{Item.Events}",
+                                    "MultiColumnHeaderTemplate": {
+                                        "BlockType": "stack",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.Track.Name}",
+                                                "PaddingTop": 5,
+                                                "Foreground": "{BackgroundDefault}"
+                                            }
+                                        ]
+                                    },
+                                    "Template": {
+                                        "BlockType": "dock",
+                                        "HorizontalAlignment": "Center",
                                         "Background": "{BackgroundDefault}",
+                                        "Width": 80,
                                         "Height": "*",
-                                        "Width": 82,
-                                        "Padding": "{PaddingDefault}",
-                                        "TextOptions": {
-                                            "HorizontalAlignment": "Center",
-                                            "VerticalAlignment": "Center"
-                                        },
                                         "Triggers": [
                                             {
                                                 "Condition": "{Item.Index, Converter=NumberIsOdd}",
                                                 "Property": "Background",
-                                                "Value": "{BackgroundDarker}"
+                                                "Value": "{darkWhite}"
+                                            }
+                                        ],
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.Points}",
+                                                "HorizontalAlignment": "Center",
+                                                "PaddingTop": 5,
+                                                "VerticalAlignment": "Center"
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "MarginLeft": -1,
+                                                "Source": ".",
+                                                "FontSize": 3
                                             }
                                         ]
                                     }
-                                ]
-                            }
-                        },
-                        {
-                            "MultiColumnHeadersSource": "{Standings.Events}",
-                            "MultiColumnItemsSource": "{Item.Events}",
-                            "MultiColumnHeaderTemplate": {
-                                "BlockType": "stack",
-                                "HorizontalAlignment": "Center",
-                                "VerticalAlignment": "Center",
-                                "Items": [
-                                    {
-                                        "BlockType": "text",
-                                        "Source": "{Item.Track.Name}",
-                                        "PaddingTop": 5,
-                                        "Foreground": "{BackgroundDefault}"
+                                },
+                                {
+                                    "Header": "",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "Component": "fader_cell"
                                     }
-                                ]
-                            },
-                            "Template": {
-                                "BlockType": "dock",
-                                "HorizontalAlignment": "Center",
-                                "Background": "{BackgroundDefault}",
-                                "Width": 80,
-                                "Height": "*",
-                                "Triggers": [
-                                    {
-                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                        "Property": "Background",
-                                        "Value": "{BackgroundDarker}"
-                                    }
-                                ],
-                                "Items": [
-                                    {
-                                        "BlockType": "text",
-                                        "Source": "{Item.Points}",
-                                        "HorizontalAlignment": "Center",
-                                        "PaddingTop": 5,
-                                        "VerticalAlignment": "Center"
-                                    },
-                                    {
-                                        "BlockType": "text",
-                                        "MarginLeft": -1,
-                                        "Source": ".",
-                                        "FontSize": 3
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "Header": "",
-                            "Template": {
-                                "BlockType": "component",
-                                "Component": "fader_cell"
-                            }
+                                }
+                            ]
                         }
-                    ]
-                }
+                    }
+                ]
             }
         ]
     }

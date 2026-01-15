@@ -26,7 +26,7 @@
                 {
                     "Condition": "{ShowDriverClass, Converter=StringEquals, Parameter=DriverFeatures}",
                     "Property": "Source",
-                    "Value": "{Item.Driver.PrimaryDriverFeature.Name}"
+                    "Value": "{Item.PrimaryDriverFeature.Name}"
                 },
                 {
                     "Condition": "{ShowDriverClass, Converter=StringEquals, Parameter=TextBadge}",

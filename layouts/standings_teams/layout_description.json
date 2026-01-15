@@ -1,3 +1,4 @@
 {
-    "RenderType": "TeamStandings"
+    "RenderType": "TeamStandings",
+    "RenderCaption": "Render Team Standings"
 }
