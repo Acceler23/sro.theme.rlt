@@ -47,6 +47,7 @@
         },
         {
             "BlockType": "itemstack",
+            "Padding": "10",
             "ItemStackOptions": {
                 "ItemSource": "{Item.Lines}",
                 "Limit": 3,
@@ -87,17 +88,19 @@
         {
             "BlockType": "itemstack",
             "Padding": "10",
+            "MarginLeft": 0,
+            "MarginRight": -325,
             "Triggers": [
                 {
                     "Condition": "{TeamSameNumber}",
-                    "Property": "ItemStackOptions.Limit",
-                    "Value": 4
+                    "Property": "MarginLeft",
+                    "Value": 325
                 }
             ],
             "ItemStackOptions": {
                 "ItemSource": "{Item.Lines}",
-                "IndexStart": 3,
-                "Limit": 3,
+                "IndexStart": 2,
+                "IndexEnd": 6,
                 "ItemTemplate": {
                     "BlockType": "stack",
                     "Orientation": "Horizontal",
@@ -105,7 +108,7 @@
                     "RenderIf": false,
                     "Triggers": [
                         {
-                            "Condition": "{Item.SeatPosition, Converter=NumberGreater, Parameter=3}",
+                            "Condition": "{Item.Index, Converter=NumberGreater, Parameter=0}",
                             "Property": "RenderIf",
                             "Value": true
                         }
@@ -133,18 +136,20 @@
         },
         {
             "BlockType": "itemstack",
+            "MarginLeft": 0,            
+            "MarginRight": -325,
             "Padding": "10",
             "Triggers": [
                 {
                     "Condition": "{TeamSameNumber}",
-                    "Property": "ItemStackOptions.Limit",
-                    "Value": 4
+                    "Property": "MarginLeft",
+                    "Value": 325
                 }
             ],
             "ItemStackOptions": {
                 "ItemSource": "{Item.Lines}",
-                "IndexStart": 6,
-                "Limit": 3,
+                "IndexStart": 5,
+                "IndexEnd": 9,
                 "ItemTemplate": {
                     "BlockType": "stack",
                     "Orientation": "Horizontal",
@@ -152,12 +157,17 @@
                     "RenderIf": false,
                     "Triggers": [
                         {
-                            "Condition": "{Item.SeatPosition, Converter=NumberGreater, Parameter=6}",
+                            "Condition": "{Item.Index, Converter=NumberGreater, Parameter=0}",
                             "Property": "RenderIf",
                             "Value": true
                         }
                     ],
                     "Items": [
+                        {
+                            "BlockType": "text",
+                            "Source": "{Item.Index}",
+                            "FontSize": 50
+                        },
                         {
                             "BlockType": "component",
                             "Component": "number_season",
